@@ -1,0 +1,5 @@
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:cjnrw/Configuration/TypoScript/Config" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:cjnrw/Configuration/TypoScript/Page" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:cjnrw/Configuration/TypoScript/Lib" extensions="typoscript">
+
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:cjnrw/Configuration/TypoScript/Content" extensions="typoscript">

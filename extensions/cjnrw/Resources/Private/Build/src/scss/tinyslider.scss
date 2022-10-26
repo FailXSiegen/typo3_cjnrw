@@ -1,0 +1,142 @@
+@import 'variables';
+@import '../../../../Public/Vendor/bootstrap/scss/functions';
+@import '../../../../Public/Vendor/bootstrap/scss/variables';
+@import '../../../../Public/Vendor/bootstrap/scss/mixins';
+@import '../../../../Public/Vendor/tiny-slider/src/tiny-slider';
+.special-slider {
+    .tns-outer {
+        position: relative;
+    }
+    .tns-ovh {
+        padding: 10px 45px;
+    }
+    .tns-controls {
+        > button {
+            position: absolute;
+            top: 50%;
+            z-index: 999;
+            width: 30px;
+            height: 100px;
+            text-indent: -9999px;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            border: 0;
+            &[data-controls="prev"] {
+                left: 5px;
+                background-image: url('../../../../Public/Icons/Slider/Pfeil_links_gelb.svg?inline');
+                &:focus,
+                &:active,
+                &:hover {
+                    background-image: url('../../../../Public/Icons/Slider/Pfeil-Hover_links_gelb.svg?inline');
+                }
+            }
+            &[data-controls="next"] {
+                right: 5px;
+                background-image: url('../../../../Public/Icons/Slider/Pfeil_rechts_gelb.svg?inline');
+                &:focus,
+                &:active,
+                &:hover {
+                    background-image: url('../../../../Public/Icons/Slider/Pfeil-Hover_rechts_gelb.svg?inline');
+                }
+            }
+            &[disabled] {
+                opacity: .25;
+            }
+        }
+        + .tns-ovh {
+            margin: 0 67px;
+        }
+    }
+}
+@include media-breakpoint-up(lg) {
+    .special-slider {
+        .tns-ovh {
+            overflow: visible;
+        }
+        .tns-controls {
+            > button {
+                width: 62px;
+            }
+        }
+        // add 3 special selectior
+        .slide-1, .slide-3 {
+            transform: scale(0.75) translateX(600px);
+            z-index: 200;
+            position: relative;
+            transition: transform .2s linear;
+            &:focus,
+            &:active,
+            &:hover  {
+                transform: scale(0.75) translateX(400px);
+                cursor: pointer;
+            }
+        }
+        .slide-2 {
+            transform: scale(1.25);
+            z-index: 500;
+            position: relative;
+            transition: transform .2s linear;
+        }
+        .slide-3 {
+            transform: scale(0.75) translateX(-600px);
+            &:focus,
+            &:active,
+            &:hover  {
+                transform: scale(0.75) translateX(-400px);
+                cursor: pointer;
+            }
+        }
+
+        .tns-inner {
+            padding-top: 4rem !important;
+            padding-bottom: 0rem !important;
+        }
+
+        .currentindex-0 {
+            .slide-1 {
+                transform: scale(1.25);
+                z-index: 500;
+                &:focus,
+                &:active,
+                &:hover  {
+                    transform: scale(1.25) translateX(0);
+                }
+                ~ .tns-slide-active {
+                    transform: scale(0.75) translateX(-600px);
+                    z-index: 200;
+                    &:focus,
+                    &:active,
+                    &:hover  {
+                        transform: scale(0.75) translateX(-400px);
+                        cursor: pointer;
+                    }
+                }
+            }
+            .slide-3 {
+                display: none;
+            }
+        }
+        .currentindex-last {
+            .slide-1, .slide-2 {
+                transform: scale(0.75) translateX(600px);
+                z-index: 200;
+                &:focus,
+                &:active,
+                &:hover  {
+                    transform: scale(0.75) translateX(400px);
+                    cursor: pointer;
+                }
+            }
+            .slide-2.slide-3 {
+                transform: scale(1.25);
+                z-index: 500;
+            }
+
+            .slide-2 + .slide-3 {
+                transform: scale(1.25);
+                z-index: 500;
+            }
+        }
+    }
+}

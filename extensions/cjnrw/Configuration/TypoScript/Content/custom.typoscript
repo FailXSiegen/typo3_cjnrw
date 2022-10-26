@@ -1,0 +1,36 @@
+tt_content {
+    scroll_background =< lib.contentElement
+    scroll_background {
+        templateName = Scrollbackground
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = image
+            }
+        }
+    }
+    counter =< lib.contentElement
+    counter {
+        templateName = Counter
+    }
+    cite =< lib.contentElement
+    cite {
+        templateName = Cite
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = image
+            }
+        }
+    }
+    projectslider =< lib.contentElement
+    projectslider {
+        templateName = Projectslider
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = image
+            }
+        }
+    }
+}

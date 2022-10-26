@@ -1,0 +1,73 @@
+@import 'variables';
+@import '../../../../Public/Vendor/bootstrap/scss/functions';
+@import '../../../../Public/Vendor/bootstrap/scss/variables';
+@import '../../../../Public/Vendor/bootstrap/scss/mixins';
+@import '../../../../Public/Vendor/bootstrap/scss/carousel';
+.slide-container {
+    .carousel-indicators [data-bs-target] {
+        width: 37px;
+        height: 7px;
+    }
+
+    &.carousel:not([class*="pb-"]) {
+        .carousel-indicators {
+            margin-bottom: 0;
+            bottom: -30px;
+        }
+        + * {
+            margin-top: 45px !important;
+        }
+    }
+    .carousel-control-prev {
+        .carousel-control-prev-icon {
+            background-image: url('../../../../Public/Icons/Slider/Pfeil_links_gelb.svg?inline');
+        }
+        &:active,
+        &:hover {
+            .carousel-control-prev-icon {
+                background-image: url('../../../../Public/Icons/Slider/Pfeil-Hover_links_gelb.svg?inline');
+            }
+        }
+    }
+    .carousel-control-next {
+        .carousel-control-next-icon {
+            background-image: url('../../../../Public/Icons/Slider/Pfeil_rechts_gelb.svg?inline');
+        }
+        &:active,
+        &:hover {
+            .carousel-control-next-icon {
+                background-image: url('../../../../Public/Icons/Slider/Pfeil-Hover_rechts_gelb.svg?inline');
+            }
+        }
+    }
+}
+div[class*="bg-"] div.bg-white,
+div[class*="bg-"] div.bg-lightgreen,
+.bg-white,
+.bg-lightgreen {
+    &.slide-container,
+    .slide-container {
+        .carousel-control-prev {
+            .carousel-control-prev-icon {
+                background-image: url('../../../../Public/Icons/Slider/Pfeil_links_lila.svg?inline');
+            }
+            &:active,
+            &:hover {
+                .carousel-control-prev-icon {
+                    background-image: url('../../../../Public/Icons/Slider/Pfeil-Hover_links_lila.svg?inline');
+                }
+            }
+        }
+        .carousel-control-next {
+            .carousel-control-next-icon {
+                background-image: url('../../../../Public/Icons/Slider/Pfeil_rechts_lila.svg?inline');
+            }
+            &:active,
+            &:hover {
+                .carousel-control-next-icon {
+                    background-image: url('../../../../Public/Icons/Slider/Pfeil-Hover_rechts_lila.svg?inline');
+                }
+            }
+        }
+    }
+}

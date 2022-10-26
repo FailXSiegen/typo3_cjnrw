@@ -1,0 +1,25 @@
+base: 'https://www.chorjugend.nrw/'
+baseVariants:
+  -
+    base: 'https://cjnrw.ddev.site'
+    condition: 'getenv("TYPO3_CONTEXT") == "Development"'
+  -
+    base: 'https://dev.chorjugend.nrw'
+    condition: 'getenv("TYPO3_CONTEXT") == "Production/Staging"'
+disableStaticFileCache: false
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    languageId: 0
+    base: /
+    typo3Language: de
+    locale: de_DE.UTF-8
+    iso-639-1: de
+    navigationTitle: Deutsch
+    hreflang: de
+    direction: ltr
+    flag: de
+    websiteTitle: ''
+rootPageId: 1
+websiteTitle: ''

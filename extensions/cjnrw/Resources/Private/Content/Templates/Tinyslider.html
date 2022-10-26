@@ -1,0 +1,173 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:asset.css identifier="tinyslider-style" href="EXT:cjnrw/Resources/Public/StyleSheet/tinyslider-style.css" />
+<f:asset.script identifier="tinyslider" src="EXT:cjnrw/Resources/Public/JavaScript/tiny-slider.js" />
+<f:if condition="{data.special_carousel}">
+    <f:then><f:render section="specialslider" arguments="{_all}" /></f:then>
+    <f:else><f:render section="normalslider" arguments="{_all}" /></f:else>
+</f:if>
+<f:spaceless>
+    <div
+        id="c{data.uid}"
+        class="{f:if(condition:data.special_carousel, then: 'special-slider ')}{f:render(partial:'Divclasses', arguments:{data:data})}"
+        >
+        <div class="tiny-slider{data.uid}">
+            <f:for each="{content}" as="child" iteration="it">
+                <div>
+                    <f:format.raw>{child.renderedContent}</f:format.raw>
+                </div>
+            </f:for>
+        </div>
+    </div>
+</f:spaceless>
+<f:section name="normalslider">
+    <f:asset.script identifier="tinyslider{data.uid}">
+        var slider = tns({
+            container: '.tiny-slider<f:format.raw>{data.uid}</f:format.raw>',
+            controls: <f:format.raw>{f:if(condition:data.carousel_controls, then: 'true', else: 'false')}</f:format.raw>,
+            nav: <f:format.raw>{f:if(condition:data.carousel_indicators, then: 'true', else: 'false')}</f:format.raw>,
+            <f:format.raw>{data.tinyslider_config}</f:format.raw>
+        });
+    </f:asset.script>
+</f:section>
+<f:section name="specialslider">
+    <f:asset.script identifier="tinyslider{data.uid}">
+        var updateActiveSlideCount = function (info, eventName) {
+
+            var sliderOuterCointainer = document.getElementsByClassName('tns-ovh');
+            sliderOuterCointainer[0].classList.remove('currentindex-' + info.indexCached);
+            sliderOuterCointainer[0].classList.add('currentindex-' + info.index);
+
+            var slideContainers = document.getElementsByClassName('tns-item');
+            var x = 1;
+            if(slideContainers.length == (info.index + 1)) {
+                sliderOuterCointainer[0].classList.add('currentindex-last');
+            } else {
+                sliderOuterCointainer[0].classList.remove('currentindex-last');
+            }
+            for (var i = 0; i < slideContainers.length; i++) {
+                if (slideContainers[i].classList.contains('tns-slide-active')) {
+                    var oldActiveSlide = document.getElementsByClassName('slide-' + x);
+                    if(oldActiveSlide.length > 0) {
+                        oldActiveSlide[0].removeEventListener('click', slideToNext);
+                        oldActiveSlide[0].removeEventListener('click', slideToPrev);
+                        oldActiveSlide[0].classList.remove('slide-' + x);
+                    }
+                    slideContainers[i].classList.add('slide-' + x);
+                    x++;
+                }
+            }
+
+            if(window.innerWidth >= 992) {
+                addEventListeners();
+            }
+        }
+        var slider = tns({
+            container: '.tiny-slider<f:format.raw>{data.uid}</f:format.raw>',
+            items: 1,
+            loop: false,
+            mouseDrag: false,
+            controls: true,
+            nav: false,
+            mouseDrag: true,
+            gutter: 60,
+            responsive: {
+                991: {
+                    items: 1,
+                    gutter: 0,
+                    edgePadding: 100,
+                    controls: true
+                },
+                1200: {
+                    items: 1,
+                    edgePadding: 220,
+                    controls: true,
+                    mouseDrag: false
+                },
+                1400: {
+                    items: 1,
+                    edgePadding: 250,
+                    controls: true,
+                    mouseDrag: false
+                },
+                1680: {
+                    items: 1,
+                    edgePadding: 340,
+                    controls: true,
+                    mouseDrag: false
+                },
+                1920: {
+                    items: 1,
+                    edgePadding: 500,
+                    controls: true,
+                    mouseDrag: false
+                },
+                2220: {
+                    items: 1,
+                    edgePadding: 600,
+                    controls: true,
+                    mouseDrag: false
+                },
+                2560: {
+                    items: 1,
+                    edgePadding: 800,
+                    controls: true,
+                    mouseDrag: false,
+                    gutter: 120
+                },
+                3000: {
+                    items: 1,
+                    edgePadding: 950,
+                    controls: true,
+                    mouseDrag: false
+                },
+                3400: {
+                    items: 1,
+                    edgePadding: 980,
+                    controls: true,
+                    mouseDrag: false
+                },
+                3840: {
+                    items: 1,
+                    edgePadding: 1350,
+                    controls: true,
+                    mouseDrag: false
+                }
+            },
+            onInit: updateActiveSlideCount
+        });
+        slider.events.on('indexChanged', updateActiveSlideCount);
+
+        function addEventListeners() {
+            var slide1 = document.getElementsByClassName('slide-1');
+            if(slide1.length > 0) {
+                if(!hasSomeParentTheClass(slide1[0], 'currentindex-0')) {
+                    slide1[0].addEventListener('click', slideToPrev);
+                }
+            }
+            var slide2 = document.getElementsByClassName('slide-2');
+            if(slide2.length > 0) {
+                if(hasSomeParentTheClass(slide2[0], 'currentindex-0')) {
+                    slide2[0].addEventListener('click', slideToNext);
+                }
+            }
+            var slide3 = document.getElementsByClassName('slide-3');
+            if(slide3.length > 0) {
+                slide3[0].addEventListener('click', slideToNext);
+            }
+        }
+
+        function slideToNext() {
+            slider.goTo('next');
+        }
+        function slideToPrev() {
+            slider.goTo('prev');
+        }
+        function hasSomeParentTheClass(element, classname) {
+            if (element.className.split(' ').indexOf(classname)>=0) return true;
+            return element.parentElement && hasSomeParentTheClass(element.parentElement, classname);
+        }
+    </f:asset.script>
+</f:section>
+
+
+</html>

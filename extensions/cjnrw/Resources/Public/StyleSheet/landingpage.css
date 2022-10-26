@@ -1,0 +1,27 @@
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/scss/landingpage.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
+body {
+  font-size: 21px;
+  line-height: 37px;
+}
+
+.landingpage-back {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iRWJlbmVfMSIgZGF0YS1uYW1lPSJFYmVuZSAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOS4zNSA0Ny4zOCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7c3Ryb2tlOiNkMmZmMjM7c3Ryb2tlLWxpbmVjYXA6c3F1YXJlO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6N3B4O308L3N0eWxlPjwvZGVmcz48cGF0aCBpZD0iUGZhZF8yIiBkYXRhLW5hbWU9IlBmYWQgMiIgY2xhc3M9ImNscy0xIiBkPSJNMjYsNi4zNCw1LjEzLDIzLjU3LDI2LDQzLjg1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMS42MyAtMS40MSkiLz48L3N2Zz4=);
+  width: 62px;
+  height: 100px;
+  transition: height 0.5s ease-in-out;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.minify .landingpage-back {
+  width: 62px;
+  height: 62px;
+  transition: height 0.5s ease-in-out;
+}
+
+body.btn-primary {
+  padding: 8px 50px;
+}

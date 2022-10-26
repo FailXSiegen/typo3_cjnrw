@@ -1,0 +1,78 @@
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/scss/bg-darkgreen.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+div[class*=bg-] div.bg-darkgreen,
+div.bg-darkgreen {
+  background-color: #004751;
+  color: white;
+}
+div[class*=bg-] div.bg-darkgreen h1, div[class*=bg-] div.bg-darkgreen h3, div[class*=bg-] div.bg-darkgreen h4, div[class*=bg-] div.bg-darkgreen h5,
+div[class*=bg-] div.bg-darkgreen .h1, div[class*=bg-] div.bg-darkgreen .h3, div[class*=bg-] div.bg-darkgreen .h4, div[class*=bg-] div.bg-darkgreen .h5,
+div[class*=bg-] div.bg-darkgreen .sidetext,
+div[class*=bg-] div.bg-darkgreen p, div[class*=bg-] div.bg-darkgreen a,
+div.bg-darkgreen h1,
+div.bg-darkgreen h3,
+div.bg-darkgreen h4,
+div.bg-darkgreen h5,
+div.bg-darkgreen .h1,
+div.bg-darkgreen .h3,
+div.bg-darkgreen .h4,
+div.bg-darkgreen .h5,
+div.bg-darkgreen .sidetext,
+div.bg-darkgreen p,
+div.bg-darkgreen a {
+  color: #fff;
+}
+div[class*=bg-] div.bg-darkgreen h1::first-line, div[class*=bg-] div.bg-darkgreen h3::first-line, div[class*=bg-] div.bg-darkgreen h4::first-line, div[class*=bg-] div.bg-darkgreen h5::first-line,
+div[class*=bg-] div.bg-darkgreen .h1::first-line, div[class*=bg-] div.bg-darkgreen .h3::first-line, div[class*=bg-] div.bg-darkgreen .h4::first-line, div[class*=bg-] div.bg-darkgreen .h5::first-line,
+div[class*=bg-] div.bg-darkgreen .sidetext::first-line,
+div[class*=bg-] div.bg-darkgreen p::first-line, div[class*=bg-] div.bg-darkgreen a::first-line,
+div.bg-darkgreen h1::first-line,
+div.bg-darkgreen h3::first-line,
+div.bg-darkgreen h4::first-line,
+div.bg-darkgreen h5::first-line,
+div.bg-darkgreen .h1::first-line,
+div.bg-darkgreen .h3::first-line,
+div.bg-darkgreen .h4::first-line,
+div.bg-darkgreen .h5::first-line,
+div.bg-darkgreen .sidetext::first-line,
+div.bg-darkgreen p::first-line,
+div.bg-darkgreen a::first-line {
+  color: #fff;
+}
+div[class*=bg-] div.bg-darkgreen .bg-particle svg,
+div.bg-darkgreen .bg-particle svg {
+  fill: #D1FF24;
+}
+div[class*=bg-] div.bg-darkgreen .btn-secondary, div[class*=bg-] div.bg-darkgreen .btn-primary,
+div.bg-darkgreen .btn-secondary,
+div.bg-darkgreen .btn-primary {
+  background-color: #C5B8F6;
+  border-color: #C5B8F6;
+  color: #171934;
+}
+div[class*=bg-] div.bg-darkgreen .btn-secondary:focus, div[class*=bg-] div.bg-darkgreen .btn-primary:focus,
+div.bg-darkgreen .btn-secondary:focus,
+div.bg-darkgreen .btn-primary:focus {
+  text-decoration: underline;
+}
+div[class*=bg-] div.bg-darkgreen .btn-secondary:hover, div[class*=bg-] div.bg-darkgreen .btn-primary:hover,
+div.bg-darkgreen .btn-secondary:hover,
+div.bg-darkgreen .btn-primary:hover {
+  background-color: #004751;
+  color: #D1FF24;
+}
+div[class*=bg-] div.bg-darkgreen .btn-secondary:active, div[class*=bg-] div.bg-darkgreen .btn-primary:active,
+div.bg-darkgreen .btn-secondary:active,
+div.bg-darkgreen .btn-primary:active {
+  border-color: #D1FF24;
+  background-color: #D1FF24;
+  color: #171934;
+}
+div[class*=bg-] div.bg-darkgreen .btn-secondary[disabled], div[class*=bg-] div.bg-darkgreen .btn-primary[disabled],
+div.bg-darkgreen .btn-secondary[disabled],
+div.bg-darkgreen .btn-primary[disabled] {
+  border-color: rgba(209, 255, 36, 0.5);
+  background-color: rgba(209, 255, 36, 0.5);
+  color: rgba(255, 255, 255, 0.6);
+}

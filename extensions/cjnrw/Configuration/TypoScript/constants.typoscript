@@ -1,0 +1,16 @@
+styles.content.textmedia.maxW = 1920
+styles.content.textmedia.maxWInText = 1920
+styles.content.textmedia.linkWrap.width = 1920
+styles.content.textmedia.linkWrap.height = 1920
+failx.rootPid = 1
+failx.mainNavigationPid = 2
+failx.socialNavigationPid = 7
+failx.contactPid = 33
+failx.resourcePath = EXT:cjnrw/Resources/
+failx.defaultTheme = theme-white
+failx.logoPath = EXT:cjnrw/Resources/Public/Images/NeurologIQ_Logo_claim.svg
+failx.logoMobilePath = EXT:cjnrw/Resources/Public/Images/NeurologIQ_Logo.svg
+failx.loginPath = EXT:cjnrw/Resources/Public/Icons/login.svg
+failx.contactIconPath = EXT:cjnrw/Resources/Public/Icons/contact.svg
+failx.buttonPath = EXT:cjnrw/Resources/Public/Icons/menu.svg
+failx.buttonClosePath = EXT:cjnrw/Resources/Public/Icons/close.svg

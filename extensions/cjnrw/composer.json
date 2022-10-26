@@ -1,0 +1,17 @@
+{
+    "name": "failx/cjnrw",
+    "type": "typo3-cms-extension",
+    "description": "basic template extension and configs for cjnrw.",
+    "autoload": {
+      "psr-4": {
+        "Failx\\Cjnrw\\": "Classes/"
+      }
+    },
+    "require": {
+      "typo3/cms-core": "^11.4",
+      "b13/container": "^1.3"
+    },
+    "replace": {
+      "cjnrw": "*"
+    }
+  }

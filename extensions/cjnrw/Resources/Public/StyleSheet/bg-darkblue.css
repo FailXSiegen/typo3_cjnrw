@@ -1,0 +1,93 @@
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/scss/bg-darkblue.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
+div[class*=bg-] div.bg-darkblue,
+div.bg-darkblue {
+  background-color: #181E3A;
+  color: #fff;
+}
+div[class*=bg-] div.bg-darkblue h1, div[class*=bg-] div.bg-darkblue h3, div[class*=bg-] div.bg-darkblue h4, div[class*=bg-] div.bg-darkblue h5,
+div[class*=bg-] div.bg-darkblue .h1, div[class*=bg-] div.bg-darkblue .h3, div[class*=bg-] div.bg-darkblue .h4, div[class*=bg-] div.bg-darkblue .h5,
+div[class*=bg-] div.bg-darkblue .sidetext,
+div[class*=bg-] div.bg-darkblue p, div[class*=bg-] div.bg-darkblue a,
+div.bg-darkblue h1,
+div.bg-darkblue h3,
+div.bg-darkblue h4,
+div.bg-darkblue h5,
+div.bg-darkblue .h1,
+div.bg-darkblue .h3,
+div.bg-darkblue .h4,
+div.bg-darkblue .h5,
+div.bg-darkblue .sidetext,
+div.bg-darkblue p,
+div.bg-darkblue a {
+  color: white;
+}
+div[class*=bg-] div.bg-darkblue h2, div[class*=bg-] div.bg-darkblue .h2,
+div.bg-darkblue h2,
+div.bg-darkblue .h2 {
+  color: #fff;
+}
+div[class*=bg-] div.bg-darkblue h2::first-line, div[class*=bg-] div.bg-darkblue .h2::first-line,
+div.bg-darkblue h2::first-line,
+div.bg-darkblue .h2::first-line {
+  color: #fff;
+}
+div[class*=bg-] div.bg-darkblue .bg-particle svg,
+div.bg-darkblue .bg-particle svg {
+  fill: #C5B8F6;
+}
+div[class*=bg-] div.bg-darkblue .btn-primary,
+div.bg-darkblue .btn-primary {
+  background-color: #C5B8F6;
+  border-color: #C5B8F6;
+  color: #171934;
+}
+div[class*=bg-] div.bg-darkblue .btn-primary:focus,
+div.bg-darkblue .btn-primary:focus {
+  text-decoration: underline;
+}
+div[class*=bg-] div.bg-darkblue .btn-primary:hover,
+div.bg-darkblue .btn-primary:hover {
+  background-color: #171934;
+  color: #C5B8F6;
+}
+div[class*=bg-] div.bg-darkblue .btn-primary:active,
+div.bg-darkblue .btn-primary:active {
+  border-color: #C5B8F6;
+  background-color: #C5B8F6;
+  color: #181E3A;
+}
+div[class*=bg-] div.bg-darkblue .btn-primary[disabled],
+div.bg-darkblue .btn-primary[disabled] {
+  border-color: rgba(197, 184, 246, 0.5);
+  background-color: rgba(197, 184, 246, 0.5);
+  color: rgba(255, 255, 255, 0.6);
+}
+div[class*=bg-] div.bg-darkblue .btn-secondary,
+div.bg-darkblue .btn-secondary {
+  background-color: #D1FF24;
+  border-color: #D1FF24;
+  color: #171934;
+}
+div[class*=bg-] div.bg-darkblue .btn-secondary:focus,
+div.bg-darkblue .btn-secondary:focus {
+  text-decoration: underline;
+}
+div[class*=bg-] div.bg-darkblue .btn-secondary:hover,
+div.bg-darkblue .btn-secondary:hover {
+  background-color: #D1FF24;
+  color: #C5B8F6;
+}
+div[class*=bg-] div.bg-darkblue .btn-secondary:active,
+div.bg-darkblue .btn-secondary:active {
+  border-color: #D1FF24;
+  background-color: #D1FF24;
+  color: #181E3A;
+}
+div[class*=bg-] div.bg-darkblue .btn-secondary[disabled],
+div.bg-darkblue .btn-secondary[disabled] {
+  border-color: rgba(209, 255, 36, 0.5);
+  background-color: rgba(209, 255, 36, 0.5);
+  color: rgba(255, 255, 255, 0.6);
+}

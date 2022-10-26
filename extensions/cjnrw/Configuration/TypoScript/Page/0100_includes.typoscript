@@ -1,0 +1,25 @@
+page{
+    includeCSS {
+        abovethefold = EXT:cjnrw/Resources/Public/StyleSheet/abovethefold.css
+        abovethefold.inline {
+            inline = 1
+            forceOnTop = 1
+            media = all
+        }
+        fonts = EXT:cjnrw/Resources/Public/StyleSheet/fonts.css
+        fontawesome = EXT:cjnrw/Resources/Public/StyleSheet/font-awesome.css
+    }
+    includeJSFooter {
+        bootstrap = EXT:cjnrw/Resources/Public/JavaScript/bootstrap.bundle.min.js
+        main_javascript = EXT:cjnrw/Resources/Public/JavaScript/javascript.js
+    }
+    headerData {
+        2 = TEXT
+        2.value (
+<link rel="preload" href="/typo3conf/ext/cjnrw/Resources/Public/Fonts/Barlow/Barlow-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/typo3conf/ext/cjnrw/Resources/Public/Fonts/Barlow/Barlow-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/typo3conf/ext/cjnrw/Resources/Public/Fonts/Barlow/Barlow-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/typo3conf/ext/cjnrw/Resources/Public/Fonts/FontAwesome/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff2" crossorigin>
+        )
+    }
+}

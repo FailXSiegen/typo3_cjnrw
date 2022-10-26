@@ -1,0 +1,71 @@
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/scss/bg-aubergine.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+div[class*=bg-] div.bg-aubergine,
+div.bg-aubergine {
+  background-color: #171934;
+  color: #fff;
+}
+div[class*=bg-] div.bg-aubergine h1, div[class*=bg-] div.bg-aubergine h3, div[class*=bg-] div.bg-aubergine h4, div[class*=bg-] div.bg-aubergine h5,
+div[class*=bg-] div.bg-aubergine .h1, div[class*=bg-] div.bg-aubergine .h3, div[class*=bg-] div.bg-aubergine .h4, div[class*=bg-] div.bg-aubergine .h5,
+div[class*=bg-] div.bg-aubergine .sidetext,
+div[class*=bg-] div.bg-aubergine p, div[class*=bg-] div.bg-aubergine a,
+div.bg-aubergine h1,
+div.bg-aubergine h3,
+div.bg-aubergine h4,
+div.bg-aubergine h5,
+div.bg-aubergine .h1,
+div.bg-aubergine .h3,
+div.bg-aubergine .h4,
+div.bg-aubergine .h5,
+div.bg-aubergine .sidetext,
+div.bg-aubergine p,
+div.bg-aubergine a {
+  color: white;
+}
+div[class*=bg-] div.bg-aubergine h2, div[class*=bg-] div.bg-aubergine .h2,
+div.bg-aubergine h2,
+div.bg-aubergine .h2 {
+  color: #fff;
+}
+div[class*=bg-] div.bg-aubergine h2::first-line, div[class*=bg-] div.bg-aubergine .h2::first-line,
+div.bg-aubergine h2::first-line,
+div.bg-aubergine .h2::first-line {
+  color: #fff;
+}
+div[class*=bg-] div.bg-aubergine .bg-particle svg,
+div.bg-aubergine .bg-particle svg {
+  fill: #D1FF24;
+}
+div[class*=bg-] div.bg-aubergine .btn-secondary, div[class*=bg-] div.bg-aubergine .btn-primary,
+div.bg-aubergine .btn-secondary,
+div.bg-aubergine .btn-primary {
+  background-color: #D1FF24;
+  border-color: #D1FF24;
+  color: #171934;
+}
+div[class*=bg-] div.bg-aubergine .btn-secondary:focus, div[class*=bg-] div.bg-aubergine .btn-primary:focus,
+div.bg-aubergine .btn-secondary:focus,
+div.bg-aubergine .btn-primary:focus {
+  text-decoration: underline;
+}
+div[class*=bg-] div.bg-aubergine .btn-secondary:hover, div[class*=bg-] div.bg-aubergine .btn-primary:hover,
+div.bg-aubergine .btn-secondary:hover,
+div.bg-aubergine .btn-primary:hover {
+  background-color: #171934;
+  color: #C5B8F6;
+}
+div[class*=bg-] div.bg-aubergine .btn-secondary:active, div[class*=bg-] div.bg-aubergine .btn-primary:active,
+div.bg-aubergine .btn-secondary:active,
+div.bg-aubergine .btn-primary:active {
+  border-color: #C5B8F6;
+  background-color: #C5B8F6;
+  color: #171934;
+}
+div[class*=bg-] div.bg-aubergine .btn-secondary[disabled], div[class*=bg-] div.bg-aubergine .btn-primary[disabled],
+div.bg-aubergine .btn-secondary[disabled],
+div.bg-aubergine .btn-primary[disabled] {
+  border-color: rgba(197, 184, 246, 0.5);
+  background-color: rgba(197, 184, 246, 0.5);
+  color: rgba(255, 255, 255, 0.6);
+}

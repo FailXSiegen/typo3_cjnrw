@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class="{f:render(partial:'Divclasses',arguments:{data:data})} container-with-sidetext {f:if(condition:'{data.subheader}',then:'with-subheader')}">
+        <div class="sidetext {data.header_color}">{data.header -> f:format.nl2br()}</div>
+        <f:if condition="{data.subheader}">
+            <div class="sidetext-subheader">{data.subheader}</div>
+        </f:if>
+        <f:for each="{content}" as="child">
+            <f:format.raw>{child.renderedContent}</f:format.raw>
+        </f:for>
+    </div>
+    <f:asset.css identifier="headerrotate" href="EXT:cjnrw/Resources/Public/StyleSheet/container-with-sidetext.css" />
+</html>

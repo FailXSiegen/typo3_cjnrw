@@ -1,0 +1,81 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+    <f:if condition="{files}">
+        <f:asset.css 
+            identifier="projectslider"
+            href="EXT:cjnrw/Resources/Public/StyleSheet/projectslider.css" />
+        <f:asset.css 
+            identifier="bg-green"
+            href="EXT:cjnrw/Resources/Public/StyleSheet/bg-green.css" />
+        <div 
+            data-bs-ride="carousel"
+            data-bs-interval="false"
+            class="d-xl-block d-none carousel slide carousel-fade projectslider {f:render(partial:'Divclasses',arguments:{data:data})}" 
+            id="c{data.uid}">
+            <div class="row">
+                <div class="col-12 col-lg-6 justify-content-end d-flex order-2 order-lg-1">
+                    <div class="carousel-inner">
+                        <f:for each="{files}" as="project" iteration="it">
+                            <div        
+                                class="carousel-item justify-content-end d-flex {f:if(condition: it.isFirst, then:'active')}">
+                                <div class="bgimage-container position-relative d-inline-block">
+                                    <f:link.typolink parameter="{project.link}">
+                                        <f:render partial="Media/Rendering/Image" arguments="{file:project}" />
+                                        <div class="position-absolute bottom-0 start-0 bg-theme-element p-5">
+                                        Case #{it.cycle}
+                                        </div>
+                                    </f:link.typolink>
+                                </div>
+                            </div>
+                        </f:for>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 justify-content-center align-items-start  d-flex flex-column order-1 order-lg-2">
+                    <div class="projectslider-navigation carousel-indicators">
+                        <ul>
+                            <f:for each="{files}" as="project" iteration="it">
+                                <li type="button"
+                                    data-bs-target="#c{data.uid}" 
+                                    data-bs-slide-to="{it.index}" 
+                                    class="{f:if(condition: it.isFirst, then:'active')} mb-3"
+                                    aria-current="{f:if(condition: it.isFirst, then:'true', else:'false')}" 
+                                    aria-label="Project {it.cycle}">
+                                    {project.title} <br />
+                                    {project.description}
+                                </li>
+                            </f:for>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div 
+            class="d-xl-none d-block projects {f:render(partial:'Divclasses',arguments:{data:data})}" 
+            id="c-mobile-{data.uid}">
+            <f:for each="{files}" as="project" iteration="it">
+                <div        
+                    class="mb-3">
+                    <div class="w-100 bgimage-container position-relative d-inline-block">
+                        <f:link.typolink parameter="{project.link}">
+                            <f:render partial="Media/Rendering/Image" arguments="{file:project}" />
+                            <div class="position-absolute bottom-0 start-0 bg-theme-element p-5">
+                            Case #{it.cycle}
+                            </div>       
+                        </f:link.typolink>
+                    </div>
+                    <div class="w-100 project-description projectslider-navigation carousel-indicators p-3">
+                        <ul>
+                            <li 
+                                data-bs-target="#c{data.uid}" 
+                                class="mb-3"
+                                aria-label="Project {it.cycle}">
+                                {project.title} <br />
+                                {project.description}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </f:if>
+</html>

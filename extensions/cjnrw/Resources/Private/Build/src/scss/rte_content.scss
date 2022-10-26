@@ -1,0 +1,71 @@
+@import 'variables';
+@import '../../../../Public/Vendor/bootstrap/scss/functions';
+@import '../../../../Public/Vendor/bootstrap/scss/variables';
+@import '../../../../Public/Vendor/bootstrap/scss/mixins';
+.cke_combopanel {
+    width: 250px !important;
+}
+.cke_editable  {
+    padding: 8px;
+}
+.line-before {
+    padding-left: 40px;
+    position: relative;
+    &:before {
+        position: absolute;
+        width: 28px;
+        content: '';
+        border:0;
+        border-top: 1px solid $grey;
+        display: block;
+        left: 0;
+        top: calc(50% - 1px);
+    }
+    @include media-breakpoint-up(md) {
+        padding-left: 90px;
+        &:before {
+            width: 75px;
+        }
+    }
+}
+span.underline {
+    position: relative;
+    padding-bottom:20px;
+    display: inline-block;
+    &:before {
+        position: absolute;
+        width: 100%;
+        content: '';
+        border: 0;
+        border-top: 0;
+        display: block;
+        left: 0;
+        bottom: 0;
+    }
+}
+@each $themeColour, $i in $themeColours {
+    .line-before.line- {
+        &#{$themeColour} {
+            &:before {
+                border-top: 1px solid $i !important;
+            }
+        }
+    }
+    span.underline.underline- {
+        &#{$themeColour} {
+            &:before {
+                border-top: 15px solid $i !important;
+            }
+        }
+    }
+}
+@each $themeColour, $i in $themeColours {
+    .cl- {
+        &#{$themeColour} {
+            color: $i !important;
+            &::first-line {
+                color: $i !important;
+            }
+        }
+    }
+}
