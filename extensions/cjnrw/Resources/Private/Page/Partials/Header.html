@@ -1,22 +1,22 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
     <header id="head" data-rootpid="{rootPageUid}">
-        <div class="container-fluid pt-3 pb-3">
-            <div class="navbar-header navbar-expand-xl row align-items-center">
+        <div class="container pt-3 pb-3">
+            <div class="navbar-header navbar-expand-xxl row align-items-center">
                 <f:if condition="{logoPath}">
-                    <div class="col-6 col-md-4" itemscope itemtype="http://schema.org/Organization">
-                        <f:link.typolink parameter="{rootPageUid}" class="logo d-none d-xl-block " additionalAttributes="{'itemprop':'url'}">
+                    <div class="col-6 col-xxl-2" itemscope itemtype="http://schema.org/Organization">
+                        <f:link.typolink parameter="{rootPageUid}" class="logo d-none d-xxl-block " additionalAttributes="{'itemprop':'url'}">
                             <span class="sr-only">Zur Startseite</span>
                             <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: logoPath}" />
                         </f:link.typolink>
-                        <f:link.typolink parameter="{rootPageUid}" class="logo logo-mobile d-block d-xl-none" additionalAttributes="{'itemprop':'url'}">
+                        <f:link.typolink parameter="{rootPageUid}" class="logo logo-mobile d-block d-xxl-none" additionalAttributes="{'itemprop':'url'}">
                             <span class="sr-only">Zur Startseite</span>
                             <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: logoMobilePath}" />
                         </f:link.typolink>
                     </div>
                 </f:if>
-                <div class="col-6 col-md-8 d-flex justify-content-end">
-                    <nav id="nav" class="navbar navbar-expand-xl pt-0 me-3" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                <div class="col-6 col-xxl-10 d-flex justify-content-end">
+                    <nav id="nav" class="navbar navbar-expand-xxl pt-0 me-3" itemscope itemtype="http://schema.org/SiteNavigationElement">
                         <button class="navbar-toggler py-0" 
                                 type="button" 
                                 data-bs-toggle="offcanvas" 
@@ -36,17 +36,10 @@
                                 </button>
                             </div>
                             <div class="offcanvas-body px-sm-3 mx-sm-3 mb-sm-3 px-md-4 mx-md-4 px-xl-0 mx-xl-0 mb-xl-0">
-                                <div class="bg-image particle-cloud particle-cloud-navigation d-block d-xl-none position-absolute h-100 w-100 top-100 translate-middle-y">
-                                    <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: 'EXT:cjnrw/Resources/Public/Icons/particle_cloud.svg'}" /> 
-                                </div>
                                 <f:render partial="Navigation/Main" arguments="{main: mainNavigation, social: socialNavigation}" />
                             </div>
                         </div>
                     </nav>
-                    <f:link.typolink parameter="{contactPid}" class="contact d-none d-xl-block">
-                        <span class="sr-only">Kontakt</span>
-                        <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: contactIconPath}" /> 
-                    </f:link.typolink>
                 </div>
             </div>  
         </div>

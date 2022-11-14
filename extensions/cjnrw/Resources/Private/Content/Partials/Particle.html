@@ -1,9 +1,0 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" 
-    data-namespace-typo3-fluid="true">
-    <div 
-        class="bg-particle overflow-hidden {data.particle_type} {data.particle_color} {data.particle_position}"
-        data-rotate="{data.particle_rotate}"
-        style="{f:if(condition: '{data.particle_width} > 0', then:'width:{data.particle_width}%;')} {f:if(condition: '{data.particle_height} > 0', then:'height:{data.particle_height}%;')} margin:{data.particle_offset_x}% {data.particle_offset_y}%;">
-        <f:cObject typoscriptObjectPath="lib.inlineSvg" data="{src: 'EXT:cjnrw/Resources/Public/Icons/Particles/{data.particle_type}.svg'}" />
-    </div>
-</html>

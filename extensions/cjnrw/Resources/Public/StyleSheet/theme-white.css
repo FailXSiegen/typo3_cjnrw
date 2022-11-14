@@ -8017,8 +8017,8 @@
 
 body {
   padding: 0 15px;
-  font-size: 24px;
-  line-height: 40px;
+  font-size: 18px;
+  line-height: 20px;
 }
 body a {
   text-decoration: none;
@@ -8127,25 +8127,25 @@ body .logo svg {
 }
 @media (min-width: 768px) {
   body h1, body .h1 {
-    font-size: 84px;
+    font-size: 26px;
     font-weight: bold;
-    line-height: 84px;
+    line-height: 26px;
     margin-bottom: 50px;
   }
 }
 @media (min-width: 768px) {
   body h2, body .h2 {
-    font-size: 80px;
+    font-size: 24px;
     font-weight: bold;
-    line-height: 80px;
+    line-height: 24px;
     margin-bottom: 50px;
   }
 }
 @media (min-width: 768px) {
   body h3, body .h3 {
-    font-size: 60px;
+    font-size: 22px;
     font-weight: bold;
-    line-height: 80px;
+    line-height: 22px;
     margin-bottom: 60px;
   }
 }
@@ -8155,11 +8155,11 @@ body h4, body .h4 {
 }
 @media (min-width: 768px) {
   body h4, body .h4 {
-    font-size: 26px;
+    font-size: 20px;
   }
 }
 body h5, body .h5 {
-  font-size: 24px;
+  font-size: 18px;
   line-height: 1.2;
   font-weight: normal;
 }
@@ -8221,24 +8221,22 @@ body .contact svg {
   height: 36px;
 }
 body .nav-link {
-  font-size: 1.9rem;
   font-weight: bold;
   line-height: 1;
 }
 @media (min-width: 576px) {
   body .nav-link {
-    font-size: 60px;
+    font-size: 18px;
   }
 }
 @media (min-width: 768px) {
   body .nav-link {
-    font-size: 80px;
+    font-size: 20px;
   }
 }
 @media (min-width: 1200px) {
   body .nav-link {
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 18px;
   }
 }
 body .nav-link.active {
@@ -8277,7 +8275,7 @@ body .social-nav .nav-item {
   margin-right: 15px;
 }
 body .social-nav .nav-link {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
 }
 @media (min-width: 768px) {
@@ -8288,7 +8286,7 @@ body .social-nav .nav-link {
 }
 body .btn-primary {
   border-radius: 0;
-  font-size: 27px;
+  font-size: 18px;
   font-weight: 600;
   padding: 5px 20px;
 }
@@ -8313,33 +8311,17 @@ body #head.minify .navbar-toggler svg {
   transition: max-height 0.5s ease-in-out, max-width 0.5s ease-in-out;
 }
 body #head.minify .logo svg {
-  max-height: 65px;
+  max-height: 85px;
   transition: max-height 0.5s ease-in-out;
-}
-@media (min-width: 768px) {
-  body #head.minify .logo svg path:nth-child(-n+2) {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-}
-body #head.minify .logo:hover svg path:nth-child(-n+2) {
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
 }
 
 @media (min-width: 768px) {
   footer .frame-type-2cols, .footer .frame-type-2cols {
-    font-size: 60px;
     font-weight: bold;
   }
 }
 footer .frame-type-menu_subpages, .footer .frame-type-menu_subpages {
   font-weight: bold;
-}
-@media (min-width: 768px) {
-  footer .frame-type-menu_subpages, .footer .frame-type-menu_subpages {
-    font-size: 32px;
-  }
 }
 
 .btn-close {
@@ -8441,6 +8423,14 @@ footer .frame-type-menu_subpages, .footer .frame-type-menu_subpages {
 
 .cke_editable {
   padding: 8px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .line-before {

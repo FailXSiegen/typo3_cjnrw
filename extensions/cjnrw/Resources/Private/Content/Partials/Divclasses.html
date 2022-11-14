@@ -20,7 +20,7 @@
                     <f:render section="defaultContainer" arguments="{data:'{data}',classname:'{classparameter}'}" />
                 </f:then>
                 <f:else>
-                    <f:variable name="classparameter" value="{f:if(condition:'{classname}',then:'{classname}',else:'container-fluid')}" />
+                    <f:variable name="classparameter" value="{f:if(condition:'{classname}',then:'{classname}',else:'container')}" />
                     <f:render section="defaultContainer" arguments="{data:'{data}',classname:'{classparameter}'}" />
                 </f:else>
             </f:if>

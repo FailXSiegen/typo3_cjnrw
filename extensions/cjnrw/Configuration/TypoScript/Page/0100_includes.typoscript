@@ -16,9 +16,7 @@ page{
     headerData {
         2 = TEXT
         2.value (
-<link rel="preload" href="/typo3conf/ext/cjnrw/Resources/Public/Fonts/Barlow/Barlow-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/typo3conf/ext/cjnrw/Resources/Public/Fonts/Barlow/Barlow-Bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/typo3conf/ext/cjnrw/Resources/Public/Fonts/Barlow/Barlow-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/typo3conf/ext/cjnrw/Resources/Public/Fonts/TheSans/TheSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/typo3conf/ext/cjnrw/Resources/Public/Fonts/FontAwesome/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff2" crossorigin>
         )
     }

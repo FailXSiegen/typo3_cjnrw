@@ -9,19 +9,85 @@ mod {
                         colCount = 1
                         rowCount = 2
                         rows {
-                            1 {
+							1 {
                                 columns {
                                     1 {
-                                        name = Content
-                                        colPos = 0
+                                        name = Inhalt volle Breite (oben)
+                                        colPos = 1
+										colspan = 3
                                     }
                                 }
                             }
                             2 {
                                 columns {
                                     1 {
-                                        name = Footer
+                                        name = Inhalt
+                                        colPos = 0
+										colspan = 2
+                                    }
+									2 {
+                                        name = Seitenleiste
+                                        colPos = 3
+                                    }
+                                }
+                            }
+                            3 {
+                                columns {
+                                    1 {
+                                        name = Inhalt volle Breite (unten)
+                                        colPos = 4
+										colspan = 3
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+			}
+			startpage {
+                title = Default
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 2
+                        rows {
+							1 {
+                                columns {
+                                    1 {
+                                        name = Inhalt volle Breite
+                                        colPos = 1
+										colspan = 3
+                                    }
+                                }
+                            }
+                            2 {
+                                columns {
+                                    1 {
+                                        name = Inhalt
+                                        colPos = 0
+										colspan = 2
+                                    }
+									2 {
+                                        name = Seitenleiste
+                                        colPos = 3
+                                    }
+                                }
+                            }
+							3 {
+                                columns {
+                                    1 {
+                                        name = Inhalt volle Breite (unten)
+                                        colPos = 4
+										colspan = 3
+                                    }
+                                }
+                            }
+                            4 {
+                                columns {
+                                    1 {
+                                        name = Fußbereich (Vererbt für alle Seiten)
                                         colPos = 2
+										colspan = 3
                                     }
                                 }
                             }
@@ -114,18 +180,6 @@ TCEFORM {
 				bg-white.icon = EXT:cjnrw/Resources/Public/Icons/color-white.png
                 bg-grey = LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:color.grey
 				bg-grey.icon = EXT:cjnrw/Resources/Public/Icons/color-grey.png
-                bg-aubergine = LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:color.aubergine
-				bg-aubergine.icon = EXT:cjnrw/Resources/Public/Icons/color-aubergine.png
-                bg-violett = LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:color.violett
-				bg-violett.icon = EXT:cjnrw/Resources/Public/Icons/color-violett.png
-                bg-darkgreen = LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:color.darkgreen
-				bg-darkgreen.icon = EXT:cjnrw/Resources/Public/Icons/color-darkgreen.png
-                bg-green = LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:color.green
-				bg-green.icon = EXT:cjnrw/Resources/Public/Icons/color-green.png
-                bg-lightgreen = LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:color.lightgreen
-				bg-lightgreen.icon = EXT:cjnrw/Resources/Public/Icons/color-lightgreen.png
-                bg-darkblue = LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:color.darkblue
-				bg-darkblue.icon = EXT:cjnrw/Resources/Public/Icons/color-darkblue.png
             }
 			types {
 				counter {

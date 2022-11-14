@@ -278,13 +278,7 @@ $columns = [
             'items' => [
                 ['---',''],
                 ['LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:color.white','cl-white','EXT:cjnrw/Resources/Public/Icons/color-white.png'],
-                ['LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:color.grey','cl-grey','EXT:cjnrw/Resources/Public/Icons/color-grey.png'],
-                ['LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:color.aubergine','cl-aubergine','EXT:cjnrw/Resources/Public/Icons/color-aubergine.png'],
-                ['LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:color.violett','cl-violett','EXT:cjnrw/Resources/Public/Icons/color-violett.png'],
-                ['LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:color.darkgreen','cl-darkgreen','EXT:cjnrw/Resources/Public/Icons/color-darkgreen.png'],
-                ['LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:color.green','cl-green','EXT:cjnrw/Resources/Public/Icons/color-green.png'],
-                ['LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:color.lightgreen','cl-lightgreen','EXT:cjnrw/Resources/Public/Icons/color-lightgreen.png'],
-                ['LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:color.darkblue','cl-darkblue','EXT:cjnrw/Resources/Public/Icons/color-darkblue.png'],
+                ['LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:color.grey','cl-grey','EXT:cjnrw/Resources/Public/Icons/color-grey.png']
             ],
             'fieldWizard' => [
                 'selectIcons' => [

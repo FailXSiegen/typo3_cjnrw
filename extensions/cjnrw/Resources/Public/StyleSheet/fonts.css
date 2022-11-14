@@ -1,51 +1,13 @@
 @font-face {
-    font-family: 'Barlow';
-    font-display: swap;
-    src: url('../Fonts/Barlow/Barlow-Bold.eot');
-    src: local('Barlow Bold'), local('Barlow-Bold'),
-        url('../Fonts/Barlow/Barlow-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../Fonts/Barlow/Barlow-Bold.woff2') format('woff2'),
-        url('../Fonts/Barlow/Barlow-Bold.woff') format('woff'),
-        url('../Fonts/Barlow/Barlow-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Barlow';
-    font-display: swap;
-    src: url('../Fonts/Barlow/Barlow-SemiBold.eot');
-    src: local('Barlow SemiBold'), local('Barlow-SemiBold'),
-        url('../Fonts/Barlow/Barlow-SemiBold.eot?#iefix') format('embedded-opentype'),
-        url('../Fonts/Barlow/Barlow-SemiBold.woff2') format('woff2'),
-        url('../Fonts/Barlow/Barlow-SemiBold.woff') format('woff'),
-        url('../Fonts/Barlow/Barlow-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Barlow';
-    font-display: swap;
-    src: url('../Fonts/Barlow/Barlow-Light.eot');
-    src: local('Barlow Light'), local('Barlow-Light'),
-        url('../Fonts/Barlow/Barlow-Light.eot?#iefix') format('embedded-opentype'),
-        url('../Fonts/Barlow/Barlow-Light.woff2') format('woff2'),
-        url('../Fonts/Barlow/Barlow-Light.woff') format('woff'),
-        url('../Fonts/Barlow/Barlow-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Barlow';
-    font-display: swap;
-    src: url('../Fonts/Barlow/Barlow-Medium.eot');
-    src: local('Barlow Medium'), local('Barlow-Medium'),
-        url('../Fonts/Barlow/Barlow-Medium.eot?#iefix') format('embedded-opentype'),
-        url('../Fonts/Barlow/Barlow-Medium.woff2') format('woff2'),
-        url('../Fonts/Barlow/Barlow-Medium.woff') format('woff'),
-        url('../Fonts/Barlow/Barlow-Medium.ttf') format('truetype');
+    font-family: 'TheSans';
+    src: url('../Fonts/TheSans/TheSans-Regular.eot');
+    src: url('../Fonts/TheSans/TheSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../Fonts/TheSans/TheSans-Regular.woff2') format('woff2'),
+        url('../Fonts/TheSans/TheSans-Regular.woff') format('woff'),
+        url('../Fonts/TheSans/TheSans-Regular.ttf') format('truetype'),
+        url('../Fonts/TheSans/TheSans-Regular.svg#TheSans-Regular') format('svg');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
+
