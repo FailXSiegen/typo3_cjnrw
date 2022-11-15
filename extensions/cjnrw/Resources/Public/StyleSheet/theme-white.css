@@ -8130,7 +8130,6 @@ body .logo svg {
     font-size: 26px;
     font-weight: bold;
     line-height: 26px;
-    margin-bottom: 50px;
   }
 }
 @media (min-width: 768px) {
@@ -8138,7 +8137,6 @@ body .logo svg {
     font-size: 24px;
     font-weight: bold;
     line-height: 24px;
-    margin-bottom: 50px;
   }
 }
 @media (min-width: 768px) {
@@ -8146,7 +8144,6 @@ body .logo svg {
     font-size: 22px;
     font-weight: bold;
     line-height: 22px;
-    margin-bottom: 60px;
   }
 }
 body h4, body .h4 {
@@ -8221,6 +8218,7 @@ body .contact svg {
   height: 36px;
 }
 body .nav-link {
+  font-family: "TheSans", oboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: bold;
   line-height: 1;
 }

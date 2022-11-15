@@ -100,7 +100,6 @@ body {
             font-size: 26px;
             font-weight: bold;
             line-height: 26px;
-            margin-bottom: 50px;
         }
     }
     h2, .h2 {
@@ -108,7 +107,6 @@ body {
             font-size: 24px;
             font-weight: bold;
             line-height: 24px;
-            margin-bottom: 50px;
         }
     }
     h3, .h3 {
@@ -116,7 +114,6 @@ body {
             font-size: 22px;
             font-weight: bold;
             line-height: 22px;
-            margin-bottom: 60px;
         }
     }
     h4, .h4 {
@@ -193,6 +190,7 @@ body {
         }
     }
     .nav-link {
+        font-family: $headings-font-family;
         font-weight: bold;
         line-height: 1;
         @include media-breakpoint-up(sm) {

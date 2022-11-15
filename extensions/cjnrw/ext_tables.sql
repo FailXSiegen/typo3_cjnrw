@@ -79,6 +79,9 @@ CREATE TABLE tt_content (
     imagecols_lg int(3) DEFAULT '0' NOT NULL,
     imagecols_md int(3) DEFAULT '0' NOT NULL,
     imagecols_sm int(3) DEFAULT '0' NOT NULL,
+
+    menu_layout VARCHAR(255) DEFAULT '' NOT NULL,
+    with_splash tinyint(4) DEFAULT '1' NOT NULL,
 );
 
 #

@@ -14,3 +14,14 @@ failx.loginPath = EXT:cjnrw/Resources/Public/Icons/login.svg
 failx.contactIconPath = EXT:cjnrw/Resources/Public/Icons/contact.svg
 failx.buttonPath = EXT:cjnrw/Resources/Public/Icons/menu.svg
 failx.buttonClosePath = EXT:cjnrw/Resources/Public/Icons/close.svg
+
+plugin.tx_news {
+	view {
+		# cat=plugin.tx_news/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:cjnrw/Resources/Private/Extensions/News/Templates/
+		# cat=plugin.tx_news/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:cjnrw/Resources/Private/Extensions/News/Partials/
+		# cat=plugin.tx_news/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:cjnrw/Resources/Private/Extensions/News/Layouts/
+	}
+}

@@ -130,6 +130,7 @@ module.exports = {
         'tinyslider-style' :  './src/scss/tinyslider.scss',
         'projectslider':  './src/scss/projectslider.scss',
         'rte':  './src/scss/rte.scss',
+        'splash':  './src/scss/splash.scss',
     },
 
     // Path and filename of your result bundle.

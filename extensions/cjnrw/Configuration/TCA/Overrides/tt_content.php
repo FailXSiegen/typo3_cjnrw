@@ -304,6 +304,33 @@ $columns = [
             ],
         ],
     ],
+    'menu_layout' => [
+        'label' => 'LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:menu.layout',
+        'config' => [
+            'renderType' => 'selectSingle',
+            'type' => 'select',
+            'items' => [
+                ['Default','1'],
+                ['2 Cols','2'],
+                ['3 Cols','3'],
+            ],
+        ],
+    ],
+    'with_splash' => [
+        'label' => 'Farbklekse aktiv',
+        'exclude' => 0,
+        'config' => [
+            'type' => 'check',
+            'renderType' => 'checkboxToggle',
+            'items' => [
+                [
+                    0 => '',
+                    1 => '',
+                ]
+            ],
+            'default' => 1
+        ],
+    ],
     'parallax' => [
         'label' => 'Bild mit Parallax',
         'exclude' => 0,
@@ -1246,6 +1273,12 @@ $container_columns = [
     'gallerySettings',
     '--linebreak--, imagecols_xxl, imagecols_xl, imagecols_lg, imagecols_md, imagecols_sm',
     'before:imagecols'
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    'tt_content',
+    'general',
+    '--linebreak--, menu_layout, with_splash',
+    'after:tx_container_parent'
 );
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
