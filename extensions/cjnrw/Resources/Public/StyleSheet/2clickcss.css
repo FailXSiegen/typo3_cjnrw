@@ -1,0 +1,38 @@
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/scss/2click.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
+.video_wrapper {
+  background-size: cover;
+  position: relative;
+  box-shadow: 0px 3px 5px #333;
+  max-width: 100%;
+}
+.video_wrapper .video_layer {
+  position: relative;
+  display: none;
+  height: inherit;
+  width: inherit;
+  margin: auto;
+}
+.video_wrapper .video_layer iframe {
+  border: 0px none transparent;
+  height: inherit;
+  max-width: 100%;
+  min-height: 200px;
+}
+.video_wrapper .video_trigger {
+  z-index: 9;
+}
+.video_wrapper .video_trigger .video_trigger_content a {
+  text-decoration: underline;
+}
+.video_wrapper .video_trigger_content .btn {
+  z-index: 999;
+  position: relative;
+}
+
+.news-single .video_wrapper .video_trigger:before {
+  width: 60px;
+  height: 60px;
+  left: calc(50% - 30px);
+}

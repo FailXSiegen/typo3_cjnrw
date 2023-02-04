@@ -1,0 +1,38 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <div id="c{data.uid}"
+      class="{f:render(partial:'Divclasses', arguments:{data:data, classname:' cite-container container-fluid '})} position-relative">
+        <f:asset.script
+            identifier="2clickjs"
+            src="EXT:cjnrw/Resources/Public/JavaScript/2click.js" />
+        <f:asset.css
+            identifier="2clickjs"
+            href="EXT:cjnrw/Resources/Public/StyleSheet/2clickcss.css" />
+        <f:variable name="textclass" value="{f:if(condition:ptextclass, then: ptextclass, else: 'col-10 col-lg-6')}" />
+        <div class="video_wrapper overflow-hidden" style="max-width:100%;height:400px">
+            <div class="video_trigger h-100 w-100 d-flex align-items-center bg-light text-dark"
+                data-source="{data.header_link}" data-type="google-maps">
+                    <div class="video_trigger_content d-flex flex-column pt-5 align-items-center">
+                    <p class="text-center {textclass}">Mit dem Aufruf der Google Maps Karte erklärst Du Dich einverstanden,
+                        dass Deine Daten an Google übermittelt werden und das Du die
+                            <a href="{f:uri.typolink(parameter:'8')}" target="_blank">Datenschutzerklärung</a> gelesen hast.
+                    </p>
+                    <span class="text-center">
+                        <input type="button"
+                            class="btn btn-small btn-primary btn-transparent"
+                            value="Akzeptieren" />
+                    </span>
+                    </div>
+            </div>
+            <div class="video_layer">
+                <iframe
+                    style="width:100%;height:400px"
+                    src=""
+                    border="0">
+                </iframe>
+            </div>
+            
+        </div>
+    </div>
+</html>

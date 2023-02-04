@@ -3,19 +3,23 @@
 
     <f:layout name="Default" />
     <f:section name="Main">
-        <f:cObject typoscriptObjectPath="lib.dynamicContent"
-          data="{
-                colPos:'1'
-          }" />
+        <f:variable name="mainContent" value="{f:cObject(typoscriptObjectPath:'lib.dynamicContent', data:'{colPos: \'0\' }')}" />
+        <f:variable name="headerContentOverMain" value="{f:cObject(typoscriptObjectPath:'lib.dynamicContent', data:'{colPos: \'1\' }')}" />
+          {headerContentOverMain -> f:format.raw()}
           <div class="container">
             <div class="row">
               <div class="col-12 col-lg-8">
-                <f:cObject typoscriptObjectPath="lib.dynamicContent"
-                data="{
-                      colPos:'0'
-                 }" />
+                {mainContent -> f:format.raw()}
               </div>
               <div class="col-12 col-lg-4">
+                <f:if condition="{headerContentOverMain}">
+                  <f:then> 
+                    
+                  </f:then>
+                  <f:else>
+                    <f:render partial="Navigation/SidebarSub" arguments="{_all}" />
+                  </f:else>
+                </f:if>
                 <f:cObject typoscriptObjectPath="lib.dynamicContent"
                 data="{
                       colPos:'3'

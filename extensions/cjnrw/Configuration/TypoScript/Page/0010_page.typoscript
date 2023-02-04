@@ -41,8 +41,6 @@ page {
               override.if.isFalse.field = theme
               noTrimWrap = | ||
             }
-
-
             stdWrap.noTrimWrap = | class="|"|
         }
 
@@ -89,7 +87,7 @@ page {
       10 {
           special = directory
           special.value = {$failx.mainNavigationPid}
-          levels = 2
+          levels = 1
           includeSpacer = 0
           as = mainNavigation
       }
@@ -100,6 +98,20 @@ page {
           levels = 1
           includeSpacer = 0
           as = socialNavigation
+      }
+      20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      20 {
+          levels = 2
+          entryLevel = 2
+          includeSpacer = 0
+          as = sidebarSubNavigation
+      }
+      25 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      25 {
+          levels = 2
+          entryLevel = 2
+          includeSpacer = 0
+          as = sidebarNavigation
       }
     }
     variables {
@@ -134,14 +146,20 @@ page {
       contactIconPath = TEXT
       contactIconPath.value = {$failx.contactIconPath}
 
+      parentPageTitle = TEXT
+      parentPageTitle.data = leveltitle:-2
+      
+      currentPageTitle = TEXT
+      currentPageTitle.field = subtitle // title
+
     }
   }
 }
 [applicationContext == 'Production']
-page.headerData.30 = TEXT
-page.headerData.30.value (
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="c78bc5cc-5eb8-4e90-bc7e-e2b762676f66" data-blockingmode="auto" type="text/javascript"></script>
-)
+# page.headerData.30 = TEXT
+# page.headerData.30.value (
+#   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="c78bc5cc-5eb8-4e90-bc7e-e2b762676f66" data-blockingmode="auto" type="text/javascript"></script>
+# )
 # page.headerData.40 = TEXT
 # page.headerData.40.value (
 # <script>
@@ -174,3 +192,28 @@ page.10 {
     }
 }
 [end]
+[tree.level > 2]
+page = PAGE
+page {
+  bodyTagCObject.10 {
+    50 = TEXT
+    50 {
+      stdWrap {
+        cObject = TEXT
+        cObject {
+          numRows.table = pages
+          numRows.select {
+            pidInList.data = field:pid
+            orderBy = sorting
+            where.data = field:sorting
+            where.intval = 1
+            where.wrap = sorting<=|
+          }
+        }
+      }
+      noTrimWrap = | pagesplash pagesplash-||
+    }
+  }
+}
+[end]
+

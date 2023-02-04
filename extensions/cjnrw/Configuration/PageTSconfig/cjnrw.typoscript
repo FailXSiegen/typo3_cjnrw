@@ -95,6 +95,48 @@ mod {
                     }
                 }
 			}
+			sidebarautofill {
+                title = Seitenleiste mit Menu gefüllt
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 2
+                        rows {
+							1 {
+                                columns {
+                                    1 {
+                                        name = Inhalt volle Breite
+                                        colPos = 1
+										colspan = 3
+                                    }
+                                }
+                            }
+                            2 {
+                                columns {
+                                    1 {
+                                        name = Inhalt
+                                        colPos = 0
+										colspan = 2
+                                    }
+									2 {
+                                        name = Seitenleiste (Unter Menü)
+                                        colPos = 3
+                                    }
+                                }
+                            }
+							3 {
+                                columns {
+                                    1 {
+                                        name = Inhalt volle Breite (unten)
+                                        colPos = 4
+										colspan = 3
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+			}
         }
     }
 }
@@ -168,6 +210,11 @@ TCEFORM {
 			    4 = Keine Ummantelung
 			}
 		}
+		uploads_type {
+			addItems {
+			    3 = Bildergalerie
+			}
+		}
 		frame_class {
             label = Background
 		    removeItems = ruler-before,ruler-after,indent,indent-left,indent-right
@@ -198,6 +245,15 @@ TCEFORM {
 						bigbigtext = Wahnsinnig Groß
 					}
 				}
+				image {
+					altLabels {
+						default = Layoutanpassungen
+					}
+					removeItems = none,ruler-before,ruler-after,indent,indent-left,indent-right,bg-white,bg-grey,bg-aubergine,bg-violett,bg-darkgreen,bg-green,bg-lightgreen
+					addItems {
+						gridlayout = Grid	
+					}
+				}	
 			}
 		}
 		menu_layout {
@@ -397,6 +453,14 @@ mod.wizards.newContentElement.wizardItems {
                CType = counter
             }
          }
+		 maps {
+            iconIdentifier = mimetypes-x-content-script
+            title = LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:maps
+            description = LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:maps.description
+            tt_content_defValues {
+               CType = maps
+            }
+         }
 		 projectslider {
             iconIdentifier = content-image
             title = LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:projectslider
@@ -413,7 +477,14 @@ mod.wizards.newContentElement.wizardItems {
                CType = cite
             }
          }
+		 video {
+            iconIdentifier = content-media
+            title = Video
+            tt_content_defValues {
+               CType = video
+            }
+         }
       }
-      show := addToList(scroll_background,counter,projectslider,cite)
+      show := addToList(scroll_background,counter,projectslider,cite,video,maps)
    }
 }

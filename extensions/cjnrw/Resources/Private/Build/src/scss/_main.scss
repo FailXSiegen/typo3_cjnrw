@@ -5,10 +5,7 @@
 @import '../../../../Public/Vendor/bootstrap/scss/list-group';
 @import '../../../../Public/Vendor/bootstrap/scss/images';
 
-body {
-    padding: 0 15px;
-    font-size: 18px;
-    line-height: 20px;
+body  {
     a {
         text-decoration: none;
     }
@@ -87,11 +84,12 @@ body {
     }
     .logo svg{
         max-height: 110px;
-        transition: max-height .5s ease-in-out;
+        max-width: 450px;
+        transition: max-height .5s ease-in-out, max-width .5s ease-in-out;
         @include media-breakpoint-up(md) {
             path:nth-child(-n + 2) {
                 opacity: 1;
-                transition: opacity .5s ease-in-out;
+                transition: opacity .5s ease-in-out, max-width .5s ease-in-out;
             }
         }
     }
@@ -100,6 +98,7 @@ body {
             font-size: 26px;
             font-weight: bold;
             line-height: 26px;
+            margin-bottom: 1.5rem;
         }
     }
     h2, .h2 {
@@ -107,6 +106,7 @@ body {
             font-size: 24px;
             font-weight: bold;
             line-height: 24px;
+            margin-bottom: 1.5rem;
         }
     }
     h3, .h3 {
@@ -114,6 +114,7 @@ body {
             font-size: 22px;
             font-weight: bold;
             line-height: 22px;
+            margin-bottom: 1.5rem;
         }
     }
     h4, .h4 {
@@ -281,8 +282,9 @@ body {
         }
         .logo {
             svg {
+                max-width: 285px;
                 max-height: 85px;
-                transition: max-height .5s ease-in-out;
+                transition: max-height .5s ease-in-out,  max-width .5s ease-in-out;
             }
         }
     }
@@ -359,7 +361,12 @@ footer, .footer {
         z-index: 10;
     }
 }
-
+.bg-blue {
+    background-color: $blue;
+}
+.bg-white {
+    background-color: white;
+}
 .drop-shadow {
     filter: drop-shadow(1px 1px 10px rgba(0,0,0,0.5));
     &.container-fluid {

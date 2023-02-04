@@ -8,24 +8,41 @@
             <f:variable name="col" value="col-12 col-lg-{12 / data.menu_layout}" />
         </f:if>
         <f:if condition="{data.with_splash}">
-            <f:asset.css 
-                identifier="splash" 
-                href="EXT:cjnrw/Resources/Public/StyleSheet/splash.css" />
-        </f:if>
-        <div class="menu">
-            <div class="row">
-                <f:for each="{menu}" as="page">
-                    <div class="{col} ce--asidebadge shadow rounded-3">
+            <f:then>
+                <f:asset.css 
+                    identifier="splash" 
+                    href="EXT:cjnrw/Resources/Public/StyleSheet/splash.css" />
+                <div class="menu with-splash">
+                    <div class="row">
+                        <f:for each="{menu}" as="page">
+                            <div class="{col} d-flex">
+                                <div class="{f:if(condition:'{data.colPos} == 3', then: 'ce--asidebadge ', else: 'ce--eventlist-event')} shadow rounded-3 flex-fill">
+                                    <a href="{page.link}"
+                                        class="d-flex flex-column text-center py-6 ce--asidebadge-link"
+                                        {f:if(condition: page.target, then: ' target="{page.target}"')} 
+                                        title="{page.title}">
+                                        <span class="h1 cl-white">{page.title}</span>
+                                        <f:if condition="{page.data.subtitle}"><span class="h3 cl-white mt-4">{page.data.subtitle}</span></f:if>
+                                    </a>
+                                </div>
+                            </div>
+                        </f:for>
+                    </div>
+                </div>
+            </f:then>
+            <f:else>
+                <div class="menu">
+                    <f:for each="{menu}" as="page">
                         <a href="{page.link}"
-                            class="d-block text-center py-6 ce--asidebadge-link"
+                            class="menulink mb-2"
                             {f:if(condition: page.target, then: ' target="{page.target}"')} 
                             title="{page.title}">
-                            <span class="h1 cl-white">{page.title}</span>
+                            {page.title}
                         </a>
-                    </div>
-                </f:for>
-            </div>
-        </div>
+                    </f:for>
+                </div>
+            </f:else>
+        </f:if>
     </f:if>
     </f:section>
 </html>

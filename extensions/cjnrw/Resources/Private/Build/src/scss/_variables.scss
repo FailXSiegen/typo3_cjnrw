@@ -1,5 +1,8 @@
 $white: #fff;
 $grey: #D1D1D6;
+$blue: #0f69b1;
+$lightblue: #57acf1;
+$red: #e2010d;
 // Add only colours to themes if you need background in _grids
 $themeColours: (
     "white": $white,
@@ -8,9 +11,10 @@ $themeColours: (
 
 $enable-cssgrid: true;
 
-$font-family-sans-serif: Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans-serif: Lato, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $headings-font-family: "TheSans", oboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $spacer: 1rem;
+$font-size-base: 1.1rem;
 $spacers: (
   0: 0,
   1: $spacer * .25,
@@ -36,3 +40,5 @@ $accordion-button-active-bg: inherit;
 $accordion-button-active-color: inherit;
 $accordion-button-focus-border-color: none;
 $accordion-button-focus-box-shadow: none;
+$dropdown-link-active-color: $blue;
+$dropdown-link-hover-color: $lightblue;

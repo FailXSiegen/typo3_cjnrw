@@ -1,103 +1,116 @@
 .ce--eventlist {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-  }
-  .ce--eventlist-event,
-  .ce--asidebadge {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 100%;
-            flex: 0 1 100%;
-    margin-bottom: 2em;
-    border-radius: 0.5em;
-    overflow: hidden;
-    text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 0px #404040, 2px 2px 0px #404040;
-  }
-  .ce--eventlist-event:before,
-  .ce--asidebadge:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    background-position: center center;
-    background-size: 110%;
-    background-repeat: no-repeat;
-    z-index: 5;
-    -webkit-transition: -webkit-transform ease-in-out 0.5s;
-    transition: -webkit-transform ease-in-out 0.5s;
-    transition: transform ease-in-out 0.5s;
-    transition: transform ease-in-out 0.5s, -webkit-transform ease-in-out 0.5s;
-  }
-  .ce--eventlist-event:hover:before,
-  .ce--asidebadge:hover:before {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  .ce--eventlist-event:nth-child(5n+1),
-  .ce--asidebadge:nth-child(5n+1) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+.ce--eventlist-event,
+.ce--asidebadge {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2em;
+  border-radius: 0.5em;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 0px #404040, 2px 2px 0px #404040;
+}
+.ce--asidebadge {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+}
+.ce--eventlist-event {
+
+}
+.ce--eventlist-event:before,
+.ce--asidebadge:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-position: center center;
+  background-size: 110%;
+  background-repeat: no-repeat;
+  z-index: 5;
+  -webkit-transition: -webkit-transform ease-in-out 0.5s;
+  transition: -webkit-transform ease-in-out 0.5s;
+  transition: transform ease-in-out 0.5s;
+  transition: transform ease-in-out 0.5s, -webkit-transform ease-in-out 0.5s;
+}
+.ce--eventlist-event:hover:before,
+.ce--asidebadge:hover:before {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+
+
+.ce--eventlist-event-link,
+.ce--asidebadge-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 1em;
+  z-index: 50;
+}
+
+.with-splash > .row > div {
+  &:nth-child(5n+1) .ce--eventlist-event,
+  &:nth-child(5n+1) .ce--asidebadge {
     background: #e3c9fe;
   }
-  .ce--eventlist-event:nth-child(5n+1):before,
-  .ce--asidebadge:nth-child(5n+1):before {
+  &:nth-child(5n+1) .ce--eventlist-event:before,
+  &:nth-child(5n+1) .ce--asidebadge:before {
     background-image: url('../../../../Public/Images/splash1.svg?inline');
   }
-  .ce--eventlist-event:nth-child(5n+2),
-  .ce--asidebadge:nth-child(5n+2) {
+  &:nth-child(5n+2) .ce--eventlist-event,
+  &:nth-child(5n+2) .ce--asidebadge {
     background: #eefad8;
   }
-  .ce--eventlist-event:nth-child(5n+2):before,
-  .ce--asidebadge:nth-child(5n+2):before {
+  &:nth-child(5n+2) .ce--eventlist-event:before,
+  &:nth-child(5n+2) .ce--asidebadge:before {
     background-image: url('../../../../Public/Images/splash2.svg?inline');
   }
-  .ce--eventlist-event:nth-child(5n+3),
-  .ce--asidebadge:nth-child(5n+3) {
+
+    
+  &:nth-child(5n+3) .ce--eventlist-event,
+  &:nth-child(5n+3) .ce--asidebadge {
     background: #ffe1f1;
   }
-  .ce--eventlist-event:nth-child(5n+3):before,
-  .ce--asidebadge:nth-child(5n+3):before {
+  &:nth-child(5n+3) .ce--eventlist-event:before,
+  &:nth-child(5n+3) .ce--asidebadge:before {
     background-image: url('../../../../Public/Images/splash3.svg?inline');
   }
-  .ce--eventlist-event:nth-child(5n+4),
-  .ce--asidebadge:nth-child(5n+4) {
+  &:nth-child(5n+4) .ce--eventlist-event,
+  &:nth-child(5n+4) .ce--asidebadge {
     background: #feecc2;
   }
-  .ce--eventlist-event:nth-child(5n+4):before,
-  .ce--asidebadge:nth-child(5n+4):before {
+  &:nth-child(5n+4) .ce--eventlist-event:before,
+  &:nth-child(5n+4) .ce--asidebadge:before {
     background-image: url('../../../../Public/Images/splash4.svg?inline');
   }
-  .ce--eventlist-event:nth-child(5n),
-  .ce--asidebadge:nth-child(5n) {
+  &:nth-child(5n) .ce--eventlist-event,
+  &:nth-child(5n) .ce--asidebadge {
     background: #e2f4f9;
   }
-  .ce--eventlist-event:nth-child(5n):before,
-  .ce--asidebadge:nth-child(5n):before {
+  &:nth-child(5n) .ce--eventlist-event:before,
+  &:nth-child(5n) .ce--asidebadge:before {
     background-image: url('../../../../Public/Images/splash5.svg?inline');
   }
-  .ce--eventlist-event-link,
-  .ce--asidebadge-link {
-    position: relative;
-    display: block;
-    width: 100%;
-    padding: 1em;
-    z-index: 50;
-  }
+}

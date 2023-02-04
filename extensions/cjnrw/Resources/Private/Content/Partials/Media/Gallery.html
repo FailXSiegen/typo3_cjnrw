@@ -2,6 +2,7 @@
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" 
     xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" 
     data-namespace-typo3-fluid="true">
+
     <f:if condition="{gallery.rows}">
         <f:variable name="columnClass" value="row-cols-{gallery.count.columns}" />
         <f:if condition="{data.imagecols_sm}">
@@ -22,7 +23,15 @@
         <div 
         class="ce-gallery{f:if(condition: data.imageborder, then: ' ce-border')}"
         data-ce-images="{gallery.count.files}">
-            <f:render section="defaultGallery" arguments="{_all}" />
+            <f:switch expression="{data.frame_class}">
+                <f:case value="gridlayout">
+                    <f:render section="gridGallery" arguments="{_all}" />
+                </f:case>
+                <f:defaultCase>
+                    <f:render section="defaultGallery" arguments="{_all}" />
+                </f:defaultCase>
+            </f:switch>
+            
         </div>
     </f:if>
 
@@ -48,4 +57,25 @@
         </f:if>
     </f:section>
 
+    <f:section name="gridGallery">
+        <f:if condition="{gallery.position.horizontal} == 'center'">
+            <div class="ce-outer">
+                <div class="ce-inner">
+        </f:if>
+        <div class="row gy-4 {data.row_item_class} {data.row_space_class}{f:if(condition:'{gallery.rows -> f:count()} > 1', then: ' mb-3')} {columnClass}">
+            <f:for each="{gallery.rows}" as="row" iteration="rowIterator">            
+                <f:for each="{row.columns}" as="column">
+                    <f:if condition="{column.media}">
+                        <div class="col d-flex flex-column min-h-100">
+                            <f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
+                        </div>
+                    </f:if>
+                </f:for>
+            </f:for>
+        </div>
+        <f:if condition="{gallery.position.horizontal} == 'center'">
+                </div>
+            </div>
+        </f:if>
+    </f:section>
 </html>

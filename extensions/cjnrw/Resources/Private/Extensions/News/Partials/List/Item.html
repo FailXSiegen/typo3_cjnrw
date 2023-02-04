@@ -5,7 +5,7 @@
 	<li class="list-group-item border-0">
 		<div class="row news-list-item mb-5 pb-5 border-bottom rounded">
 			
-			<div class="col-md articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}" itemscope="itemscope" itemtype="http://schema.org/Article">
+			<div class="col-md mb-4 mb-md-0 articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}" itemscope="itemscope" itemtype="http://schema.org/Article">
 				<h3 itemprop="headline">
 					<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" additionalAttributes="{itemprop:'url'}">
 						{newsItem.title}

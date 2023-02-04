@@ -11,6 +11,8 @@ editor:
     stylesSet:
       - { name: "Button Primary", element: "a", attributes: { class: "btn btn-primary"} }
       - { name: "Button Secondary", element: "a", attributes: { class: "btn btn-secondary"} }
+
+      - { name: "Download/Externe Seite", element: "a", attributes: { class: "download"} }
       # - { name: "Button Default", element: "a", attributes: { class: "btn btn-default"} }
       # - { name: "Button Link", element: "a", attributes: { class: "btn btn-link"} }
       # - { name: "Button Succes", element: "a", attributes: { class: "btn btn-success"} }
@@ -19,40 +21,10 @@ editor:
       # - { name: "Button Danger", element: "a", attributes: { class: "btn btn-danger"} }
       # - { name: "Internal Link", element: "a", attributes: { class: "internal-link"} }
       # - { name: "Offset Text", element: "p", attributes: { class: "offset-text"} }
-      - { name: "Bigtext - 160", element: "p", attributes: { class: "bigtext"} }
-      - { name: "Bigbigtext - 280", element: "p", attributes: { class: "bigbigtext"} }
-      - { name: "Bold - 60", element: "p", attributes: { class: "h3 mb-0"} }
-      - { name: "Linie vor Text (Themevorgabe)", element: ['h1','h2','h3','h4','h5','p'], attributes: { class: "line-before"} }
-      - { name: "Linie vor Text (Dunkelgrün)", element: ['h1','h2','h3','h4','h5','p'], attributes: { class: "line-before line-darkgreen"} }
-      - { name: "Linie vor Text (Grün)", element: ['h1','h2','h3','h4','h5','p'], attributes: { class: "line-before line-green"} }
-      - { name: "Linie vor Text (Hellgrün)", element: ['h1','h2','h3','h4','h5','p'], attributes: { class: "line-before line-lightgreen"} }
-      - { name: "Linie vor Text (Aubergine)", element: ['h1','h2','h3','h4','h5','p'], attributes: { class: "line-before line-aubergine"} }
-      - { name: "Linie vor Text (Violett)", element: ['h1','h2','h3','h4','h5','p'], attributes: { class: "line-before line-violett"} }
-      - { name: "Linie vor Text (Weiß)", element: ['h1','h2','h3','h4','h5','p'], attributes: { class: "line-before line-white"} }
-      - { name: "Linie vor Text (Grau)", element: ['h1','h2','h3','h4','h5','p'], attributes: { class: "line-before line-grey"} }
-      - { name: "Unterstrichen (Themevorgabe)", element: "span", attributes: { class: "underline"} }
-      - { name: "Unterstrichen (Dunkelgrün)", element: "span", attributes: { class: "underline underline-darkgreen"} }
-      - { name: "Unterstrichen (Grün)", element: "span", attributes: { class: "underline underline-green"} }
-      - { name: "Unterstrichen (Hellgrün)", element: "span", attributes: { class: "underline underline-lightgreen"} }
-      - { name: "Unterstrichen (Aubergine)", element: "span", attributes: { class: "underline underline-aubergine"} }
-      - { name: "Unterstrichen (Violett)", element: "span", attributes: { class: "underline underline-violett"} }
-      - { name: "Unterstrichen (Weiß)", element: "span", attributes: { class: "underline underline-white"} }
-      - { name: "Unterstrichen (Grau)", element: "span", attributes: { class: "underline underline-grey"} }
+      - { name: "Blaue Box", element:  ['p'], attributes: { class: "bg-primary p-3 rounded shadow text-white"} }
       - { name: ".h1", element:  ['h1','h2','h3','h4','h5','p'], attributes: { class: "h1"} }
       - { name: ".h2", element:  ['h1','h2','h3','h4','h5','p'], attributes: { class: "h2"} }
       - { name: ".h3", element:  ['h1','h2','h3','h4','h5','p'], attributes: { class: "h3"} }
-      - { name: ".h4", element:  ['h1','h2','h3','h4','h5','p'], attributes: { class: "h4"} }
-      - { name: ".h5", element:  ['h1','h2','h3','h4','h5','p'], attributes: { class: "h5"} }
-      - { name: "Abstand unten mb-1", element:  ['h1','h2','h3','h4','h5','p'], attributes: { class: "mb-1"} }
-      - { name: "Abstand unten mb-2", element:  ['h1','h2','h3','h4','h5','p'], attributes: { class: "mb-2"} }
-      - { name: "Abstand unten mb-3", element:  ['h1','h2','h3','h4','h5','p'], attributes: { class: "mb-3"} }
-      - { name: "Farbe Dunkelgrün", element: "span", attributes: { class: "cl-darkgreen"} }
-      - { name: "Farbe Grün", element: "span", attributes: { class: "cl-green"} }
-      - { name: "Farbe Hellgrün", element: "span", attributes: { class: "cl-lightgreen"} }
-      - { name: "Farbe Aubergine", element: "span", attributes: { class: "cl-aubergine"} }
-      - { name: "Farbe Violett", element: "span", attributes: { class: "cl-violett"} }
-      - { name: "Farbe Weiß", element: "span", attributes: { class: "cl-white"} }
-      - { name: "Farbe Grau", element: "span", attributes: { class: "cl-grey"} }
       # - { name: "Box Highlights", element: "p", attributes: { class: "box-highlight"} }
     format_tags: "p;h1;h2;h3;h4;h5;div"
     toolbarGroups:

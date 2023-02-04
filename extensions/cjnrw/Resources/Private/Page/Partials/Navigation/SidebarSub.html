@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+    <f:if condition="{sidebarSubNavigation}">
+        <div class="position-relative d-flex flex-column">
+            <span class="h2 mb-3">{currentPageTitle}</span>
+            <f:for each="{sidebarSubNavigation}" as="menu">
+                    <a href="{menu.link}"
+                        class="w-100 d-block mb-3 {f:if(condition: menu.active, then:'active')} btn btn-primary rounded-3 shadow"
+                        {f:if(condition:menu.target,then: 'target="{menu.target}"')}
+                        itemprop="url"
+                        title="{menu.title}">
+                        {menu.title}
+                    </a>
+                    <f:if condition="{menu.children}">
+                        <div class="submenu">
+                            <f:for each="{menu.children}" as="submenu">
+                                <a href="{submenu.link}"
+                                    class="w-50 mx-auto d-block mb-3 {f:if(condition: submenu.active, then:'active')} btn btn-secondary rounded-3 shadow"
+                                    {f:if(condition:submenu.target,then: 'target="{submenu.target}"')}
+                                    itemprop="url"
+                                    title="{submenu.title}">
+                                    {submenu.title}
+                                </a>
+                            </f:for>
+                        </div>
+                    </f:if>
+            </f:for>
+        </div>   
+    </f:if>
+</html>

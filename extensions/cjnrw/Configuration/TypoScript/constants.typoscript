@@ -1,7 +1,9 @@
 styles.content.textmedia.maxW = 1920
 styles.content.textmedia.maxWInText = 1920
-styles.content.textmedia.linkWrap.width = 1920
-styles.content.textmedia.linkWrap.height = 1920
+styles.content.textmedia.linkWrap.width = 1920m
+styles.content.textmedia.linkWrap.height = 1920m
+styles.content.textmedia.linkWrap.lightboxEnabled = 1
+styles.content.textmedia.linkWrap.lightboxCssClass = glightbox
 failx.rootPid = 1
 failx.mainNavigationPid = 2
 failx.socialNavigationPid = 7

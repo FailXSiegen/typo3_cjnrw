@@ -3,20 +3,81 @@
 @import '../../../../Public/Vendor/bootstrap/scss/variables';
 @import '../../../../Public/Vendor/bootstrap/scss/mixins';
 
+body {
+    &.pagesplash {
+        main > *:first-child {
+            position: relative;
+            overflow: hidden;
+            > * {
+                z-index: 10;
+                position: relative;
+            }
+            &:after {
+                position: absolute;
+                width: 400px;
+                top: 0;
+                right: -5em;
+                height: 500px;
+                z-index: 5;
+                content: '';
+                display: block;
+    
+                background-image: url('../../../../Public/Images/splash1.svg?inline');
+                background-repeat: no-repeat;
+                background-size: contain;
+
+            }
+        }
+    }
+    &.pagesplash-2 main > *:first-child:after {
+        background-image: url('../../../../Public/Images/splash2.svg?inline');
+    }
+    &.pagesplash-3 main > *:first-child:after {
+        background-image: url('../../../../Public/Images/splash3.svg?inline');
+    }
+    &.pagesplash-4 main > *:first-child:after {
+        background-image: url('../../../../Public/Images/splash4.svg?inline');
+    }
+    &.pagesplash-5 main > *:first-child:after {
+        background-image: url('../../../../Public/Images/splash5.svg?inline');
+    }
+    &.pagesplash-6 main > *:first-child:after {
+        background-image: url('../../../../Public/Images/splash1.svg?inline');
+    }
+    &.pagesplash-7 main > *:first-child:after {
+        background-image: url('../../../../Public/Images/splash2.svg?inline');
+    }
+    &.pagesplash-8 main > *:first-child:after {
+        background-image: url('../../../../Public/Images/splash3.svg?inline');
+    }
+    &.pagesplash-9 main > *:first-child:after {
+        background-image: url('../../../../Public/Images/splash4.svg?inline');
+    }
+    &.pagesplash-10 main > *:first-child:after {
+        background-image: url('../../../../Public/Images/splash5.svg?inline');
+    }
+}
+
+
 @include media-breakpoint-up(md) {
-    body.default {
+    body {
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
         > header {
-            padding-left: 45px;
-            padding-right: 45px;
+            padding-left: 15px;
+            padding-right: 15px;
         }
         > main {
             overflow: hidden;
+            flex: 1 1 auto!important;
             > div {
-                padding-left: 45px;
-                padding-right: 45px;
+                padding-left: 30px !important;
+                padding-right: 30px !important;
                 z-index: 10;
                 position: relative;
+                padding-bottom: 30px;
             }
         }
     }
@@ -78,7 +139,7 @@
         > .container-fluid {
             + .container-fluid,
             + .container {
-                margin-top: 30px;
+                padding-top: 30px;
             }
         }
     }
@@ -98,3 +159,22 @@
 .flex-fill-last-child > *:last-child {
     flex: 1 1 auto !important;
 }
+
+main {
+    background-color: $primary;
+    padding: 0 15px;
+    > * {
+        background-color: white;
+    }
+    > *:first-child {
+        padding-top: 15px;
+    }
+}
+
+.row-cols-3 {
+    .col {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@import 'download';

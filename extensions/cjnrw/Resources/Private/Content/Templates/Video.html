@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<div id="c{data.uid}"
+      class="{f:render(partial:'Divclasses', arguments:{data:data, classname:' video-container container'})} position-relative">
+    <div class="video-wrap {responsiveClass}" style="z-index:5;position:relative;">
+        <video id="vid{data.uid}" controls poster="{poster.0.publicUrl}" class="img img-responsive img-fluid w-100 rounded-3 shadow">
+            <f:if condition="{webm}">
+                <source src="{webm.0.publicUrl}" type="video/webm" />
+            </f:if>
+            <f:if condition="{mp4}">
+                <source src="{mp4.0.publicUrl}" type="video/mp4" />
+            </f:if>
+            <f:if condition="{poster.0}">
+                <f:image src="{poster.0.publicUrl}" class="img img-responsive img-fluid" />
+            </f:if>
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+</html>

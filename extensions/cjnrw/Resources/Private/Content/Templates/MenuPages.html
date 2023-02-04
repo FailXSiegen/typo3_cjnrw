@@ -11,21 +11,24 @@
             <f:asset.css 
                 identifier="splash" 
                 href="EXT:cjnrw/Resources/Public/StyleSheet/splash.css" />
-        </f:if>
-        <div class="menu">
-            <div class="row">
-                <f:for each="{menu}" as="page">
-                    <div class="{col} ce--asidebadge shadow rounded-3">
-                        <a href="{page.link}"
-                            class="d-block text-center py-6 ce--asidebadge-link"
-                            {f:if(condition: page.target, then: ' target="{page.target}"')} 
-                            title="{page.title}">
-                            <span class="h1 cl-white">{page.title}</span>
-                        </a>
-                    </div>
-                </f:for>
+            <div class="menu with-splash">
+                <div class="row">
+                    <f:for each="{menu}" as="page">
+                        <div class="{col}">
+                            <div class=" ce--asidebadge shadow rounded-3">
+                                <a href="{page.link}"
+                                    class="d-block text-center py-6 ce--asidebadge-link"
+                                    {f:if(condition: page.target, then: ' target="{page.target}"')} 
+                                    title="{page.title}">
+                                    <span class="h1 cl-white">{page.title}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </f:for>
+                </div>
             </div>
-        </div>
+        </f:if>
+        
     </f:if>
 </f:section>
 </html>

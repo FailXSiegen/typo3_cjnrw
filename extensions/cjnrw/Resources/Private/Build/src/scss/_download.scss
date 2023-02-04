@@ -1,0 +1,40 @@
+
+.menulink,
+.download {
+    display: block;
+    position: relative;
+    background: #d3e9fb;
+    border-radius: 0.5em;
+    border-bottom: 1px solid rgba(15, 105, 177, 0.2);
+    padding: 0.5em 1em 0.5em 2.5em;
+    color: #0f69b1;
+    -webkit-transition-property: background, color;
+    transition-property: background, color;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+    &:before {
+        content: "\232A";
+        font-weight: bold;
+        font-size: 1.5em;
+        line-height: 1.5em;
+        height: 1.5em;
+        width: 1.5em;
+        display: block;
+        position: absolute;
+        left: 0.45em;
+        top: 50%;
+        margin-top: -0.75em;
+        color: #fc1890;
+        -webkit-transition: left ease-in-out 0.8s;
+        transition: left ease-in-out 0.8s;
+    }
+    &:hover {
+        background: #add7f8;
+        border-bottom-color: #fc1890;
+        &:before {
+            left: 0.95em;
+        }
+    }
+}

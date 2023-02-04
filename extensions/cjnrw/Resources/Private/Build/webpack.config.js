@@ -114,12 +114,18 @@ module.exports = {
                     from: './../../Public/Vendor/tiny-slider/dist/min/tiny-slider.js',
                     to: 'JavaScript/'
                 }
+                ,
+                {
+                    from: './../../Public/Vendor/glightbox/dist/js/glightbox.min.js',
+                    to: 'JavaScript/'
+                }
             ]
         })
     ],
     entry: {
         'javascript': './src/javascript/index.js',
         'purecounter_vanilla': './src/javascript/purecounter_vanilla.js',
+        '2click': './src/javascript/2click.js',
         'abovethefold': './src/scss/above-the-fold.scss',
         'theme-white':  './src/scss/theme-white.scss',
         'bg-white':  './src/scss/bg-white.scss',
@@ -131,6 +137,8 @@ module.exports = {
         'projectslider':  './src/scss/projectslider.scss',
         'rte':  './src/scss/rte.scss',
         'splash':  './src/scss/splash.scss',
+        '2clickcss' : './src/scss/2click.scss',
+        'glightboxcss' : './src/scss/glightbox.scss',
     },
 
     // Path and filename of your result bundle.

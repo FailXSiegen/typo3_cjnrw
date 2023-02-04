@@ -1,0 +1,3 @@
+[traverse(request.getQueryParams(), 'tx_news_pi1/news') > 0]
+
+[end]

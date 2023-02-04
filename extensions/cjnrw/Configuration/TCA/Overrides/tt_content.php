@@ -600,7 +600,7 @@ $columns = [
                     8,
                 ],
             ],
-            'default' => 2,
+            'default' => 0,
         ],
     ],
     'imagecols_xl' => [
@@ -644,7 +644,7 @@ $columns = [
                     8,
                 ],
             ],
-            'default' => 2,
+            'default' => 0,
         ],
     ],
     'imagecols_lg' => [
@@ -688,7 +688,7 @@ $columns = [
                     8,
                 ],
             ],
-            'default' => 2,
+            'default' => 0,
         ],
     ],
     'imagecols_md' => [
@@ -732,7 +732,7 @@ $columns = [
                     8,
                 ],
             ],
-            'default' => 2,
+            'default' => 0,
         ],
     ],
     'imagecols_sm' => [
@@ -776,7 +776,7 @@ $columns = [
                     8,
                 ],
             ],
-            'default' => 2,
+            'default' => 0,
         ],
     ],
 ];
@@ -1280,6 +1280,12 @@ $container_columns = [
     '--linebreak--, menu_layout, with_splash',
     'after:tx_container_parent'
 );
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    'tt_content',
+    'video',
+    'media, assets, image',
+    'after:header_link'
+);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
@@ -1302,7 +1308,17 @@ $container_columns = [
     'scroll_background',
     'after'
 );
-
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+    'tt_content',
+    'CType',
+    [
+         'LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:maps',
+         'maps',
+         'mimetypes-x-content-script',
+     ],
+    'textmedia',
+    'after'
+);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
@@ -1318,11 +1334,11 @@ $container_columns = [
     'tt_content',
     'CType',
     [
-         'LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:counter',
-         'counter',
-         'mimetypes-x-content-script',
+         'LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:video',
+         'video',
+         'content-media',
      ],
-    'scroll_background',
+    'textmedia',
     'after'
 );
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
@@ -1374,7 +1390,7 @@ $GLOBALS['TCA']['tt_content']['types']['scroll_background'] = [
         counter_separator, counter_separatorsymbol,'
 ];
 
- $GLOBALS['TCA']['tt_content']['types']['counter'] = [
+$GLOBALS['TCA']['tt_content']['types']['counter'] = [
     'showitem' => '
              --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;;general,
@@ -1393,6 +1409,34 @@ $GLOBALS['TCA']['tt_content']['types']['scroll_background'] = [
              --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;;general,
             image,imageheight,imagewidth,bodytext,header,subheader,
+            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+            --palette--;;frames,
+            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+            --palette--;;hidden,
+            --palette--;;access,
+       ',
+ ];
+
+ 
+ $GLOBALS['TCA']['tt_content']['types']['video'] = [
+    'showitem' => '
+             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+            --palette--;;general,
+            header,
+            --palette--;;video,
+            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+            --palette--;;frames,
+            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+            --palette--;;hidden,
+            --palette--;;access,
+       ',
+ ];
+ $GLOBALS['TCA']['tt_content']['types']['maps'] = [
+    'showitem' => '
+             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+            --palette--;;general,
+            header,
+            header_link;Google Maps URL,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
             --palette--;;frames,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,

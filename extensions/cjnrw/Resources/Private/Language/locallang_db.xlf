@@ -78,6 +78,12 @@
 			<trans-unit id="counter.description" xml:space="preserve">
 				<source>Counts from defined number to defined number if elements gets in to view</source>
 			</trans-unit>
+			<trans-unit id="maps" xml:space="preserve">
+				<source>Google Maps</source>
+			</trans-unit>
+			<trans-unit id="maps.description" xml:space="preserve">
+				<source>DSGVO 2 click integration</source>
+			</trans-unit>
 			<trans-unit id="imagecols_xxl" xml:space="preserve">
 				<source>Number of Columns (XXL)</source>
 			</trans-unit>

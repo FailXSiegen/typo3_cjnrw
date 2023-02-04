@@ -23,6 +23,10 @@ tt_content {
             }
         }
     }
+    maps =< lib.contentElement
+    maps {
+        templateName = Maps
+    }
     projectslider =< lib.contentElement
     projectslider {
         templateName = Projectslider
@@ -30,6 +34,27 @@ tt_content {
             10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
             10 {
                 references.fieldName = image
+            }
+        }
+    }
+    video =< lib.contentElement
+    video {
+        templateName = video
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = image
+                as=poster
+            }
+            20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            20 {
+                references.fieldName = assets
+                as=webm
+            }
+            30 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            30 {
+                references.fieldName = media
+                as=mp4
             }
         }
     }
