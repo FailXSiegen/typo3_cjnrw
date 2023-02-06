@@ -52,8 +52,6 @@
         "lochmueller/staticfilecache": "^12.4",
         "plan2net/webp": "^4.0",
         "symfony/console": "^5.1",
-        "t3/save": "^1.2",
-        "t3/scroll": "^1.0",
         "typo3/cms-about": "^11",
         "typo3/cms-backend": "^11",
         "typo3/cms-belog": "^11",
@@ -83,9 +81,7 @@
         "typo3/cms-sys-note": "^11",
         "typo3/cms-t3editor": "^11",
         "typo3/cms-tstemplate": "^11",
-        "typo3/cms-viewpage": "^11",
-        "yoast-seo-for-typo3/yoast_seo": "^8.0",
-        "jigal/t3adminer":"^11"
+        "typo3/cms-viewpage": "^11"
     },
     "scripts": {
         "post-autoload-dump": [
