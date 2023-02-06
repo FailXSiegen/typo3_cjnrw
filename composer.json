@@ -84,7 +84,8 @@
         "typo3/cms-t3editor": "^11",
         "typo3/cms-tstemplate": "^11",
         "typo3/cms-viewpage": "^11",
-        "yoast-seo-for-typo3/yoast_seo": "^8.0"
+        "yoast-seo-for-typo3/yoast_seo": "^8.0",
+        "jigal/t3adminer":"^11"
     },
     "scripts": {
         "post-autoload-dump": [
