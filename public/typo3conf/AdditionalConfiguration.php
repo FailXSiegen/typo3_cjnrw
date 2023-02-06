@@ -39,7 +39,7 @@ $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
         'SYS' => [
             'sitename' => $_ENV['SITENAME'],
             'systemMaintainers' => [
-                1,
+                2
             ],
             'trustedHostsPattern' => $_ENV['TRUSTED_HOSTS_PATTERN'],
             'displayErrors' => $_ENV['DISPLAY_ERRORS'],
