@@ -36,4 +36,11 @@
     url('../Fonts/FontAwesome/fa-regular-900.ttf') format('truetype'),
     url('../Fonts/FontAwesome/fa-regular-900.svg#fontawesome') format('svg');
 }
-  
+.fa,
+.fas,
+.far,
+.fal,
+.fad,
+.fab {
+    font-family: 'Font Awesome 5 Free';
+}
