@@ -59,13 +59,12 @@ build/
 #
 # Ignore common TYPO3 CMS files/directories
 /fileadmin
-/typo3conf
 /typo3temp
 /uploads
 /public/*
-!/public/typo3conf
-!/public/favicon.ico
 
+!/public/favicon.ico
+!/public/typo3conf/
 /public/typo3conf/ext
 /public/typo3conf/l10n
 /public/typo3conf/LocalConfiguration.php
