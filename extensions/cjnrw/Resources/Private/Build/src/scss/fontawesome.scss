@@ -1,5 +1,6 @@
 
-$fa-font-path: "/typo3conf/Resources/Public/Fonts/FontAwesome";
-$fa-css-prefix: fas;
+$fa-font-path: "../Fonts/FontAwesome";
+
+
 @import '../../../../Public/Vendor/@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '../../../../Public/Vendor/@fortawesome/fontawesome-free/scss/icons.scss';

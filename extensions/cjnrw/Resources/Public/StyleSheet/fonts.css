@@ -11,3 +11,16 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Font Awesome 5 Free';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../Fonts/FontAwesome/fa-regular-400.eot');
+    src: url('../Fonts/FontAwesome/fa-regular-400.eot?#iefix') format('embedded-opentype'),
+    url('../Fonts/FontAwesome/fa-regular-400.woff2') format('woff2'),
+    url('../Fonts/FontAwesome/fa-regular-400.woff') format('woff'),
+    url('../Fonts/FontAwesome/fa-regular-400.ttf') format('truetype'),
+    url('../Fonts/FontAwesome/fa-regular-400.svg#fontawesome') format('svg');
+  }
+  
