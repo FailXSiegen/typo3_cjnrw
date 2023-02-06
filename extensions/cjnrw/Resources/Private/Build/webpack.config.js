@@ -138,7 +138,7 @@ module.exports = {
         'splash':  './src/scss/splash.scss',
         '2clickcss' : './src/scss/2click.scss',
         'glightboxcss' : './src/scss/glightbox.scss',
-        'fontaweseom' : './src/scss/fontawesome.scss',
+        'fontawesome' : './src/scss/fontawesome.scss',
     },
 
     // Path and filename of your result bundle.
