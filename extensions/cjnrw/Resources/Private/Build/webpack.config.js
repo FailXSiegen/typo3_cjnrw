@@ -113,8 +113,7 @@ module.exports = {
                 {
                     from: './../../Public/Vendor/tiny-slider/dist/min/tiny-slider.js',
                     to: 'JavaScript/'
-                }
-                ,
+                },
                 {
                     from: './../../Public/Vendor/glightbox/dist/js/glightbox.min.js',
                     to: 'JavaScript/'
@@ -139,6 +138,7 @@ module.exports = {
         'splash':  './src/scss/splash.scss',
         '2clickcss' : './src/scss/2click.scss',
         'glightboxcss' : './src/scss/glightbox.scss',
+        'fontaweseom' : './src/scss/fontawesome.scss',
     },
 
     // Path and filename of your result bundle.

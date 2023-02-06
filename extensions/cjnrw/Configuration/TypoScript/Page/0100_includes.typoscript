@@ -7,7 +7,7 @@ page{
             media = all
         }
         fonts = EXT:cjnrw/Resources/Public/StyleSheet/fonts.css
-        fontawesome = EXT:cjnrw/Resources/Public/StyleSheet/font-awesome.css
+        fontawesome = EXT:cjnrw/Resources/Public/StyleSheet/fontawesome.css
     }
     includeJSFooter {
         bootstrap = EXT:cjnrw/Resources/Public/JavaScript/bootstrap.bundle.min.js
