@@ -155,18 +155,18 @@
 
 	<f:if condition="{newsItem.relatedFiles}">
 		<!-- related files -->
-		<div class="news-related-files mb-3 d-flex">
+		<div class="news-related-files mb-3 d-flex justify-content-center">
 			<f:for each="{newsItem.relatedFiles}" as="relatedFile">
-				<span class="related-file">
-					<span class="news-related-files-link me-2">
+				<span class="related-file me-4 d-flex flex-column justify-content-center">
+					<span class="news-related-files-link">
 						<a href="{relatedFile.originalResource.publicUrl -> f:format.htmlspecialchars()}" target="_blank">
 							<f:render partial="Media/Rendering/Image" arguments="{file:relatedFile}" />
 						</a>
 					</span>
 					<f:if condition="{relatedFile.originalResource.description}">
-						<span class="news-related-files-description"> {relatedFile.originalResource.description -> f:format.nl2br()} </span>
+						<small class="news-related-files-description mt-1 blockquote-footer"> {relatedFile.originalResource.description -> f:format.nl2br()} </small>
 					</f:if>
-					<span class="news-related-files-size"> {relatedFile.originalResource.size -> f:format.bytes()} </span>
+					<small class="news-related-files-size"> {relatedFile.originalResource.size -> f:format.bytes()} </small>
 				</span>
 			</f:for>
 		</div>
