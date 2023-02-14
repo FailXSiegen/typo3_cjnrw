@@ -155,23 +155,20 @@
 
 	<f:if condition="{newsItem.relatedFiles}">
 		<!-- related files -->
-		<div class="news-related news-related-files mb-3">
-			<h4>
-				<f:translate key="related-files" />
-			</h4>
-			<ul class="list-group">
-				<f:for each="{newsItem.relatedFiles}" as="relatedFile">
-					<li class="list-group-item">
-						<span class="news-related-files-link me-2">
-							<a href="{relatedFile.originalResource.publicUrl -> f:format.htmlspecialchars()}" target="_blank">
-								<i class="fas fa-file me-1"></i>
-								{f:if(condition:relatedFile.originalResource.title, then:relatedFile.originalResource.title, else:relatedFile.originalResource.name)}
-							</a>
-						</span>
-						<span class="news-related-files-size"> {relatedFile.originalResource.size -> f:format.bytes()} </span>
-					</li>
-				</f:for>
-			</ul>
+		<div class="news-related-files mb-3 d-flex">
+			<f:for each="{newsItem.relatedFiles}" as="relatedFile">
+				<span class="related-file">
+					<span class="news-related-files-link me-2">
+						<a href="{relatedFile.originalResource.publicUrl -> f:format.htmlspecialchars()}" target="_blank">
+							<f:render partial="Media/Rendering/Image" arguments="{file:relatedFile}" />
+						</a>
+					</span>
+					<f:if condition="{relatedFile.originalResource.description}">
+						<span class="news-related-files-description"> {relatedFile.originalResource.description -> f:format.nl2br()} </span>
+					</f:if>
+					<span class="news-related-files-size"> {relatedFile.originalResource.size -> f:format.bytes()} </span>
+				</span>
+			</f:for>
 		</div>
 	</f:if>
 

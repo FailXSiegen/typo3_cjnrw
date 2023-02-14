@@ -1,3 +1,12 @@
+plugin.tx_news {
+	view {
+		partialRootPaths {
+			99 = EXT:cjnrw/Resources/Private/Content/Partials/
+		}
+    }
+}
+
+
 [traverse(request.getQueryParams(), 'tx_news_pi1/news') > 0]
 
 [end]
