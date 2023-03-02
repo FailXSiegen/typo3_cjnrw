@@ -25,3 +25,4 @@
 
 
 $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['fxnet'] = 'EXT:cjnrw/Configuration/RTE/Default.yaml';
+$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['classes']['Domain/Model/News']['cjnrw'] = 'cjnrw';

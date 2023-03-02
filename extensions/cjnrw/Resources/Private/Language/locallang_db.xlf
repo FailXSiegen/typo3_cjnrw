@@ -399,6 +399,13 @@
 				<source>no</source>
 			</trans-unit>
 
+			<trans-unit id="hide_more" xml:space="preserve">
+				<source>Keine Detailseite</source>
+			</trans-unit>
+
+			<trans-unit id="hide_more.description" xml:space="preserve">
+				<source>Versteckt den "Weiterlesen" Button und gibt den kompletten Inhalt ohne Beschränkung in der Listenansicht aus</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>

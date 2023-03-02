@@ -98,3 +98,9 @@ CREATE TABLE sys_file_reference (
     image_style varchar(20) DEFAULT '' NOT NULL
 );
 
+#
+# Table structure for table 'tx_news_domain_model_news'
+#
+CREATE TABLE tx_news_domain_model_news (
+    hide_more tinyint(4) DEFAULT '0' NOT NULL
+);

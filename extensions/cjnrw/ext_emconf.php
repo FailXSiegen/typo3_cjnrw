@@ -12,6 +12,8 @@ $EM_CONF['cjnrw'] = [
     'constraints' => [
         'depends' => [
             'typo3' => '11.5.0-11.5.99',
+            'news' => '10.0.0-10.9.99'
+
         ],
         'conflicts' => [],
         'suggests' => [],
