@@ -20,9 +20,14 @@
         <f:if condition="{data.imagecols_xxl}">
             <f:variable name="columnClass" value="{columnClass} row-cols-xxl-{data.imagecols_xxl}" />
         </f:if>
+        <f:if condition="{data.imagewidth}">
+            <f:variable name="inlineStyle" value="max-width: {data.imagewidth}px" />
+        </f:if>
         <div 
-        class="ce-gallery{f:if(condition: data.imageborder, then: ' ce-border')}"
-        data-ce-images="{gallery.count.files}">
+            class="ce-gallery{f:if(condition: data.imageborder, then: ' ce-border')}"
+            {f:if(condition: inlineStyle, then:'style="{inlineStyle}"')}
+            data-ce-images="{gallery.count.files}"
+            data-ce-rows="{gallery.count.columns}">
             <f:switch expression="{data.frame_class}">
                 <f:case value="gridlayout">
                     <f:render section="gridGallery" arguments="{_all}" />
@@ -44,7 +49,7 @@
             <f:for each="{gallery.rows}" as="row" iteration="rowIterator">            
                 <f:for each="{row.columns}" as="column">
                     <f:if condition="{column.media}">
-                        <div class="col">
+                        <div class="col{f:if(condition:'{gallery.rows -> f:count()} > 1', then: ' mb-3')}">
                             <f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
                         </div>
                     </f:if>
@@ -64,7 +69,7 @@
         </f:if>
         <div class="row gy-4 {data.row_item_class} {data.row_space_class}{f:if(condition:'{gallery.rows -> f:count()} > 1', then: ' mb-3')} {columnClass}">
             <f:for each="{gallery.rows}" as="row" iteration="rowIterator">            
-                <f:for each="{row.columns}" as="column">
+                <f:for each="{row.columns}{f:if(condition:'{gallery.rows -> f:count()} > 1', then: ' mb-3')}" as="column">
                     <f:if condition="{column.media}">
                         <div class="col d-flex flex-column min-h-100">
                             <f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
