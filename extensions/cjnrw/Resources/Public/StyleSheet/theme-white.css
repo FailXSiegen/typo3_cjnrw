@@ -1810,27 +1810,27 @@
 }
 
 .fs-1 {
-  font-size: calc(1.4rem + 1.8vw) !important;
+  font-size: calc(1.425rem + 2.1vw) !important;
 }
 
 .fs-2 {
-  font-size: calc(1.345rem + 1.14vw) !important;
+  font-size: calc(1.365rem + 1.38vw) !important;
 }
 
 .fs-3 {
-  font-size: calc(1.3175rem + 0.81vw) !important;
+  font-size: calc(1.335rem + 1.02vw) !important;
 }
 
 .fs-4 {
-  font-size: calc(1.29rem + 0.48vw) !important;
+  font-size: calc(1.305rem + 0.66vw) !important;
 }
 
 .fs-5 {
-  font-size: calc(1.2625rem + 0.15vw) !important;
+  font-size: calc(1.275rem + 0.3vw) !important;
 }
 
 .fs-6 {
-  font-size: 1.1rem !important;
+  font-size: 1.2rem !important;
 }
 
 .fst-italic {
@@ -7111,19 +7111,19 @@
 }
 @media (min-width: 1200px) {
   .fs-1 {
-    font-size: 2.75rem !important;
+    font-size: 3rem !important;
   }
   .fs-2 {
-    font-size: 2.2rem !important;
+    font-size: 2.4rem !important;
   }
   .fs-3 {
-    font-size: 1.925rem !important;
+    font-size: 2.1rem !important;
   }
   .fs-4 {
-    font-size: 1.65rem !important;
+    font-size: 1.8rem !important;
   }
   .fs-5 {
-    font-size: 1.375rem !important;
+    font-size: 1.5rem !important;
   }
 }
 @media print {
@@ -7171,7 +7171,7 @@
   background-color: transparent;
   border: 1px solid transparent;
   padding: 0.375rem 0.75rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -7646,18 +7646,18 @@
 
 .btn-lg {
   padding: 0.5rem 1rem;
-  font-size: calc(1.2625rem + 0.15vw);
+  font-size: calc(1.275rem + 0.3vw);
   border-radius: 0.3rem;
 }
 @media (min-width: 1200px) {
   .btn-lg {
-    font-size: 1.375rem;
+    font-size: 1.5rem;
   }
 }
 
 .btn-sm {
   padding: 0.25rem 0.5rem;
-  font-size: 0.9625rem;
+  font-size: 1.05rem;
   border-radius: 0.2rem;
 }
 
@@ -8088,11 +8088,11 @@
 
 .pagination-lg .page-link {
   padding: 0.75rem 1.5rem;
-  font-size: calc(1.2625rem + 0.15vw);
+  font-size: calc(1.275rem + 0.3vw);
 }
 @media (min-width: 1200px) {
   .pagination-lg .page-link {
-    font-size: 1.375rem;
+    font-size: 1.5rem;
   }
 }
 .pagination-lg .page-item:first-child .page-link {
@@ -8106,7 +8106,7 @@
 
 .pagination-sm .page-link {
   padding: 0.25rem 0.5rem;
-  font-size: 0.9625rem;
+  font-size: 1.05rem;
 }
 .pagination-sm .page-item:first-child .page-link {
   border-top-left-radius: 0.2rem;
