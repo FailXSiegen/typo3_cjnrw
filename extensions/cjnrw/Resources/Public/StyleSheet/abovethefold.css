@@ -9467,7 +9467,7 @@ body.pagesplash main > *:first-child > * {
     background-size: contain;
   }
   body.pagesplash main > *:first-child.frame-type-text {
-    padding-right: 350px;
+    padding-right: 350px !important;
   }
 }
 body.pagesplash-2 main > *:first-child:after {
