@@ -12,20 +12,25 @@ body {
                 z-index: 10;
                 position: relative;
             }
-            &:after {
-                position: absolute;
-                width: 400px;
-                top: 0;
-                right: -5em;
-                height: 500px;
-                z-index: 5;
-                content: '';
-                display: block;
-    
-                background-image: url('../../../../Public/Images/splash1.svg?inline');
-                background-repeat: no-repeat;
-                background-size: contain;
-
+            
+            @include media-breakpoint-up(md) {
+                &:after {
+                    position: absolute;
+                    width: 400px;
+                    top: 0;
+                    right: -5em;
+                    height: 500px;
+                    z-index: 5;
+                    content: '';
+                    display: block;
+        
+                    background-image: url('../../../../Public/Images/splash1.svg?inline');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                &.frame-type-text {
+                    padding-right: 350px;
+                }
             }
         }
     }
