@@ -9639,6 +9639,15 @@ main > *:first-child {
   margin-bottom: 1.5rem;
 }
 
+.container > .row .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.image-caption {
+  font-size: 1rem;
+}
+
 .menulink,
 .download {
   display: block;

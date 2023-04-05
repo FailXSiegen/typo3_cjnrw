@@ -177,4 +177,12 @@ main {
     }
 }
 
+.container > .row .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.image-caption {
+    font-size: 1rem;
+}
 @import 'download';
