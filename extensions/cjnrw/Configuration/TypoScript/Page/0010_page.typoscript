@@ -192,7 +192,7 @@ page.10 {
     }
 }
 [end]
-[tree.level > 2]
+[tree.level > 1]
 page = PAGE
 page {
   bodyTagCObject.10 {
