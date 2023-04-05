@@ -20,7 +20,7 @@
         <f:if condition="{data.imagecols_xxl}">
             <f:variable name="columnClass" value="{columnClass} row-cols-xxl-{data.imagecols_xxl}" />
         </f:if>
-        <f:if condition="{data.imagewidth}">
+        <f:if condition="{data.imagewidth} && ({data.imageorient} == 17  || {data.imageorient} == 18)">
             <f:variable name="inlineStyle" value="max-width: {data.imagewidth}px" />
         </f:if>
         <div 
