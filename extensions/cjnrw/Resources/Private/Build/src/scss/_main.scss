@@ -1,5 +1,6 @@
 @import 'variables';
 
+
 @import '../../../../Public/Vendor/bootstrap/scss/bootstrap-utilities';
 @import '../../../../Public/Vendor/bootstrap/scss/buttons';
 @import '../../../../Public/Vendor/bootstrap/scss/list-group';
@@ -7,6 +8,7 @@
 @import '../../../../Public/Vendor/bootstrap/scss/pagination';
 
 body  {
+    
     a {
         text-decoration: none;
     }
@@ -29,20 +31,6 @@ body  {
         line-height: 1;
     }
 
-    @include media-breakpoint-up(md) {
-        .f-size-35 {
-            font-size: 35px;
-        }
-        .f-size-md-40 {
-            font-size: 40px
-        }
-        .f-size-45 {
-            font-size: 45px;
-        }
-        .line-height-45 {
-            line-height: 45px;
-        }
-    }
     .bigbigtext {
         font-size: 100px;
         line-height: 1;
@@ -93,45 +81,6 @@ body  {
                 transition: opacity .5s ease-in-out, max-width .5s ease-in-out;
             }
         }
-    }
-    h1, .h1 {
-        @include media-breakpoint-up(md) {
-            font-size: 26px;
-            font-weight: bold;
-            line-height: 26px;
-            margin-bottom: 1.5rem;
-        }
-    }
-    h2, .h2 {
-        @include media-breakpoint-up(md) {
-            font-size: 24px;
-            font-weight: bold;
-            line-height: 24px;
-            margin-bottom: 1.5rem;
-        }
-    }
-    h3, .h3 {
-        @include media-breakpoint-up(md) {
-            font-size: 22px;
-            font-weight: bold;
-            line-height: 22px;
-            margin-bottom: 1.5rem;
-        }
-    }
-    h4, .h4 {
-        line-height: 1.2;
-        font-weight: normal;
-        @include media-breakpoint-up(md) {
-            font-size: 20px;
-        }
-    }
-    h5, .h5 {
-        font-size: 18px;
-        line-height: 1.2;
-        font-weight: normal;
-    }
-    .semibold {
-        font-weight: 600;
     }
     .navbar {
         padding-bottom: 0;

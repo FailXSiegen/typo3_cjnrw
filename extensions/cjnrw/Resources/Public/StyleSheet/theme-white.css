@@ -1810,19 +1810,19 @@
 }
 
 .fs-1 {
-  font-size: calc(1.425rem + 2.1vw) !important;
-}
-
-.fs-2 {
   font-size: calc(1.365rem + 1.38vw) !important;
 }
 
-.fs-3 {
+.fs-2 {
   font-size: calc(1.335rem + 1.02vw) !important;
 }
 
-.fs-4 {
+.fs-3 {
   font-size: calc(1.305rem + 0.66vw) !important;
+}
+
+.fs-4 {
+  font-size: calc(1.275rem + 0.3vw) !important;
 }
 
 .fs-5 {
@@ -1866,11 +1866,11 @@
 }
 
 .lh-sm {
-  line-height: 1.25 !important;
+  line-height: 1.5 !important;
 }
 
 .lh-base {
-  line-height: 1.5 !important;
+  line-height: 1.3 !important;
 }
 
 .lh-lg {
@@ -7111,16 +7111,16 @@
 }
 @media (min-width: 1200px) {
   .fs-1 {
-    font-size: 3rem !important;
-  }
-  .fs-2 {
     font-size: 2.4rem !important;
   }
-  .fs-3 {
+  .fs-2 {
     font-size: 2.1rem !important;
   }
-  .fs-4 {
+  .fs-3 {
     font-size: 1.8rem !important;
+  }
+  .fs-4 {
+    font-size: 1.5rem !important;
   }
   .fs-5 {
     font-size: 1.5rem !important;
@@ -7161,7 +7161,7 @@
 .btn {
   display: inline-block;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.3;
   color: #212529;
   text-align: center;
   text-decoration: none;
@@ -8138,20 +8138,6 @@ body .f-weight-700 {
 body .line-height-1 {
   line-height: 1;
 }
-@media (min-width: 768px) {
-  body .f-size-35 {
-    font-size: 35px;
-  }
-  body .f-size-md-40 {
-    font-size: 40px;
-  }
-  body .f-size-45 {
-    font-size: 45px;
-  }
-  body .line-height-45 {
-    line-height: 45px;
-  }
-}
 body .bigbigtext {
   font-size: 100px;
   line-height: 1;
@@ -8223,47 +8209,6 @@ body .logo svg {
     transition: opacity 0.5s ease-in-out, max-width 0.5s ease-in-out;
   }
 }
-@media (min-width: 768px) {
-  body h1, body .h1 {
-    font-size: 26px;
-    font-weight: bold;
-    line-height: 26px;
-    margin-bottom: 1.5rem;
-  }
-}
-@media (min-width: 768px) {
-  body h2, body .h2 {
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 24px;
-    margin-bottom: 1.5rem;
-  }
-}
-@media (min-width: 768px) {
-  body h3, body .h3 {
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 22px;
-    margin-bottom: 1.5rem;
-  }
-}
-body h4, body .h4 {
-  line-height: 1.2;
-  font-weight: normal;
-}
-@media (min-width: 768px) {
-  body h4, body .h4 {
-    font-size: 20px;
-  }
-}
-body h5, body .h5 {
-  font-size: 18px;
-  line-height: 1.2;
-  font-weight: normal;
-}
-body .semibold {
-  font-weight: 600;
-}
 body .navbar {
   padding-bottom: 0;
 }
@@ -8319,7 +8264,7 @@ body .contact svg {
   height: 36px;
 }
 body .nav-link {
-  font-family: "TheSans", oboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "TheSans", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: bold;
   line-height: 1;
 }

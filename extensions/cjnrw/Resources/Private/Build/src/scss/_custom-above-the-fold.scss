@@ -3,6 +3,9 @@
 @import '../../../../Public/Vendor/bootstrap/scss/variables';
 @import '../../../../Public/Vendor/bootstrap/scss/mixins';
 
+@import '../../../../Public/Vendor/bootstrap/scss/reboot';
+@import '../../../../Public/Vendor/bootstrap/scss/type';
+
 body {
     &.pagesplash {
         main > *:first-child {
