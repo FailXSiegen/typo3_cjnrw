@@ -68,8 +68,8 @@
                 <div class="ce-inner">
         </f:if>
         <div class="row gy-4 {data.row_item_class} {data.row_space_class}{f:if(condition:'{gallery.rows -> f:count()} > 1', then: ' mb-3')} {columnClass}">
-            <f:for each="{gallery.rows}" as="row" iteration="rowIterator">            
-                <f:for each="{row.columns}{f:if(condition:'{gallery.rows -> f:count()} > 1', then: ' mb-3')}" as="column">
+            <f:for each="{gallery.rows}" as="row" iteration="rowIterator">    
+                <f:for each="{row.columns}" as="column">
                     <f:if condition="{column.media}">
                         <div class="col d-flex flex-column min-h-100">
                             <f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
