@@ -8,5 +8,5 @@ plugin.tx_news {
 
 
 [traverse(request.getQueryParams(), 'tx_news_pi1/news') > 0]
-
+page.bodyTagCObject.10.50 >
 [end]

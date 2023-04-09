@@ -193,7 +193,6 @@ page.10 {
 }
 [end]
 [tree.level > 1]
-page = PAGE
 page {
   bodyTagCObject.10 {
     50 = TEXT
