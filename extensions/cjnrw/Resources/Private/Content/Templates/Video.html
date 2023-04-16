@@ -11,7 +11,12 @@
                 <source src="{mp4.0.publicUrl}" type="video/mp4" />
             </f:if>
             <f:if condition="{poster.0}">
-                <f:image src="{poster.0.publicUrl}" class="img img-responsive img-fluid" />
+                <f:render partial="Media/Rendering/Image" arguments="{
+                    file: poster.0
+                }" />
+                <f:comment>
+                    <f:image src="{poster.0.publicUrl}" class="img img-responsive img-fluid" />
+                </f:comment>
             </f:if>
             Your browser does not support the video tag.
         </video>
