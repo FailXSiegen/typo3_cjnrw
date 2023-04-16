@@ -87,7 +87,7 @@ page {
       10 {
           special = directory
           special.value = {$failx.mainNavigationPid}
-          levels = 1
+          levels = 3
           includeSpacer = 0
           as = mainNavigation
       }

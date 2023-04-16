@@ -1,7 +1,15 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
+      <a href="{menu.link}"
+        class="nav-link {f:if(condition: menu.active, then:'active')} d-none d-xl-block"
+        {f:if(condition:menu.target,then: 'target="{menu.target}"')}
+        itemprop="url"
+        title="{menu.title}">
+        {menu.title}
+    </a>
+    
     <a href="#"
-        class="nav-link dropdown-toggle {f:if(condition: menu.active, then:'active')}"
+        class="nav-link dropdown-toggle {f:if(condition: menu.active, then:'active')} d-xl-none py-3"
         role="button" 
         data-bs-toggle="dropdown"
         {f:if(condition:menu.target,then: 'target="{menu.target}"')}
@@ -9,16 +17,27 @@
         title="{menu.title}">
         {menu.title}
     </a>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu d-xl-none">
+        <li>
+            <a href="{menu.link}"
+                class="dropdown-item {f:if(condition: menu.current, then:'active')} pb-3"
+                {f:if(condition:menu.target,then: 'target="{menu.target}"')}
+                itemprop="url"
+                title="{menu.title}">
+                Zur Seite {menu.title}
+            </a>
+            <hr class="m-0" />
+        </li>
         <f:for each="{menu.children}" as="submenu">
             <li>
                 <a href="{submenu.link}"
-                    class="dropdown-item {f:if(condition: submenu.active, then:'active')}"
+                    class="dropdown-item {f:if(condition: submenu.active, then:'active')} py-3"
                     {f:if(condition:submenu.target,then: 'target="{submenu.target}"')}
                     itemprop="url"
                     title="{submenu.title}">
                     {submenu.title}
                 </a>
+                <hr class="m-0" />
             </li>
         </f:for>
     </ul>  
