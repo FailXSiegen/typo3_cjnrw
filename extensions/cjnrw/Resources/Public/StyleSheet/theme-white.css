@@ -8418,10 +8418,18 @@ footer .frame-type-menu_subpages, .footer .frame-type-menu_subpages {
   .position-xl-absolute {
     position: absolute !important;
   }
-}
-@media (min-width: 1200px) {
   .navbar-expand-xl .offcanvas {
     width: auto;
+  }
+}
+@media (min-width: 1400px) {
+  .start-xxl-0 {
+    left: 0 !important;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .end-xl-0 {
+    right: 0 !important;
   }
 }
 .bgimage-container > picture + div {

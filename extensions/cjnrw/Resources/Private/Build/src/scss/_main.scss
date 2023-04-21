@@ -280,6 +280,7 @@ footer, .footer {
     .position-md-absolute {
         position: absolute !important;
     }
+    
 }
 @include media-breakpoint-up(lg) {
     .position-lg-absolute {
@@ -290,10 +291,19 @@ footer, .footer {
     .position-xl-absolute {
         position: absolute !important;
     }
-}
-@include media-breakpoint-up(xl) {
     .navbar-expand-xl .offcanvas {
         width: auto;
+    }
+}
+@include media-breakpoint-up(xxl) {
+    .start-xxl-0 {
+        left: 0 !important;
+    }
+}
+
+@include media-breakpoint-only(xl) {
+    .end-xl-0 {
+        right: 0 !important;
     }
 }
 

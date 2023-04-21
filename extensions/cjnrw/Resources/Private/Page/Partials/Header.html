@@ -2,7 +2,7 @@
       data-namespace-typo3-fluid="true">
     <header id="head" data-rootpid="{rootPageUid}">
         <div class="container pt-3 pb-3">
-            <div class="navbar-header navbar-expand-xl row align-items-lg-start align-items-xxl-center">
+            <div class="navbar-header navbar-expand-xl row align-items-lg-stretch align-items-xxl-center">
                 <f:if condition="{logoPath}">
                     <div class="col-8 col-xl-2" itemscope itemtype="http://schema.org/Organization">
                         <f:link.typolink parameter="{rootPageUid}" class="logo d-none d-xl-block " additionalAttributes="{'itemprop':'url'}">
@@ -16,7 +16,7 @@
                     </div>
                 </f:if>
                 <div class="col-4 col-xl-10 d-flex justify-content-end position-relative min-h-100">
-                    <nav id="nav" class="navbar navbar-expand-xxl pt-0 me-3" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                    <nav id="nav" class="navbar navbar-expand-xxl pt-0 mt-xl-4 mt-xxl-0" itemscope itemtype="http://schema.org/SiteNavigationElement">
                         <button class="navbar-toggler py-0" 
                                 type="button" 
                                 data-bs-toggle="offcanvas" 
@@ -40,12 +40,12 @@
                             </div>
                         </div>
                     </nav>
-                    <ul class="d-none d-xl-flex flex-row navbar-nav social-nav position-absolute bottom-xl-0 top-xxl-0 start-0 w-auto mt-xl-5 mt-xxl-0">
+                    <ul class="d-none d-xl-flex flex-row navbar-nav social-nav position-absolute end-xl-0 start-xxl-0 w-auto me-xl-4 me-xxl-0">
                         <f:for each="{socialNavigation}" as="menu">
                             <li class="{f:if(condition: menu.current,then:'current')}" itemprop="name">
                                 <a href="{menu.link}"
                                     rel="noopener noreferrer"
-                                    class="me-3 {f:if(condition: menu.active,then:'active')}"
+                                    class="me-xxl-3 ms-xl-3 ms-xxl-0 {f:if(condition: menu.active,then:'active')}"
                                     {f:if(condition:menu.target,then: 'target="{menu.target}"')}
                                     itemprop="url"
                                     title="{menu.title}">
