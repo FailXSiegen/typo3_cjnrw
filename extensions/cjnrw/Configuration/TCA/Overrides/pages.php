@@ -25,12 +25,16 @@
   *  This copyright notice MUST APPEAR in all copies of the script!
   ***************************************************************/
 
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+
 if (!defined('TYPO3_MODE')) {
     die('Access denied.');
 }
 
 call_user_func(
     function ($_EXTKEY) {
+        $configurationManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Configuration\\BackendConfigurationManager');
+        $extbaseFrameworkConfiguration = $configurationManager->getTypoScriptSetup();
         // get absolute path the PageTSconfig directory.
         $path = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/PageTSconfig/';
         // Collect .ts files.
@@ -47,8 +51,6 @@ call_user_func(
                 $fileValue
             );
         }
-
-
         $columns = [
             'theme' => [
                 'label' => 'LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:theme',
@@ -67,6 +69,16 @@ call_user_func(
                     ],
                 ],
             ],
+            'social_media_icon' => [
+                'label' => 'Icon',
+                'exclude' => 0,
+                'config' => [
+                    'type' => 'select',
+                    'renderType' => 'selectMultipleSideBySide',
+                    'items' => \Failx\Cjnrw\Utility\IconUtility::iconArray($extbaseFrameworkConfiguration['plugin.']['tx_cjnrw.']['settings.']['jsonfile']),
+                    'maxitems' => 1
+                ],
+            ]
         ];
         // Add TCA columns.
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
@@ -78,6 +90,12 @@ call_user_func(
             'theme,--linebreak--',
             '',
             'after:doktype'
+        );
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+            'pages',
+            'title',
+            '--linebreak--,social_media_icon',
+            'after:subtitle'
         );
     },
     'cjnrw'

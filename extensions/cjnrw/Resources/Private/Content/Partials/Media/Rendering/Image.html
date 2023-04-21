@@ -25,9 +25,9 @@
         </f:then>
         <f:else>
             <picture class="{imageStyle}">
-                <fx:exists file="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'767m',cropVariant:'smartphone-portrait') -> fx:substring(start:'1')}.webp">
+                <fx:exists file="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1', width:'767m',cropVariant:'smartphone-portrait') -> fx:substring(start:'1')}.webp">
                         <source media="(max-width: 767px) and (orientation:portrait)"
-                                srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'767m',cropVariant:'smartphone-portrait')}.webp"
+                                srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1', width:'767m',cropVariant:'smartphone-portrait')}.webp"
                                 type="image/webp"
                         >
                 </fx:exists>
@@ -42,9 +42,9 @@
                                 >
                 </fx:exists>
                 <source media="(max-width: 767px) and (orientation:landscape)"
-                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'767m',cropVariant:'smartphone-landscape')}">
+                        srcset="{f:uri.image(src:'{file.uid}', treatIdAsReference:'1', width:'767m', cropVariant:'smartphone-landscape')}">
 
-                <fx:exists file="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'991m',cropVariant:'tablet-portrait') -> fx:substring(start:'1')}.webp">
+                <fx:exists file="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1', width:'991m', cropVariant:'tablet-portrait') -> fx:substring(start:'1')}.webp">
                         <source media="(max-width: 991px) and (orientation:portrait)"
                                 srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'991m',cropVariant:'tablet-portrait')}.webp"
                                 type="image/webp"

@@ -177,25 +177,6 @@ body  {
             padding-left: 0.5rem;
         }
     }
-    .social-nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        @include media-breakpoint-up(md) {
-            display: block;
-        }
-        .nav-item {
-            margin-right: 15px;
-        }
-        .nav-link {
-            font-size: 18px;
-            font-weight: bold;
-            @include media-breakpoint-up(md) {
-                font-size: 32px;
-                font-weight: 600;
-            }
-        }
-    }
     .btn- {
         &primary {
             border-radius: 0;
@@ -300,8 +281,18 @@ footer, .footer {
         position: absolute !important;
     }
 }
+@include media-breakpoint-up(lg) {
+    .position-lg-absolute {
+        position: absolute !important;
+    }
+}
 @include media-breakpoint-up(xl) {
-    .navbar-expand-lg .offcanvas {
+    .position-xl-absolute {
+        position: absolute !important;
+    }
+}
+@include media-breakpoint-up(xl) {
+    .navbar-expand-xl .offcanvas {
         width: auto;
     }
 }

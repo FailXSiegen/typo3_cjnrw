@@ -216,3 +216,9 @@ page {
 }
 [end]
 
+plugin.tx_cjnrw {
+  settings {
+    jsonfile = {$plugin.tx_cjnrw.settings.jsonfile}
+  }
+}
+

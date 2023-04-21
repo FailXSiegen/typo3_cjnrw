@@ -2,7 +2,7 @@
       data-namespace-typo3-fluid="true">
     <header id="head" data-rootpid="{rootPageUid}">
         <div class="container pt-3 pb-3">
-            <div class="navbar-header navbar-expand-xl row align-items-center">
+            <div class="navbar-header navbar-expand-xl row align-items-lg-start align-items-xxl-center">
                 <f:if condition="{logoPath}">
                     <div class="col-8 col-xl-2" itemscope itemtype="http://schema.org/Organization">
                         <f:link.typolink parameter="{rootPageUid}" class="logo d-none d-xl-block " additionalAttributes="{'itemprop':'url'}">
@@ -15,7 +15,7 @@
                         </f:link.typolink>
                     </div>
                 </f:if>
-                <div class="col-4 col-xl-10 d-flex justify-content-end">
+                <div class="col-4 col-xl-10 d-flex justify-content-end position-relative min-h-100">
                     <nav id="nav" class="navbar navbar-expand-xxl pt-0 me-3" itemscope itemtype="http://schema.org/SiteNavigationElement">
                         <button class="navbar-toggler py-0" 
                                 type="button" 
@@ -40,7 +40,23 @@
                             </div>
                         </div>
                     </nav>
+                    <ul class="d-none d-xl-flex flex-row navbar-nav social-nav position-absolute bottom-xl-0 top-xxl-0 start-0 w-auto mt-xl-5 mt-xxl-0">
+                        <f:for each="{socialNavigation}" as="menu">
+                            <li class="{f:if(condition: menu.current,then:'current')}" itemprop="name">
+                                <a href="{menu.link}"
+                                    rel="noopener noreferrer"
+                                    class="me-3 {f:if(condition: menu.active,then:'active')}"
+                                    {f:if(condition:menu.target,then: 'target="{menu.target}"')}
+                                    itemprop="url"
+                                    title="{menu.title}">
+                                    <span class="visually-hidden">{menu.title}</span>
+                                    <i class="{menu.data.social_media_icon} h3 mb-0"></i>
+                                </a>
+                            </li>
+                        </f:for>
+                    </ul>
                 </div>
+                
             </div>  
         </div>
 

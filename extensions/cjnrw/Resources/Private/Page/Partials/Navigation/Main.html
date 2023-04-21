@@ -22,15 +22,17 @@
                 </li>
             </f:for>
         </ul>
-        <ul class="d-xl-none navbar-nav social-nav position-relative position-md-absolute bottom-0 end-0 order-3 mt-3">
+        <ul class="d-flex flex-row d-xl-none navbar-nav social-nav position-relative position-md-absolute bottom-0 end-0 order-3 mt-3 ">
             <f:for each="{social}" as="menu">
-                <li class="nav-item {f:if(condition: menu.current,then:'current')}" itemprop="name">
+                <li class="{f:if(condition: menu.current,then:'current')}" itemprop="name">
                     <a href="{menu.link}"
-                        class="nav-link {f:if(condition: menu.active,then:'active')}"
+                        rel="noopener noreferrer"
+                        class="me-3 {f:if(condition: menu.active,then:'active')}"
                         {f:if(condition:menu.target,then: 'target="{menu.target}"')}
                         itemprop="url"
                         title="{menu.title}">
-                            {menu.title}
+                        <span class="visually-hidden">{menu.title}</span>
+                        <i class="{menu.data.social_media_icon} h1"></i>
                     </a>
                 </li>
             </f:for>
