@@ -4,6 +4,10 @@ plugin.tx_news {
 			99 = EXT:cjnrw/Resources/Private/Content/Partials/
 		}
     }
+	settings {
+		media.maxWidth = 262m
+		list.media.image.width = 262
+	}
 }
 
 
