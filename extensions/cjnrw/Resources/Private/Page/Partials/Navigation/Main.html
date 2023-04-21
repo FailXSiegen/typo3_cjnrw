@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
     <div class="nav-wrapper position-relative d-flex flex-column">
-        <ul class="navbar-nav pe-3 order-1 flex-fill justify-content-center">
+        <ul class="navbar-nav order-1 flex-fill justify-content-center">
             <f:for each="{main}" as="menu">
                 <li class="nav-item mb-3 mb-lg-0{f:if(condition: menu.children, then:' dropdown ')}{f:if(condition: '{menu.current} || {menu.active}', then:'current')}" itemprop="name">
                     <f:if condition="{menu.children}">
