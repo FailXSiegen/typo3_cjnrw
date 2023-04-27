@@ -27,16 +27,16 @@
 
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
-if (!defined('TYPO3_MODE')) {
+if (!defined('TYPO3')) {
     die('Access denied.');
 }
 
 call_user_func(
-    function ($_EXTKEY) {
-        $configurationManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Configuration\\BackendConfigurationManager');
-        $extbaseFrameworkConfiguration = $configurationManager->getTypoScriptSetup();
+    function ($extkey) {
+        // $configurationManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Configuration\BackendConfigurationManager::class);
+        // $extbaseFrameworkConfiguration = $configurationManager->getTypoScriptSetup();
         // get absolute path the PageTSconfig directory.
-        $path = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/PageTSconfig/';
+        $path = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($extkey).'Configuration/PageTSconfig/';
         // Collect .ts files.
         $filesTS = \TYPO3\CMS\Core\Utility\GeneralUtility::getFilesInDir($path, 'ts');
         // Collect .txt files
@@ -46,7 +46,7 @@ call_user_func(
         foreach ($files as $fileKey => $fileValue) {
             // Register all files under PageTS
             \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
-                $_EXTKEY,
+                $extkey,
                 'Configuration/PageTSconfig/'.$fileValue,
                 $fileValue
             );
@@ -75,7 +75,7 @@ call_user_func(
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectMultipleSideBySide',
-                    'items' => \Failx\Cjnrw\Utility\IconUtility::iconArray($extbaseFrameworkConfiguration['plugin.']['tx_cjnrw.']['settings.']['jsonfile']),
+                    // 'items' => \Failx\Cjnrw\Utility\IconUtility::iconArray($extbaseFrameworkConfiguration['plugin.']['tx_cjnrw.']['settings.']['jsonfile']),
                     'maxitems' => 1
                 ],
             ]

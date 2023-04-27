@@ -25,13 +25,17 @@
   *  This copyright notice MUST APPEAR in all copies of the script!
   ***************************************************************/
 
-if (!defined('TYPO3_MODE')) {
+if (!defined('TYPO3')) {
     die('Access denied.');
 }
 
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-    'cjnrw',
-    'Configuration/TypoScript',
-    'Basic Templates'
+call_user_func(
+  function ($extkey) {
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+      $extkey,
+      'Configuration/TypoScript',
+      'Basic Templates'
+    );
+  },
+  'cjnrw'
 );

@@ -3,7 +3,6 @@ imports:
     - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
     - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
     - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
-    - { resource: "EXT:rte_ckeditor_fontawesome/Configuration/RTE/PluginFA4.yaml" }
 
 editor:
   config:
@@ -22,12 +21,19 @@ editor:
       # - { name: "Internal Link", element: "a", attributes: { class: "internal-link"} }
       # - { name: "Offset Text", element: "p", attributes: { class: "offset-text"} }
       - { name: "Blaue Box", element:  ['p'], attributes: { class: "bg-primary p-3 rounded shadow text-white"} }
-      - { name: ".h1", element:  ['h1','h2','h3','h4','h5','p'], attributes: { class: "h1"} }
-      - { name: ".h2", element:  ['h1','h2','h3','h4','h5','p'], attributes: { class: "h2"} }
-      - { name: ".h3", element:  ['h1','h2','h3','h4','h5','p'], attributes: { class: "h3"} }
+      - { name: ".h1", element: 'p', attributes: { class: "h1"} }
+      - { name: ".h2", element: 'p', attributes: { class: "h2"} }
+      - { name: ".h3", element: 'p', attributes: { class: "h3"} }
+      - { name: ".h2", element: 'h1', attributes: { class: "h2"} }
+      - { name: ".h3", element: 'h1', attributes: { class: "h3"} }
+      - { name: ".h1", element: 'h2', attributes: { class: "h1"} }
+      - { name: ".h3", element: 'h2', attributes: { class: "h3"} }
+      - { name: ".h1", element: 'h3', attributes: { class: "h1"} }
+      - { name: ".h2", element: 'h3', attributes: { class: "h2"} }
       # - { name: "Box Highlights", element: "p", attributes: { class: "box-highlight"} }
     format_tags: "p;h1;h2;h3;h4;h5;div"
     toolbarGroups:
+      - { name: styles }
       - { name: clipboard, groups: [clipboard, undo] }
       - { name: editing,   groups: [find, selection, spellchecker] }
       - { name: links, groups: [links, anchor] }
@@ -40,8 +46,7 @@ editor:
       - "/"
       - { name: basicstyles, groups: [ basicstyles, align, cleanup ] }
       - { name: paragraph,   groups: [ list, indent, blocks, align, bidi ] }
-      - "/"
-      - { name: styles }
+     
 
     justifyClasses:
       - text-left

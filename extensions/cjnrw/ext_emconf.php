@@ -11,8 +11,8 @@ $EM_CONF['cjnrw'] = [
     'author_company' => 'Chorjugend NRW',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.0-11.5.99',
-            'news' => '10.0.0-10.9.99'
+            'typo3' => '11.5.0-12.4.99',
+            'news' => '10.0.0-11.9.99'
 
         ],
         'conflicts' => [],
