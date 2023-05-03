@@ -119,7 +119,7 @@ call_user_func(
                     ]
                 )
             )
-            ->setIcon('cEXT:cjnrw/Resources/Public/Icons/col1.gif')
+            ->setIcon('EXT:cjnrw/Resources/Public/Icons/col1.gif')
         );
 
         \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
@@ -136,7 +136,7 @@ call_user_func(
                     ]
                 )
             )
-            ->setIcon('cEXT:cjnrw/Resources/Public/Icons/col2.gif')
+            ->setIcon('EXT:cjnrw/Resources/Public/Icons/col2.gif')
         );
 
         \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
@@ -154,7 +154,7 @@ call_user_func(
                     ]
                 )
             )
-            ->setIcon('cEXT:cjnrw/Resources/Public/Icons/col3.gif')
+            ->setIcon('EXT:cjnrw/Resources/Public/Icons/col3.gif')
         );
 
         \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
@@ -173,7 +173,7 @@ call_user_func(
                     ]
                 )
             )
-            ->setIcon('cEXT:cjnrw/Resources/Public/Icons/col4.gif')
+            ->setIcon('EXT:cjnrw/Resources/Public/Icons/col4.gif')
         );
         $GLOBALS['TCA']['tt_content']['types']['slider']['showitem'] =  '
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
