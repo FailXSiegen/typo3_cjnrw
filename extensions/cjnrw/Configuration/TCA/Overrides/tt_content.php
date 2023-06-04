@@ -1381,7 +1381,7 @@ call_user_func(
             'tt_content',
             'CType',
             [
-                'LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:video',
+                'Video',
                 'video',
                 'content-media',
             ],
