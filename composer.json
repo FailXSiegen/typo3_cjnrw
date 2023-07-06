@@ -1,6 +1,10 @@
 {
     "repositories": [
         {
+            "type": "vcs",
+            "url":  "https://gitlab.com/FailXSiegen/typo3-form-to-database.git"
+        },
+        {
             "type": "composer",
             "url": "https://composer.typo3.org/"
         },
@@ -44,6 +48,7 @@
         "b13/container": "^2.2",
         "cweagans/composer-patches": "*",
         "failx/cjnrw": "@dev",
+        "lavitto/typo3-form-to-database": "dev-feature/typo3-12",
         "georgringer/news": "^11.0",
         "helhum/dotenv-connector": "^3.0",
         "helhum/typo3-console": "^8.0",
@@ -89,6 +94,6 @@
     "prefer-stable": true,
     "require-dev": {
         "rector/rector": "*",
-        "ssch/typo3-rector": "*"
+        "ssch/typo3-rector": "^1"
     }
 }
