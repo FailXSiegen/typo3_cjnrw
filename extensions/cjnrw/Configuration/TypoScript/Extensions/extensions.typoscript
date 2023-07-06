@@ -1,1 +1,2 @@
 <INCLUDE_TYPOSCRIPT: source="DIR:EXT:cjnrw/Configuration/TypoScript/Extensions/News" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:cjnrw/Configuration/TypoScript/Extensions/Form" extensions="typoscript">

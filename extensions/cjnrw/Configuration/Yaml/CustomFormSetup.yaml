@@ -1,0 +1,14 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  20: 'EXT:cjnrw/Resources/Private/Extensions/Form/Templates/'
+                partialRootPaths:
+                  20: 'EXT:cjnrw/Resources/Private/Extensions/Form/Partials/'
+                layoutRootPaths:
+                  20: 'EXT:cjnrw/Resources/Private/Extensions/Form/Layouts/'

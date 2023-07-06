@@ -139,6 +139,7 @@ module.exports = {
         '2clickcss' : './src/scss/2click.scss',
         'glightboxcss' : './src/scss/glightbox.scss',
         'fontawesome' : './src/scss/fontawesome.scss',
+        'forms' : './src/scss/forms.scss',
     },
 
     // Path and filename of your result bundle.
