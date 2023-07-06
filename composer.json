@@ -49,6 +49,7 @@
         "cweagans/composer-patches": "*",
         "failx/cjnrw": "@dev",
         "lavitto/typo3-form-to-database": "dev-feature/typo3-12",
+        "tritum/form-element-linked-checkbox": "dev-master",
         "georgringer/news": "^11.0",
         "helhum/dotenv-connector": "^3.0",
         "helhum/typo3-console": "^8.0",
