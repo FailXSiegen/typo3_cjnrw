@@ -48,7 +48,7 @@
         "b13/container": "^2.2",
         "cweagans/composer-patches": "*",
         "failx/cjnrw": "@dev",
-        "lavitto/typo3-form-to-database": "@dev",
+        "failx/typo3-form-to-database": "@dev",
         "tritum/form-element-linked-checkbox": "dev-master",
         "georgringer/news": "^11.0",
         "helhum/dotenv-connector": "^3.0",

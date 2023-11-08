@@ -7,7 +7,7 @@ return [
         'parent' => 'web',
         'position' => ['after' => 'web_FormFormbuilder'],
         'access' => 'user',
-        'workspaces' => 'live',
+        'workspaces' => '*',
         'path' => '/module/web/FormToDatabaseFormresults',
         'labels' => 'LLL:EXT:form_to_database/Resources/Private/Language/locallang_mod.xlf',
         'extensionName' => 'FormToDatabase',

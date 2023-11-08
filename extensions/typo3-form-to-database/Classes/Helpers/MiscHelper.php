@@ -2,11 +2,10 @@
 
 namespace Lavitto\FormToDatabase\Helpers;
 
-use Lavitto\FormToDatabase\Domain\Repository\PageRepository;
+use Lavitto\FormToDatabase\Domain\Repository\FormResultRepository;
 use PDO;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
-use Lavitto\FormToDatabase\Helpers\QueryGenerator;
 use TYPO3\CMS\Core\Exception\SiteNotFoundException;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -57,7 +56,8 @@ class MiscHelper
      */
     static public function getPluginUids($webMounts)
     {
-        $pids = self::getTreePids($webMounts);
+        $queryGenerator = GeneralUtility::makeInstance(FormResultRepository::class);
+        $pids = $queryGenerator->getTreePids($webMounts);
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
         $queryBuilder->getRestrictions()->removeAll();
@@ -66,29 +66,6 @@ class MiscHelper
             ->from('tt_content')->where($queryBuilder->expr()->in('pid', $pids ? $pids : [0]), $queryBuilder->expr()->eq('CType',
             $queryBuilder->createNamedParameter('form_formframework', PDO::PARAM_STR)))->executeQuery()->fetchAll();
         return array_column($result, 'uid');
-    }
-
-    /**
-     * Get all pids which user can access
-     *
-     * @param array $webMounts
-     * @return array
-     */
-    static public function getTreePids($webMounts = 0)
-    {
-    //     $childPidsArray = [];
-    //     if ($webMounts) {
-    //         $childPidsArray = [];
-    //         /** @var PageRepository $queryGenerator */
-    //         $queryGenerator = GeneralUtility::makeInstance(PageRepository::class);
-    //         foreach ($webMounts as $webMount) {
-    //             $childPids = $queryGenerator->getAllSubpageIdentifiers($webMount, 1, 1); //Will be a string like 1,2,3
-    //             foreach ($childPids as $childPid) {
-    //                 $childPidsArray[] = $childPid['uid'];
-    //             }
-    //         }
-    //     }
-    //     return array_unique($childPidsArray);
     }
 
 }
