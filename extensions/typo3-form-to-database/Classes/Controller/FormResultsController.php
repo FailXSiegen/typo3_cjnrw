@@ -27,12 +27,14 @@ use Lavitto\FormToDatabase\Utility\FormDefinitionUtility;
 use Lavitto\FormToDatabase\Utility\FormValueUtility;
 use PDO;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\Template\Components\ButtonBar;
 use TYPO3\CMS\Backend\Template\ModuleTemplate;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
+use TYPO3\CMS\Core\Http\PropagateResponseException;
 use TYPO3\CMS\Core\Http\RedirectResponse;
 use TYPO3\CMS\Core\Imaging\Icon;
 use TYPO3\CMS\Core\Pagination\ArrayPaginator;
@@ -297,19 +299,24 @@ class FormResultsController extends FormManagerController
      *
      * @throws NoSuchArgumentException
      * @throws Exception
-     * @todo Add more charsets?
      */
-    public function downloadCsvAction(): void
+    public function downloadCsvAction(): ResponseInterface
     {
         $charset = 'UTF-8';
         $formPersistenceIdentifier = $this->request->getArgument('formPersistenceIdentifier');
         $filtered = $this->request->hasArgument('filtered') === true && $this->request->getArgument('filtered') === '1';
         $csvContent = "\xEF\xBB\xBF" . $this->getCsvContent($formPersistenceIdentifier, $filtered);
-        header('Content-Type: application/csv; charset=' . $charset);
-        header('Content-Disposition: attachment; filename="' . $this->getCsvFileName($formPersistenceIdentifier) . '";');
-        header('Content-Length: ' . strlen($csvContent));
-        echo $csvContent;
-        die;
+        // header('Content-Type: application/csv; charset=' . $charset);
+        // header('Content-Disposition: attachment; filename="' . $this->getCsvFileName($formPersistenceIdentifier) . '";');
+        // header('Content-Length: ' . strlen($csvContent));
+        // echo $csvContent;
+        $response = $this->responseFactory->createResponse()
+            ->withHeader('Content-Disposition', sprintf('attachment; filename="%s"', $this->getCsvFileName($formPersistenceIdentifier)))
+            ->withHeader('Content-Length', (string) strlen($csvContent))
+            ->withHeader('Content-Type', 'application/octet-stream');
+        $response->getBody()->write($csvContent);
+
+        throw new PropagateResponseException($response, 200);
     }
 
     /**
@@ -672,13 +679,12 @@ class FormResultsController extends FormManagerController
      */
     protected function getCsvContent(string $formPersistenceIdentifier, bool $filtered = false): string
     {
-        $csvDelimiter = $this->extConfUtility->getConfig('csvDelimiter') ?? ',';
+        $csvDelimiter = ';';
         $csvContent = [];
 
         $formResults = $this->formResultRepository->findByFormPersistenceIdentifier($formPersistenceIdentifier);
         $formDefinition = $this->getFormDefinitionObject($formPersistenceIdentifier, true);
         $formRenderables = $this->getFormRenderables($formDefinition);
-
         if ($filtered === true) {
             /** @var AbstractFormElement $renderable */
             foreach ($formRenderables as $i => $renderable) {
@@ -738,7 +744,7 @@ class FormResultsController extends FormManagerController
     protected function getCsvFilename(string $formPersistenceIdentifier): string
     {
         /** @var LocalDriver $localDriver */
-        $localDriver = $this->objectManager->get(LocalDriver::class);
+        $localDriver = GeneralUtility::makeInstance(LocalDriver::class);
         $dateTime = new DateTime('now',
             FormValueUtility::getValidTimezone((string)$GLOBALS['TYPO3_CONF_VARS']['SYS']['phpTimeZone']));
         $filename = $dateTime->format(FormValueUtility::getDateFormat() . ' ' . FormValueUtility::getTimeFormat());
@@ -776,8 +782,10 @@ class FormResultsController extends FormManagerController
         $getVars = $this->request->getArguments();
 
         if ($this->request->getControllerActionName() === 'show') {
+            $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
+            $href = $uriBuilder->buildUriFromRoute('web_FormToDatabaseFormresults');
             $backFormButton = $buttonBar->makeLinkButton()
-                ->setHref($this->getModuleUrl('web_FormToDatabaseFormresults'))
+                ->setHref($href)
                 ->setTitle($this->getLanguageService()->sL('LLL:EXT:form_to_database/Resources/Private/Language/locallang_be.xlf:show.buttons.backlink'))
                 ->setShowLabelText(true)
                 ->setIcon($this->iconFactory->getIcon('actions-view-go-back', Icon::SIZE_SMALL));
@@ -785,26 +793,26 @@ class FormResultsController extends FormManagerController
 
             if ($formPersistenceIdentifier !== null && $showCsvDownload === true) {
                 $urlParameters = [
-                    'tx_formtodatabase_web_formtodatabaseformresults' => [
-                        'formPersistenceIdentifier' => $formPersistenceIdentifier,
-                        'action' => 'downloadCsv',
-                        'controller' => 'FormResults'
-                    ]
+                    'formPersistenceIdentifier' => $formPersistenceIdentifier,
+                    'action' => 'downloadCsv',
+                    'controller' => 'FormResults'
+                    
                 ];
-
+                $href = $uriBuilder->buildUriFromRoute('web_FormToDatabaseFormresults', $urlParameters);
                 // Full list download-button
                 $downloadCsvFormButton = $buttonBar->makeLinkButton()
-                    ->setHref($this->getModuleUrl('web_FormToDatabaseFormresults', $urlParameters))
+                    ->setHref($href)
                     ->setTitle($this->getLanguageService()->sL('LLL:EXT:form_to_database/Resources/Private/Language/locallang_be.xlf:show.buttons.download_csv'))
                     ->setShowLabelText(true)
                     ->setIcon($this->iconFactory->getIcon('actions-download',
                         Icon::SIZE_SMALL));
                 $buttonBar->addButton($downloadCsvFormButton, ButtonBar::BUTTON_POSITION_LEFT, 2);
-
+                
+                $href = $uriBuilder->buildUriFromRoute('web_FormToDatabaseFormresults', $urlParameters);
                 // Filtered list download-button
                 $urlParameters['tx_formtodatabase_web_formtodatabaseformresults']['filtered'] = true;
                 $downloadCsvFormButton = $buttonBar->makeLinkButton()
-                    ->setHref($this->getModuleUrl('web_FormToDatabaseFormresults', $urlParameters))
+                    ->setHref($href)
                     ->setTitle($this->getLanguageService()->sL('LLL:EXT:form_to_database/Resources/Private/Language/locallang_be.xlf:show.buttons.download_csv_filtered'))
                     ->setShowLabelText(true)
                     ->setIcon($this->iconFactory->getIcon('actions-download', Icon::SIZE_SMALL));
