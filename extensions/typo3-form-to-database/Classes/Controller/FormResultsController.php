@@ -33,6 +33,7 @@ use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
+use TYPO3\CMS\Core\Http\RedirectResponse;
 use TYPO3\CMS\Core\Imaging\Icon;
 use TYPO3\CMS\Core\Pagination\ArrayPaginator;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
@@ -319,7 +320,7 @@ class FormResultsController extends FormManagerController
      * @throws RenderingException
      * @throws StopActionException
      */
-    public function deleteFormResultAction(FormResult $formResult): void
+    public function deleteFormResultAction(FormResult $formResult): ResponseInterface
     {
         $formPersistenceIdentifier = $formResult->getFormPersistenceIdentifier();
         $this->formResultRepository->remove($formResult);
@@ -333,8 +334,9 @@ class FormResultsController extends FormManagerController
                 $this->getFormRenderables($formDefinition)
             )
         );
-
-        $this->redirect('show', null, null, ['formPersistenceIdentifier' => $formPersistenceIdentifier]);
+        return (new \TYPO3\CMS\Extbase\Http\ForwardResponse('show'))
+            ->withArguments(['formPersistenceIdentifier' => $this->request->getArgument('formPersistenceIdentifier')]
+        );
     }
 
     /**
@@ -345,7 +347,7 @@ class FormResultsController extends FormManagerController
      * @throws UnknownObjectException
      * @noinspection PhpParamsInspection
      */
-    public function unDeleteFormDefinitionAction(string $formDefinitionPath, string $formIdentifier): void
+    public function unDeleteFormDefinitionAction(string $formDefinitionPath, string $formIdentifier): ResponseInterface
     {
         /** @var FilePersistenceSlot $formPersistenceSlot */
         $formPersistenceSlot = GeneralUtility::makeInstance(FilePersistenceSlot::class);
@@ -369,15 +371,14 @@ class FormResultsController extends FormManagerController
                 $this->formResultRepository->update($result);
             }
         }
-
-        $this->redirect('index');
+        return new \TYPO3\CMS\Extbase\Http\ForwardResponse('index');
     }
 
     /**
      * @throws NoSuchArgumentException
      * @throws StopActionException
      */
-    public function updateItemListSelectAction(): void
+    public function updateItemListSelectAction(): ResponseInterface
     {
         $formPersistenceIdentifier = $this->request->getArgument('formPersistenceIdentifier');
         $formDefinition = $this->getFormDefinition($formPersistenceIdentifier);
@@ -387,8 +388,10 @@ class FormResultsController extends FormManagerController
 
         $this->BEUser->uc['tx_formtodatabase']['listViewStates'][$formDefinition['identifier']] = $this->request->getArgument('field');
         $this->BEUser->writeUC();
-        $this->redirect('show', null, null,
-            ['formPersistenceIdentifier' => $this->request->getArgument('formPersistenceIdentifier')]);
+        // return new RedirectResponse()
+        return (new \TYPO3\CMS\Extbase\Http\ForwardResponse('show'))
+            ->withArguments(['formPersistenceIdentifier' => $this->request->getArgument('formPersistenceIdentifier')]
+        );
     }
 
     /**
