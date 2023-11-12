@@ -5,15 +5,15 @@
             "url":  "https://gitlab.com/FailXSiegen/typo3-form-to-database.git"
         },
         {
-            "type": "composer",
-            "url": "https://composer.typo3.org/"
-        },
-        {
             "type": "path",
             "url": "extensions/*",
             "options": {
                 "symlink": true
             }
+        },
+        {
+            "type": "composer",
+            "url": "https://composer.typo3.org/"
         }
     ],
     "name": "cjnrw/typo3",
@@ -48,7 +48,7 @@
         "b13/container": "^2.2",
         "cweagans/composer-patches": "*",
         "failx/cjnrw": "@dev",
-        "failx/typo3-form-to-database": "@dev",
+        "lavitto/typo3-form-to-databas": "^3.1",
         "tritum/form-element-linked-checkbox": "dev-master",
         "georgringer/news": "^11.0",
         "helhum/dotenv-connector": "^3.0",

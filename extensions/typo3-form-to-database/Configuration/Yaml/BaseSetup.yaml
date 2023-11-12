@@ -1,8 +1,0 @@
-TYPO3:
-  CMS:
-    Form:
-      prototypes:
-        standard:
-          finishersDefinition:
-            FormToDatabase:
-              implementationClassName: 'Lavitto\FormToDatabase\Domain\Finishers\FormToDatabaseFinisher'
