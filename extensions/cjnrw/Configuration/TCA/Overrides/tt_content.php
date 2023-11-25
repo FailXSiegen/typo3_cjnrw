@@ -175,6 +175,50 @@ call_user_func(
             )
             ->setIcon('EXT:cjnrw/Resources/Public/Icons/col4.gif')
         );
+
+        \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
+            (
+                new \B13\Container\Tca\ContainerConfiguration(
+                    'advent',
+                    'Adventskalender',
+                    '',
+                    [
+                        [
+                            ['name' => 'Tag 1', 'colPos' => 501],
+                            ['name' => 'Tag 2', 'colPos' => 502],
+                            ['name' => 'Tag 3', 'colPos' => 503],
+                            ['name' => 'Tag 4', 'colPos' => 504],
+                            ['name' => 'Tag 5', 'colPos' => 505],
+                            ['name' => 'Tag 6', 'colPos' => 506]
+                        ],
+                        [
+                            ['name' => 'Tag 7', 'colPos' => 507],
+                            ['name' => 'Tag 8', 'colPos' => 508],
+                            ['name' => 'Tag 9', 'colPos' => 509],
+                            ['name' => 'Tag 10', 'colPos' => 510],
+                            ['name' => 'Tag 11', 'colPos' => 511],
+                            ['name' => 'Tag 12', 'colPos' => 512]
+                        ],
+                        [
+                            ['name' => 'Tag 13', 'colPos' => 513],
+                            ['name' => 'Tag 14', 'colPos' => 514],
+                            ['name' => 'Tag 15', 'colPos' => 515],
+                            ['name' => 'Tag 16', 'colPos' => 516],
+                            ['name' => 'Tag 17', 'colPos' => 517],
+                            ['name' => 'Tag 18', 'colPos' => 518]
+                        ],
+                        [
+                            ['name' => 'Tag 19', 'colPos' => 519],
+                            ['name' => 'Tag 20', 'colPos' => 520],
+                            ['name' => 'Tag 21', 'colPos' => 521],
+                            ['name' => 'Tag 22', 'colPos' => 522],
+                            ['name' => 'Tag 23', 'colPos' => 523],
+                            ['name' => 'Tag 24', 'colPos' => 524]
+                        ]
+                    ]
+                )
+            )
+        );
         $GLOBALS['TCA']['tt_content']['types']['slider']['showitem'] =  '
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
         --palette--;;general,
@@ -276,6 +320,17 @@ call_user_func(
         --palette--;;hidden,
         --palette--;;access,';
 
+        $GLOBALS['TCA']['tt_content']['types']['advent']['showitem'] = '
+        CType,header,tx_container_parent,colPos,--palette--;;advent,
+        --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+        --palette--;;frames,
+        --palette--;;appearanceLinks,
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+        --palette--;;language,
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+        --palette--;;hidden,
+        --palette--;;access,';
+
         $GLOBALS['TCA']['tt_content']['palettes']['col1'] = [
             'label' => 'LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:grid.label.col1',
             'description' => 'LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:grid.sheet.description',
@@ -305,6 +360,11 @@ call_user_func(
             'label' => 'Slider',
             'description' => 'Slider Properties',
             'showitem' => 'carousel_controls, carousel_indicators,  carousel_crossfade, --linebreak--, carousel_intervall,--linebreak--,special_carousel,--linebreak--,tinyslider_config'
+        ];
+        $GLOBALS['TCA']['tt_content']['palettes']['advent'] = [
+            'label' => 'Advent',
+            'description' => 'Advent',
+            'showitem' => '-div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.images, image, --palette--;;mediaAdjustments'
         ];
         $columns = [
             'header' => [
