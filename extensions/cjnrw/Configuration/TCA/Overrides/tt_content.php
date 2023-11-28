@@ -364,7 +364,11 @@ call_user_func(
         $GLOBALS['TCA']['tt_content']['palettes']['advent'] = [
             'label' => 'Advent',
             'description' => 'Advent',
-            'showitem' => '-div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.images, image, --palette--;;mediaAdjustments'
+            'showitem' => '
+            -div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.images, image,
+            --palette--;;mediaAdjustments,
+            --linebreak--, bodytext;Koordinaten,
+            --linebreak--, subheader;Gilt für Monat'
         ];
         $columns = [
             'header' => [

@@ -1,4 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:fx="http://typo3.org/ns/Failx/Cjnrw/ViewHelpers"
       data-namespace-typo3-fluid="true">
     <f:asset.css 
       identifier="accordion"
@@ -11,11 +12,7 @@
         identifier="glightbox-lib"
         src="EXT:cjnrw/Resources/Public/JavaScript/glightbox.min.js" />
     
-    <f:variable name="adventsDays" value="{
-        0: '{day:1, coords:\'143,129,24,25\'}',
-        1: '{day:2, coords:\'283,130,166,28\'}',
-        2: '{day:3, coords:\'324,29,438,131\'}'
-    }" />
+    <f:variable name="adventsDays" value="{fx:advent(content:'{data.bodytext}')}" />
     <f:variable name="currentDay" value="{f:format.date(date:'now',format:'d')}" />
     <f:variable name="currentMonth" value="{f:format.date(date:'now',format:'m')}" />
    
@@ -23,7 +20,7 @@
         <div class="accordion d-block d-md-none" id="accordionAdvent"> 
             <f:for each="{adventsDays}" as="day" iteration="counter">
                 <f:variable name="dayContent" value="{day{day.day}}" />
-                <f:if condition="{currentMonth} == '11'">
+                <f:if condition="{currentMonth} == {data.subheader}">
                     <f:if condition="{day.day} <= {currentDay} && {dayContent}">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="heading{day.day}">
@@ -60,15 +57,15 @@
         </div>
         <div class="d-none d-md-block"> 
             <div class="position-relative">
-                <f:image id="adventImage" treatIdAsReference="1" src="{files.0.uid}" additionalAttributes='{usemap:\'#advent-map\'}' />
+                <f:image id="adventImage" class="img img-fluid" treatIdAsReference="1" src="{files.0.uid}" additionalAttributes='{usemap:\'#advent-map\'}' />
                 <canvas id="adventCanvas" style="position: absolute; top: 0; left: 0;"></canvas>
             
                 <map name="advent-map">
                     <f:variable name="counterWithContent" value="0" />
                     <f:for each="{adventsDays}" as="day" iteration="counter">
                         <f:variable name="dayContent" value="{day{day.day}}" />
-                        <f:if condition="{day.day} <= {currentDay} && {dayContent}">
-                            <area alt="Tag {day.day}" title="Tag {day.day}" href="#" data-slide="{counterWithContent}" class="glightboxAdvent" coords="{day.coords}" shape="rect">
+                        <f:if condition="{day.day} <= {currentDay} && {dayContent} && {currentMonth} == {data.subheader}">
+                            <area alt="Tag {day.day}" title="Tag {day.day}" href="#" data-original-coords="{day.coords}" data-slide="{counterWithContent}" class="glightboxAdvent" coords="{day.coords}" shape="rect">
                             <f:variable name="counterWithContent" value="{counterWithContent + 1}" />
                         </f:if>
                     </f:for>
@@ -77,19 +74,16 @@
         </div>
         <f:asset.css identifier="advents-css">
             #adventCanvas {
-                pointer-events: none;  /* Erlaubt Klicks durch das Canvas-Element hindurch */
+                pointer-events: none;
             }
         </f:asset.css>
         <f:asset.script identifier="glightbox-advent-init">
-
-
             document.addEventListener('DOMContentLoaded', function() {
-
                 function createLightboxElements() {
                     var elements = [];
                     <f:spaceless>
                     <f:for each="{adventsDays}" as="day" iteration="index"><f:variable name="dayContent" value="{day{day.day}}" />
-                        <f:if condition="{day.day} <= {currentDay} && {dayContent}"> var originalElement = document.getElementById('modal-day-<f:format.raw>{day.day}</f:format.raw>');
+                        <f:if condition="{day.day} <= {currentDay} && {dayContent}  && {currentMonth} == {data.subheader}"> var originalElement = document.getElementById('modal-day-<f:format.raw>{day.day}</f:format.raw>');
                             if (originalElement) {
                                 var kopierterInhalt = originalElement.cloneNode(true);
                                 elements.push({ height: 'auto', width: 'auto', content: kopierterInhalt.outerHTML });
@@ -110,24 +104,26 @@
               
                 var ctx = canvas.getContext('2d');
 
-                document.querySelectorAll('area').forEach(function(area) {
-                    var coords = area.coords.split(',').map(function(coord) {  
-                        return parseInt(coord, 10);
+                // Funktion zum Überprüfen und Öffnen der Lightbox basierend auf dem URL-Anker
+                function drawCanvasOnAreas() {
+                    document.querySelectorAll('area').forEach(function(area) {
+                        var coords = area.coords.split(',').map(function(coord) {  
+                            return parseInt(coord, 10);
+                        });
+                        ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+                        ctx.fillRect(coords[0], coords[1], coords[2] - coords[0], coords[3] - coords[1]);
+
+                        area.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            adventLightbox.openAt(area.dataset.slide);
+                        });
                     });
-                    ctx.strokeStyle = 'red';
-                    ctx.strokeRect(coords[0], coords[1], coords[2] - coords[0], coords[3] - coords[1]);
-
-                    area.addEventListener('click', function(event) {
-                      event.preventDefault();
-                      ctx.clearRect(coords[0], coords[1], coords[2] - coords[0], coords[3] - coords[1]);
-
-                      ctx.strokeStyle = 'green';
-                      ctx.strokeRect(coords[0], coords[1], coords[2] - coords[0], coords[3] - coords[1]);
-                      adventLightbox.openAt(area.dataset.slide);
-
+                }
+                function clearCanvasOnAreas() {
+                    document.querySelectorAll('area').forEach(function(area) { 
+                        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
                     });
-                });
-
+                }
                 // Funktion zum Überprüfen und Öffnen der Lightbox basierend auf dem URL-Anker
                 function checkUrlAndOpenLightbox() {
                     var hash = window.location.hash;
@@ -142,10 +138,37 @@
 
                 // Führen Sie die Überprüfung beim Laden der Seite aus
                 checkUrlAndOpenLightbox();
-            });
-              
+
+                function resizeMap() {
+                    clearCanvasOnAreas();
+                    var bild = document.getElementById('adventImage');
+                    var areas = document.getElementsByTagName('area');
                 
-              
+                    var originalBreite = <f:format.raw>{files.0.originalFile.properties.width}</f:format.raw>; // Ersetzen Sie dies durch die Originalbreite des Bildes
+                    var originalHoehe = <f:format.raw>{files.0.originalFile.properties.height}</f:format.raw>; // Ersetzen Sie dies durch die Originalhöhe des Bildes
+                    var prozentBreite = bild.clientWidth / originalBreite;
+                    var prozentHoehe = bild.clientHeight / originalHoehe;
+                
+                    for (var i = 0; i < areas.length; i++) {
+                        var coords = areas[i].dataset.originalCoords.split(',');
+                        var newCoords = coords.map(function (coord, index) {
+                            return Math.round(coord * (index % 2 === 0 ? prozentBreite : prozentHoehe));
+                        }).join(',');
+                        areas[i].coords = newCoords;
+                    }
+                    drawCanvasOnAreas();
+                }
+                
+                // Speichern Sie die ursprünglichen Koordinaten
+               
+                var areas = document.getElementsByTagName('area');
+                for (var i = 0; i < areas.length; i++) {
+                    areas[i].dataset.originalCoords = areas[i].coords;
+                }
+                
+                resizeMap();
+                window.onresize = resizeMap;
+            });
         </f:asset.script>
     </div>
 
