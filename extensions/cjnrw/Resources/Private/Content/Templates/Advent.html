@@ -142,14 +142,16 @@
                                 elements.push({ height: 'auto', width: 'auto', content: kopierterInhalt.innerHTML });
                             }</f:if></f:for>
                     </f:spaceless>
-                    allowVideosFromYouTubeInLightbox();
+                   
                     return elements;
                 }
                 const adventLightbox = GLightbox({
                     selector: '.glightboxAdvent',
                     elements: createLightboxElements()
                 });
-
+                adventLightbox.on('slide_after_load', () => {
+                    allowVideosFromYouTubeInLightbox();
+                });
 
                 var bild = document.getElementById('adventImage');
                 var canvas = document.getElementById('adventCanvas');
@@ -170,7 +172,6 @@
                         area.addEventListener('click', function(event) {
                             event.preventDefault();
                             adventLightbox.openAt(area.dataset.slide);
-                            allowVideosFromYouTubeInLightbox();
                         });
                     });
                 }
@@ -183,11 +184,15 @@
                 function checkUrlAndOpenLightbox() {
                     var hash = window.location.hash;
                     if (hash && hash.startsWith('#advent-')) {
-                    // Extrahieren der Nummer aus dem Anker (z.B. "#advent-1" ergibt 1)
-                    var index = parseInt(hash.split('-')[1], 10);
+                        // Extrahieren der Nummer aus dem Anker (z.B. "#advent-1" ergibt 1)
+                        var index = parseInt(hash.split('-')[1], 10);
                         if (!isNaN(index) && index > 0) {
-                            adventLightbox.openAt(index - 1); // Öffnet die Lightbox beim entsprechenden Index
-                            allowVideosFromYouTubeInLightbox();
+                            var triggeredElement = document.getElementById('modal-day-' + index);
+                            if (triggeredElement) {
+                                adventLightbox.openAt(index - 1); // Öffnet die Lightbox beim entsprechenden Index    
+                            } else {
+                                window.confirm('Adventskalender werden nicht zu früh geöffnet!')
+                            }
                         }
                     }
                 }
