@@ -56,6 +56,7 @@
         "plan2net/webp": "^5.0",
         "symfony/console": "^6.2",
         "typo3/cms-about": "^12.4",
+        "typo3/cms-adminpanel": "^12.4",
         "typo3/cms-backend": "^12.4",
         "typo3/cms-belog": "^12.4",
         "typo3/cms-beuser": "^12.4",
