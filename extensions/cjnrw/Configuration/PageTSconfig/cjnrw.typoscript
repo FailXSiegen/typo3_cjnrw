@@ -208,6 +208,7 @@ TCEFORM {
 			}
 			addItems {
 			    4 = Keine Ummantelung
+				5 = Besondere Infobox
 			}
 		}
 		uploads_type {
