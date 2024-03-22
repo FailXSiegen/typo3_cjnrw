@@ -16,10 +16,10 @@
 			<trans-unit id="class.lg.description" xml:space="preserve">
 				<source>from 992px up to 1199px</source>
 			</trans-unit>
-			<trans-unit id="class.xl.description"  ml:space="preserve">
+			<trans-unit id="class.xl.description" xml:space="preserve">
 				<source>from 1200px up to 1399px</source>
 			</trans-unit>
-			<trans-unit id="class.xxl.description"  ml:space="preserve">
+			<trans-unit id="class.xxl.description" xml:space="preserve">
 				<source>from 1400px and above</source>
 			</trans-unit>
 			<trans-unit id="col1Class" resname="col1Class">
