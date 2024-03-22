@@ -14,7 +14,7 @@
         </f:case>
         <f:case value="4"></f:case>
         <f:case value="5">
-            <f:variable name="classparameter" value="{f:if(condition:'{classname}',then:'{classname}',else:'container alert alert-dark px-3 my-2')}" />
+            <f:variable name="classparameter" value="{f:if(condition:'{classname}',then:'{classname}',else:'container alert alert-dark px-3 my-3 rounded-0')}" />
             <f:render section="defaultContainer" arguments="{data:'{data}',classname:'{classparameter}'}" />
         </f:case>
         
