@@ -23,6 +23,7 @@ $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
         'GFX' => [
             'processor' => $_ENV['GFX'],
             'processor_colorspace' => $_ENV['GFX_COLORSPACE'],
+            'processor_stripColorProfileCommand' => '+profile \'*\'',
         ],
         'MAIL' => [
             'transport' => $_ENV['MAIL_TRANSPORT'],
