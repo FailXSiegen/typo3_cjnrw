@@ -24,20 +24,20 @@
             border: 0;
             &[data-controls="prev"] {
                 left: 5px;
-                background-image: url('../../../../Public/Icons/Slider/Pfeil_links_gelb.svg?inline');
+                background-image: url('../../../../Public/Icons/Slider/Pfeil_links_blau.svg?inline');
                 &:focus,
                 &:active,
                 &:hover {
-                    background-image: url('../../../../Public/Icons/Slider/Pfeil-Hover_links_gelb.svg?inline');
+                    background-image: url('../../../../Public/Icons/Slider/Pfeil-Hover_links_blau.svg?inline');
                 }
             }
             &[data-controls="next"] {
                 right: 5px;
-                background-image: url('../../../../Public/Icons/Slider/Pfeil_rechts_gelb.svg?inline');
+                background-image: url('../../../../Public/Icons/Slider/Pfeil_rechts_blau.svg?inline');
                 &:focus,
                 &:active,
                 &:hover {
-                    background-image: url('../../../../Public/Icons/Slider/Pfeil-Hover_rechts_gelb.svg?inline');
+                    background-image: url('../../../../Public/Icons/Slider/Pfeil-Hover_rechts_blau.svg?inline');
                 }
             }
             &[disabled] {

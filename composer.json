@@ -49,6 +49,7 @@
         "cweagans/composer-patches": "*",
         "failx/cjnrw": "@dev",
         "lavitto/typo3-form-to-database": "^3.1",
+        "jweiland/sync-crop-areas": "^3.0",	
         "tritum/form-element-linked-checkbox": "dev-master",
         "georgringer/news": "^11.0",
         "helhum/dotenv-connector": "^3.0",
