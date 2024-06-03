@@ -2,7 +2,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url":  "https://gitlab.com/FailXSiegen/typo3-form-to-database.git"
+            "url":  "git@gitlab.com:FailXSiegen/typo3-form-to-database.git"
         },
         {
             "type": "path",

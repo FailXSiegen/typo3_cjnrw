@@ -19,11 +19,20 @@
                         <f:if condition="{file.extension} == 'webp'">
                             <f:then></f:then>
                             <f:else>
+                                <f:variable name="lightboxAttr" value="" />
+                                <f:if condition="{file.properties.title}">
+                                    <f:variable name="lightboxAttr" value="{lightboxAttr} title:{file.properties.title}" />
+                                </f:if>
+                                <f:if condition="{file.properties.description}">
+                                    <f:variable name="lightboxAttr" value="{lightboxAttr} description:{file.properties.description}" />
+                                </f:if>
                                 <div class="col-6 col-lg-4">
-                                    
-                                    <ce:link.clickEnlarge image="{file}" configuration="{settings.media.popup}">
+                                    <a href="{file.publicUrl}"
+                                        class="glightbox"
+                                        rel="lightbox[{data.uid}]"
+                                        data-glightbox="{lightboxAttr}">
                                         <f:media file="{file}" class="img img-fluid" width="255" height="255c" alt="{file.properties.alternative}" />
-                                    </ce:link.clickEnlarge>
+                                    </a>
                                 </div>
                             </f:else>
                         </f:if>
