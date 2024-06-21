@@ -19,7 +19,6 @@ failx.buttonClosePath = EXT:cjnrw/Resources/Public/Icons/close.svg
 plugin.tx_cjnrw{
     settings{
         # cat=FaIcon; type=string; label=Path to Font-Awesome's JSON file: Relative path from your root directory. Note the shortcut EXT: will not work here!
-		/home/felixherrmann/projects/TYPO3/cjnrw/DEV/extensions/cjnrw/Resources/Public/Vendor/@fortawesome/fontawesome-free/metadata/icons.yml
         jsonfile = typo3conf/ext/cjnrw/Resources/Public/Fonts/FontAwesome/metadata/icons.json
     }
 }
