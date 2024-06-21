@@ -33,3 +33,8 @@ plugin.tx_news {
 		layoutRootPath = EXT:cjnrw/Resources/Private/Extensions/News/Layouts/
 	}
 }
+plugin.tx_lux.settings {
+  tracking {
+    assetDownloads.allowedExtensions = pdf,txt,doc,docx,xls,xlsx,ppt,pptx,zip,mp3,mp4
+  }
+}
