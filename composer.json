@@ -1,10 +1,6 @@
 {
     "repositories": [
         {
-            "type": "vcs",
-            "url":  "git@gitlab.com:FailXSiegen/typo3-form-to-database.git"
-        },
-        {
             "type": "path",
             "url": "extensions/*",
             "options": {
@@ -53,7 +49,7 @@
         "helhum/typo3-console": "^8.0",
         "in2code/lux": "^35.4",
         "jweiland/sync-crop-areas": "^3.0",
-        "lavitto/typo3-form-to-database": "^3.1",
+        "lavitto/typo3-form-to-database": "^4.1",
         "plan2net/webp": "^5.0",
         "symfony/console": "^6.2",
         "tritum/form-element-linked-checkbox": "dev-master",

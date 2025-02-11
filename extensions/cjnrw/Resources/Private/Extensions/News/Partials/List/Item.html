@@ -45,7 +45,15 @@
 		<f:if condition="{newsItem.mediaPreviews}">
 			<div class="col-md-3">
 				<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
-						<f:media class="img-fluid" file="{newsItem.mediaPreviews.0}" title="{newsItem.mediaPreviews.0.originalResource.title}" alt="{newsItem.mediaPreviews.0.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}"  width="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.width)}" height="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else:'')}" />
+					<f:variable name="newsWidth" value="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.width)}" />
+					<f:variable name="newsHeight" value="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else:'')}" />
+					<f:variable name="newsDimensions" value="{width: newsWidth, height: newsHeight}" />
+					<f:render 
+						partial="Media/Rendering/Image" 
+						arguments="{
+							file: newsItem.mediaPreviews.0, 
+							dimensions: newsDimensions
+						}" />
 				</n:link>
 			</div>
 		</f:if>

@@ -12,3 +12,8 @@ TYPO3:
                   20: 'EXT:cjnrw/Resources/Private/Extensions/Form/Partials/'
                 layoutRootPaths:
                   20: 'EXT:cjnrw/Resources/Private/Extensions/Form/Layouts/'
+          finishersDefinition:
+            EmailToReceiver:
+              options:
+                layoutRootPaths:
+                  20: 'EXT:cjnrw/Resources/Private/Extensions/Form/Emails/'
