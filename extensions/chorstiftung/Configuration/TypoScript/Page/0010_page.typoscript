@@ -1,5 +1,6 @@
 page = PAGE
 page {
+  shortcutIcon = EXT:chorstiftung/Resources/Public/Icons/favicon.ico
   typeNum = 0
   meta {
     viewport = width=device-width, initial-scale=1.0
@@ -70,6 +71,7 @@ page {
   10 {
     templateName = TEXT
     templateName.data = register:pageTemplate
+
     layoutRootPaths {
       1 = {$chorstiftung.resourcePath}Private/Page/Layouts/
     }
