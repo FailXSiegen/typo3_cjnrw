@@ -165,8 +165,9 @@ return [
             ],
         ],
         'devIPmask' => '*',
-        'displayErrors' => '1',
+        'displayErrors' => '0',
         'encryptionKey' => '91afc57e4d8f51bcee147724d7d7c5798c6fe84ee65ad877b1fb06c0d09d4f30c5b657a91fed6ed6445c91f5bc6ce318',
+        'errorHandlerErrors' => '29952',
         'exceptionalErrors' => 12290,
         'features' => [
             'security.usePasswordPolicyForFrontendUsers' => true,

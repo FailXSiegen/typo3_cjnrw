@@ -100,7 +100,7 @@
   }
 }
 .form-control:hover:not(:disabled):not([readonly])::file-selector-button {
-  background-color: #dde0e3;
+  background-color: rgb(221.35, 224.2, 227.05);
 }
 .form-control::-webkit-file-upload-button {
   padding: 0.375rem 0.75rem;
@@ -122,7 +122,7 @@
   }
 }
 .form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
-  background-color: #dde0e3;
+  background-color: rgb(221.35, 224.2, 227.05);
 }
 
 .form-control-plaintext {
@@ -406,7 +406,7 @@ textarea.form-control-lg {
   }
 }
 .form-range::-webkit-slider-thumb:active {
-  background-color: #b7d2e8;
+  background-color: rgb(183, 210, 231.6);
 }
 .form-range::-webkit-slider-runnable-track {
   width: 100%;
@@ -432,7 +432,7 @@ textarea.form-control-lg {
   }
 }
 .form-range::-moz-range-thumb:active {
-  background-color: #b7d2e8;
+  background-color: rgb(183, 210, 231.6);
 }
 .form-range::-moz-range-track {
   width: 100%;

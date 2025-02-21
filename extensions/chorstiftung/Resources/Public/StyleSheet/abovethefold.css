@@ -238,11 +238,11 @@ sup {
 }
 
 a {
-  color: #0f69b1;
+  color: #009136;
   text-decoration: underline;
 }
 a:hover {
-  color: #0c548e;
+  color: rgb(0, 116, 43.2);
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -9619,11 +9619,11 @@ sup {
 }
 
 a {
-  color: #0f69b1;
+  color: #009136;
   text-decoration: underline;
 }
 a:hover {
-  color: #0c548e;
+  color: rgb(0, 116, 43.2);
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -9996,7 +9996,7 @@ progress {
   }
   body > main {
     overflow: hidden;
-    flex: 1 1 auto !important;
+    padding-bottom: 30px;
   }
   body > main > div {
     padding-left: 30px !important;

@@ -242,7 +242,7 @@ a {
   text-decoration: underline;
 }
 a:hover {
-  color: #0c548e;
+  color: rgb(12, 84, 141.6);
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -8443,7 +8443,7 @@ progress {
   }
 }
 .nav-link:hover, .nav-link:focus {
-  color: #0c548e;
+  color: rgb(12, 84, 141.6);
 }
 .nav-link.disabled {
   color: #6c757d;
@@ -9623,7 +9623,7 @@ a {
   text-decoration: underline;
 }
 a:hover {
-  color: #0c548e;
+  color: rgb(12, 84, 141.6);
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
