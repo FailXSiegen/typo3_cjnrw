@@ -41,7 +41,7 @@
         </f:if>
         <f:if condition="{file.description}">
             <figcaption class="image-caption">
-                {file.description -> f:format.nl2br()}
+                <f:format.raw>{file.description -> f:format.nl2br()}</f:format.raw>
             </figcaption>
         </f:if>
     </figure>
@@ -79,7 +79,7 @@
         </f:if>
         <f:if condition="{file.description}">
             <figcaption class="image-caption mt-auto pt-3 text-center">
-                {file.description -> f:format.nl2br()}
+                <f:format.raw>{file.description -> f:format.nl2br()}</f:format.raw>
             </figcaption>
         </f:if>
     </figure>
