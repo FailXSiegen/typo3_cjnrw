@@ -65,9 +65,9 @@
 .form-control:focus {
   color: #212529;
   background-color: #fff;
-  border-color: #87b4d8;
+  border-color: rgb(127.5, 200, 154.5);
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(15, 105, 177, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(0, 145, 54, 0.25);
 }
 .form-control::-webkit-date-and-time-value {
   height: 1.3em;
@@ -232,9 +232,9 @@ textarea.form-control-lg {
   }
 }
 .form-select:focus {
-  border-color: #87b4d8;
+  border-color: rgb(127.5, 200, 154.5);
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(15, 105, 177, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(0, 145, 54, 0.25);
 }
 .form-select[multiple], .form-select[size]:not([size="1"]) {
   padding-right: 0.75rem;
@@ -303,13 +303,13 @@ textarea.form-control-lg {
   filter: brightness(90%);
 }
 .form-check-input:focus {
-  border-color: #87b4d8;
+  border-color: rgb(127.5, 200, 154.5);
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(15, 105, 177, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(0, 145, 54, 0.25);
 }
 .form-check-input:checked {
-  background-color: #0f69b1;
-  border-color: #0f69b1;
+  background-color: #009136;
+  border-color: #009136;
 }
 .form-check-input:checked[type=checkbox] {
   background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 20 20%27%3e%3cpath fill=%27none%27 stroke=%27%23fff%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%273%27 d=%27M6 10l3 3l6-6%27/%3e%3c/svg%3e");
@@ -318,8 +318,8 @@ textarea.form-control-lg {
   background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%27-4 -4 8 8%27%3e%3ccircle r=%272%27 fill=%27%23fff%27/%3e%3c/svg%3e");
 }
 .form-check-input[type=checkbox]:indeterminate {
-  background-color: #0f69b1;
-  border-color: #0f69b1;
+  background-color: #009136;
+  border-color: #009136;
   background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 20 20%27%3e%3cpath fill=%27none%27 stroke=%27%23fff%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%273%27 d=%27M6 10h8%27/%3e%3c/svg%3e");
 }
 .form-check-input:disabled {
@@ -348,7 +348,7 @@ textarea.form-control-lg {
   }
 }
 .form-switch .form-check-input:focus {
-  background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%27-4 -4 8 8%27%3e%3ccircle r=%273%27 fill=%27%2387b4d8%27/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%27-4 -4 8 8%27%3e%3ccircle r=%273%27 fill=%27rgb%28127.5, 200, 154.5%29%27/%3e%3c/svg%3e");
 }
 .form-switch .form-check-input:checked {
   background-position: right center;
@@ -382,10 +382,10 @@ textarea.form-control-lg {
   outline: 0;
 }
 .form-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(15, 105, 177, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(0, 145, 54, 0.25);
 }
 .form-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(15, 105, 177, 0.25);
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(0, 145, 54, 0.25);
 }
 .form-range::-moz-focus-outer {
   border: 0;
@@ -394,7 +394,7 @@ textarea.form-control-lg {
   width: 1rem;
   height: 1rem;
   margin-top: -0.25rem;
-  background-color: #0f69b1;
+  background-color: #009136;
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -406,7 +406,7 @@ textarea.form-control-lg {
   }
 }
 .form-range::-webkit-slider-thumb:active {
-  background-color: rgb(183, 210, 231.6);
+  background-color: rgb(178.5, 222, 194.7);
 }
 .form-range::-webkit-slider-runnable-track {
   width: 100%;
@@ -420,7 +420,7 @@ textarea.form-control-lg {
 .form-range::-moz-range-thumb {
   width: 1rem;
   height: 1rem;
-  background-color: #0f69b1;
+  background-color: #009136;
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -432,7 +432,7 @@ textarea.form-control-lg {
   }
 }
 .form-range::-moz-range-thumb:active {
-  background-color: rgb(183, 210, 231.6);
+  background-color: rgb(178.5, 222, 194.7);
 }
 .form-range::-moz-range-track {
   width: 100%;
