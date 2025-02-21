@@ -13,10 +13,4 @@ page{
         bootstrap = EXT:chorstiftung/Resources/Public/JavaScript/bootstrap.bundle.min.js
         main_javascript = EXT:chorstiftung/Resources/Public/JavaScript/javascript.js
     }
-    headerData {
-        2 = TEXT
-        2.value (
-<link rel="preload" href="/typo3conf/ext/chorstiftung/Resources/Public/Fonts/TheSans/TheSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
-        )
-    }
 }
