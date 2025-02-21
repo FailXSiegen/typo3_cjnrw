@@ -1,0 +1,297 @@
+tt_content.accordion < lib.contentElement
+tt_content.accordion {
+  templateName = accordion
+  templateRootPaths.10 = EXT:chorstiftung/Resources/Private/Content/Templates
+  dataProcessing {
+    101 = B13\Container\DataProcessing\ContainerProcessor
+    101 {
+      colPos = 101
+      as = content
+    }
+  }
+}
+
+tt_content.tinyslider < lib.contentElement
+tt_content.tinyslider {
+  templateName = tinyslider
+  templateRootPaths.10 = EXT:chorstiftung/Resources/Private/Content/Templates
+  dataProcessing {
+    101 = B13\Container\DataProcessing\ContainerProcessor
+    101 {
+      colPos = 101
+      as = content
+    }
+  }
+}
+
+tt_content.slider < lib.contentElement
+tt_content.slider {
+  templateName = slider
+  templateRootPaths.10 = EXT:chorstiftung/Resources/Private/Content/Templates
+  dataProcessing {
+    101 = B13\Container\DataProcessing\ContainerProcessor
+    101 {
+      colPos = 101
+      as = content
+    }
+  }
+}
+
+
+tt_content.scrollcontainer < lib.contentElement
+tt_content.scrollcontainer {
+  templateName = scrollcontainer
+  templateRootPaths.10 = EXT:chorstiftung/Resources/Private/Content/Templates
+  dataProcessing {
+    101 = B13\Container\DataProcessing\ContainerProcessor
+    101 {
+      colPos = 101
+      as = content
+    }
+  }
+}
+
+
+tt_content.headerrotate < lib.contentElement
+tt_content.headerrotate {
+  templateName = headerrotate
+  templateRootPaths.10 = EXT:chorstiftung/Resources/Private/Content/Templates
+  dataProcessing {
+    102 = B13\Container\DataProcessing\ContainerProcessor
+    102 {
+      colPos = 102
+      as = content
+    }
+  }
+}
+
+tt_content.bgcontainer < lib.contentElement
+tt_content.bgcontainer {
+  templateName = bgcontainer
+  templateRootPaths.10 = EXT:chorstiftung/Resources/Private/Content/Templates
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    10 {
+        references.fieldName = image
+    }
+    103 = B13\Container\DataProcessing\ContainerProcessor
+    103 {
+      colPos = 103
+      as = content
+    }
+  }
+}
+
+tt_content.1col < lib.contentElement
+tt_content.1col {
+  templateName = 1col
+  templateRootPaths.10 = EXT:chorstiftung/Resources/Private/Content/Templates
+  dataProcessing {
+    101 = B13\Container\DataProcessing\ContainerProcessor
+    101 {
+      colPos = 101
+      as = col
+    }
+  }
+}
+
+tt_content.2cols < lib.contentElement
+tt_content.2cols {
+  templateName = 2cols
+  templateRootPaths.10 = EXT:chorstiftung/Resources/Private/Content/Templates
+  dataProcessing {
+    201 = B13\Container\DataProcessing\ContainerProcessor
+    201 {
+      colPos = 201
+      as = col1
+    }
+    202 = B13\Container\DataProcessing\ContainerProcessor
+    202 {
+     colPos = 202
+     as = col2
+    }
+  }
+}
+
+tt_content.3cols < lib.contentElement
+tt_content.3cols {
+  templateName = 3cols
+  templateRootPaths.10 = EXT:chorstiftung/Resources/Private/Content/Templates
+  dataProcessing {
+    301 = B13\Container\DataProcessing\ContainerProcessor
+    301 {
+      colPos = 301
+      as = col1
+    }
+    302 = B13\Container\DataProcessing\ContainerProcessor
+    302 {
+     colPos = 302
+     as = col2
+    }
+    303 = B13\Container\DataProcessing\ContainerProcessor
+    303 {
+     colPos = 303
+     as = col3
+    }
+  }
+}
+
+
+tt_content.4cols < lib.contentElement
+tt_content.4cols {
+  templateName = 4cols
+  templateRootPaths.10 = EXT:chorstiftung/Resources/Private/Content/Templates
+  dataProcessing {
+    401 = B13\Container\DataProcessing\ContainerProcessor
+    401 {
+      colPos = 401
+      as = col1
+    }
+    402 = B13\Container\DataProcessing\ContainerProcessor
+    402 {
+     colPos = 402
+     as = col2
+    }
+    403 = B13\Container\DataProcessing\ContainerProcessor
+    403 {
+     colPos = 403
+     as = col3
+    }
+    404 = B13\Container\DataProcessing\ContainerProcessor
+    404 {
+     colPos = 404
+     as = col4
+    }
+  }
+}
+tt_content.advent < lib.contentElement
+tt_content.advent {
+  templateName = advent
+  templateRootPaths.10 = EXT:chorstiftung/Resources/Private/Content/Templates
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    10 {
+        references.fieldName = image
+    }
+    501 = B13\Container\DataProcessing\ContainerProcessor
+    501 {
+      colPos = 501
+      as = day1
+    }
+    502 = B13\Container\DataProcessing\ContainerProcessor
+    502 {
+     colPos = 502
+     as = day2
+    }
+    503 = B13\Container\DataProcessing\ContainerProcessor
+    503 {
+     colPos = 503
+     as = day3
+    }
+    504 = B13\Container\DataProcessing\ContainerProcessor
+    504 {
+     colPos = 504
+     as = day4
+    }
+    505 = B13\Container\DataProcessing\ContainerProcessor
+    505 {
+     colPos = 505
+     as = day5
+    }
+    506 = B13\Container\DataProcessing\ContainerProcessor
+    506 {
+     colPos = 506
+     as = day6
+    }
+    507 = B13\Container\DataProcessing\ContainerProcessor
+    507 {
+     colPos = 507
+     as = day7
+    }
+    508 = B13\Container\DataProcessing\ContainerProcessor
+    508 {
+     colPos = 508
+     as = day8
+    }
+    509 = B13\Container\DataProcessing\ContainerProcessor
+    509 {
+     colPos = 509
+     as = day9
+    }
+    510 = B13\Container\DataProcessing\ContainerProcessor
+    510 {
+     colPos = 510
+     as = day10
+    }
+    511 = B13\Container\DataProcessing\ContainerProcessor
+    511 {
+     colPos = 511
+     as = day11
+    }
+    512 = B13\Container\DataProcessing\ContainerProcessor
+    512 {
+     colPos = 512
+     as = day12
+    }
+    513 = B13\Container\DataProcessing\ContainerProcessor
+    513 {
+     colPos = 513
+     as = day13
+    }
+    514 = B13\Container\DataProcessing\ContainerProcessor
+    514 {
+     colPos = 514
+     as = day14
+    }
+    515 = B13\Container\DataProcessing\ContainerProcessor
+    515 {
+     colPos = 515
+     as = day15
+    }
+    516 = B13\Container\DataProcessing\ContainerProcessor
+    516 {
+     colPos = 516
+     as = day16
+    }
+    517 = B13\Container\DataProcessing\ContainerProcessor
+    517 {
+     colPos = 517
+     as = day17
+    }
+    518 = B13\Container\DataProcessing\ContainerProcessor
+    518 {
+     colPos = 518
+     as = day18
+    } 
+    519 = B13\Container\DataProcessing\ContainerProcessor
+    519 {
+     colPos = 519
+     as = day19
+    }
+    520 = B13\Container\DataProcessing\ContainerProcessor
+    520 {
+     colPos = 520
+     as = day20
+    }
+    521 = B13\Container\DataProcessing\ContainerProcessor
+    521 {
+     colPos = 521
+     as = day21
+    }
+    522 = B13\Container\DataProcessing\ContainerProcessor
+    522 {
+     colPos = 522
+     as = day22
+    }
+    523 = B13\Container\DataProcessing\ContainerProcessor
+    523 {
+     colPos = 523
+     as = day23
+    }
+    524 = B13\Container\DataProcessing\ContainerProcessor
+    524 {
+     colPos = 524
+     as = day24
+    }
+  }
+}

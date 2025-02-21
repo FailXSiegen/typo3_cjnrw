@@ -1,0 +1,18 @@
+{
+  "name": "failx/chorstiftung",
+  "type": "typo3-cms-extension",
+  "description": "basic template extension and configs for chorstiftung.",
+  "require": {
+    "typo3/cms-core": "^11.4 || ^12.4",
+    "b13/container": "^2.0",
+    "georgringer/news":"^11.0"
+  },
+  "replace": {
+    "chorstiftung": "*"
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "chorstiftung"
+    }
+  }
+}

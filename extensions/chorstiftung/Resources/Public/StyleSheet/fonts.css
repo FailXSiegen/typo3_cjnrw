@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'TheSans';
+    src: url('../Fonts/TheSans/TheSans-Regular.eot');
+    src: url('../Fonts/TheSans/TheSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../Fonts/TheSans/TheSans-Regular.woff2') format('woff2'),
+        url('../Fonts/TheSans/TheSans-Regular.woff') format('woff'),
+        url('../Fonts/TheSans/TheSans-Regular.ttf') format('truetype'),
+        url('../Fonts/TheSans/TheSans-Regular.svg#TheSans-Regular') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Font Awesome 5 Free';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../Fonts/FontAwesome/fa-regular-400.eot');
+    src: url('../Fonts/FontAwesome/fa-regular-400.eot?#iefix') format('embedded-opentype'),
+    url('../Fonts/FontAwesome/fa-regular-400.woff2') format('woff2'),
+    url('../Fonts/FontAwesome/fa-regular-400.woff') format('woff'),
+    url('../Fonts/FontAwesome/fa-regular-400.ttf') format('truetype'),
+    url('../Fonts/FontAwesome/fa-regular-400.svg#fontawesome') format('svg');
+}
+  
+@font-face {
+    font-family: 'Font Awesome 5 Free';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('../Fonts/FontAwesome/fa-solid-900.eot');
+    src: url('../Fonts/FontAwesome/fa-solid-900.eot?#iefix') format('embedded-opentype'),
+    url('../Fonts/FontAwesome/fa-solid-900.woff2') format('woff2'),
+    url('../Fonts/FontAwesome/fa-solid-900.woff') format('woff'),
+    url('../Fonts/FontAwesome/fa-solid-900.ttf') format('truetype'),
+    url('../Fonts/FontAwesome/fa-solid-900.svg#fontawesome') format('svg');
+}
+
+@font-face {
+    font-family: 'Font Awesome 5 Brands';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../Fonts/FontAwesome/fa-brands-400.eot');
+    src: url('../Fonts/FontAwesome/fa-brands-400.eot?#iefix') format('embedded-opentype'),
+    url('../Fonts/FontAwesome/fa-brands-400.woff2') format('woff2'),
+    url('../Fonts/FontAwesome/fa-brands-400.woff') format('woff'),
+    url('../Fonts/FontAwesome//fa-brands-400.ttf') format('truetype'),
+    url('../Fonts/FontAwesome/fa-brands-400.svg#fontawesome') format('svg');
+}
+  
+
+.fa,
+.fas,
+.far,
+.fal,
+.fad {
+    font-family: 'Font Awesome 5 Free';
+}
+.fab {
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+}
+  

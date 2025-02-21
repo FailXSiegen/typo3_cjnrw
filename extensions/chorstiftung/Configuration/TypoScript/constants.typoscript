@@ -1,0 +1,33 @@
+styles.content.textmedia.maxW = 1920
+styles.content.textmedia.maxWInText = 1920
+styles.content.textmedia.linkWrap.width = 1920m
+styles.content.textmedia.linkWrap.height = 1920m
+styles.content.textmedia.linkWrap.lightboxEnabled = 1
+styles.content.textmedia.linkWrap.lightboxCssClass = glightbox
+chorstiftung.rootPid = 107
+chorstiftung.mainNavigationPid = 108
+chorstiftung.socialNavigationPid = 111
+chorstiftung.contactPid = 39
+chorstiftung.resourcePath = EXT:chorstiftung/Resources/
+chorstiftung.defaultTheme = theme-white
+chorstiftung.logoPath = EXT:chorstiftung/Resources/Public/Images/Chorstiftung_NRW.svg
+chorstiftung.logoMobilePath = EXT:chorstiftung/Resources/Public/Images/Chorstiftung_NRW.svg
+chorstiftung.loginPath = EXT:chorstiftung/Resources/Public/Icons/login.svg
+chorstiftung.contactIconPath = EXT:chorstiftung/Resources/Public/Icons/contact.svg
+chorstiftung.buttonPath = EXT:chorstiftung/Resources/Public/Icons/menu.svg
+chorstiftung.buttonClosePath = EXT:chorstiftung/Resources/Public/Icons/close.svg
+plugin.tx_news {
+	view {
+		# cat=plugin.tx_news/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:chorstiftung/Resources/Private/Extensions/News/Templates/
+		# cat=plugin.tx_news/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:chorstiftung/Resources/Private/Extensions/News/Partials/
+		# cat=plugin.tx_news/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:chorstiftung/Resources/Private/Extensions/News/Layouts/
+	}
+}
+plugin.tx_lux.settings {
+  tracking {
+    assetDownloads.allowedExtensions = pdf,txt,doc,docx,xls,xlsx,ppt,pptx,zip,mp3,mp4
+  }
+}

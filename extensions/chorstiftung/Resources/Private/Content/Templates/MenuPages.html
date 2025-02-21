@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+    
+    <f:if condition="{menu}">
+        <f:variable name="col" value="col-12" />
+        <f:if condition="{data.menu_layout}">
+            <f:variable name="col" value="col-12 col-lg-{12 / data.menu_layout}" />
+        </f:if>
+
+        <div class="menu">
+            <div class="row">
+                <f:for each="{menu}" as="page">
+                    <div class="{col}">
+                        <div class=" ce--asidebadge shadow rounded-3">
+                            <a href="{page.link}"
+                                class="d-block text-center py-6 ce--asidebadge-link"
+                                {f:if(condition: page.target, then: ' target="{page.target}"')} 
+                                title="{page.title}">
+                                <span class="h1 cl-white">{page.title}</span>
+                            </a>
+                        </div>
+                    </div>
+                </f:for>
+            </div>
+        </div>
+        
+    </f:if>
+</f:section>
+</html>

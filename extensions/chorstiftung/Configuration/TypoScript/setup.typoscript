@@ -1,0 +1,6 @@
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:chorstiftung/Configuration/TypoScript/Config" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:chorstiftung/Configuration/TypoScript/Page" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:chorstiftung/Configuration/TypoScript/Lib" extensions="typoscript">
+
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:chorstiftung/Configuration/TypoScript/Content" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:chorstiftung/Configuration/TypoScript/Extensions" extensions="typoscript">

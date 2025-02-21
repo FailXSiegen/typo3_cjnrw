@@ -1,0 +1,87 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+    <div id="c{data.uid}" class="{f:render(partial:'Divclasses', arguments:{data:data, classname:' video-container container'})} position-relative">
+        <div class="video-wrap {responsiveClass}" style="z-index:5;position:relative;">
+            <!-- Poster Container -->
+            <div id="poster{data.uid}" class="poster-container position-relative cursor-pointer">
+                <f:if condition="{poster.0}">
+                    <f:render partial="Media/Rendering/Image" arguments="{
+                        file: poster.0,
+                        class: 'img img-responsive img-fluid w-100 rounded-3 shadow'
+                    }" />
+                </f:if>
+                <!-- Play Button Overlay -->
+                <div class="play-button-overlay position-absolute top-50 start-50 translate-middle">
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 24 24" fill="white" style="filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.5));">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Video Container (initially empty) -->
+            <div id="videoContainer{data.uid}" style="display:none;">
+            </div>
+        </div>
+    </div>
+    
+    <f:asset.css identifier="videoelement">
+    .poster-container {
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+    }
+    .poster-container:hover {
+        opacity: 0.6;
+    }
+    .play-button-overlay {
+        z-index: 10;
+        width: 96px;
+        height: 96px;
+    }
+    @media(min-width: 992px) {
+        .play-button-overlay {
+            width: 256px;
+            height: 256px;
+        }
+    }
+    </f:asset.css>
+    
+    <f:asset.script identifier="videoelement">
+    document.getElementById('poster{data.uid}').addEventListener('click', function() {
+        const videoContainer = document.getElementById('videoContainer{data.uid}');
+        const posterContainer = document.getElementById('poster{data.uid}');
+        
+        // Create video element
+        const video = document.createElement('video');
+        video.id = 'vid{data.uid}';
+        video.className = 'img img-responsive img-fluid w-100 rounded-3 shadow';
+        video.controls = true;
+        
+        // Add sources
+        <f:if condition="{webm}">
+        const webmSource = document.createElement('source');
+        webmSource.src = '{webm.0.publicUrl}';
+        webmSource.type = 'video/webm';
+        video.appendChild(webmSource);
+        </f:if>
+        
+        <f:if condition="{mp4}">
+        const mp4Source = document.createElement('source');
+        mp4Source.src = '{mp4.0.publicUrl}';
+        mp4Source.type = 'video/mp4';
+        video.appendChild(mp4Source);
+        </f:if>
+        
+        // Add fallback text
+        video.appendChild(document.createTextNode('Your browser does not support the video tag.'));
+        
+        // Show video container and hide poster
+        videoContainer.style.display = 'block';
+        videoContainer.appendChild(video);
+        posterContainer.style.display = 'none';
+        
+        // Start playing
+        video.play();
+    });
+    </f:asset.script>
+</html>

@@ -1,0 +1,239 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:fx="http://typo3.org/ns/Failx/Cjnrw/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+    <f:asset.css 
+      identifier="accordion"
+      href="EXT:cjnrw/Resources/Public/StyleSheet/accordion.css" />
+
+    <f:asset.css 
+        identifier="glightbox"
+        href="EXT:cjnrw/Resources/Public/StyleSheet/glightboxcss.css" />
+    <f:asset.script 
+        identifier="glightbox-lib"
+        src="EXT:cjnrw/Resources/Public/JavaScript/glightbox.min.js" />
+    
+    <f:variable name="adventsDays" value="{fx:advent(content:'{data.bodytext}')}" />
+    <f:variable name="currentDay" value="{f:format.date(date:'now',format:'d')}" />
+    <f:variable name="currentMonth" value="{f:format.date(date:'now',format:'m')}" />
+   
+    <div id="c{data.uid}" class="{f:render(partial:'Divclasses',arguments:{data:data})}">
+        <div class="d-block d-md-none">
+            <f:render partial="Media/Rendering/Image" arguments="{file:files.0}" />
+            <div class="accordion mt-3" id="accordionAdvent">
+                <f:for each="{adventsDays}" as="day" iteration="counter">
+                    <f:variable name="dayContent" value="{day{day.day}}" />
+                    <f:if condition="{currentMonth} == {data.subheader}">
+                        <f:if condition="{day.day} <= {currentDay} && {dayContent}">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading{day.day}">
+                                    <button 
+                                        class="accordion-button {f:if(condition:'{day.day} == {currentday} || {counter.isLast}', then:'', else:'collapsed')}" 
+                                        type="button" 
+                                        data-bs-toggle="collapse" 
+                                        data-bs-target="#collapse{day.day}" 
+                                        aria-expanded="{f:if(condition:'{day.day} == {currentday} || {counter.isLast}', then:'true', else:'false')}" 
+                                        aria-controls="collapse{day.day}">
+                                        Tag {day.day}
+                                    </button>
+                                </h2>
+                                <div 
+                                    id="collapse{day.day}" 
+                                    class="accordion-collapse {f:if(condition:'{day.day} == {currentday} || {counter.isLast}', then:'collapse show', else:'collapse')}" 
+                                    aria-labelledby="heading{day.day}" 
+                                    data-bs-parent="#accordionAdvent">
+                                    <div class="accordion-body">
+                                        <div id="modal-day-{day.day}" class="day-{day.day}">
+                                            <div class="inline-inner">
+                                                <p class="h2 d-none d-md-block">Tag {day.day}</p>
+                                                <f:for each="{dayContent}" as="child">
+                                                    <f:format.raw>{child.renderedContent}</f:format.raw>
+                                                </f:for>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </f:if> 
+                    </f:if>
+                </f:for>
+            </div>
+        </div>
+        <div class="d-none d-md-block"> 
+            <div class="position-relative">
+                <f:image id="adventImage" class="img img-fluid" treatIdAsReference="1" src="{files.0.uid}" additionalAttributes='{usemap:\'#advent-map\'}' />
+                <canvas id="adventCanvas" style="position: absolute; top: 0; left: 0;"></canvas>
+            
+                <map name="advent-map">
+                    <f:variable name="counterWithContent" value="0" />
+                    <f:for each="{adventsDays}" as="day" iteration="counter">
+                        <f:variable name="dayContent" value="{day{day.day}}" />
+                        <f:if condition="{day.day} <= {currentDay} && {dayContent} && {currentMonth} == {data.subheader}">
+                            <area alt="Tag {day.day}" title="Tag {day.day}" href="#" data-original-coords="{day.coords}" data-slide="{counterWithContent}" class="glightboxAdvent" coords="{day.coords}" shape="rect">
+                            <f:variable name="counterWithContent" value="{counterWithContent + 1}" />
+                        </f:if>
+                    </f:for>
+                </map>
+            </div>
+        </div>
+        <f:asset.css identifier="advents-css">
+            #adventCanvas {
+                pointer-events: none;
+            }
+        </f:asset.css>
+        <f:asset.script identifier="glightbox-advent-init">
+            document.addEventListener('DOMContentLoaded', function() {
+                function get_source_url( data_type ) {
+                    switch( data_type ) {
+                      case "youtube":
+                        return "https://www.youtube-nocookie.com/embed/{SOURCE}?rel=0&controls=1&showinfo=0&autoplay=1";
+                  
+                      case "google-maps":
+                        return "{SOURCE}";
+                      default: break;
+                    }
+                  }     
+                function allowVideosFromYouTubeInLightbox() {
+                    var video_wrapper = document.querySelectorAll('.video_wrapper');
+                    if (!!video_wrapper.length ) {
+                    for( var i=0; i < video_wrapper.length; i++ ) {
+                        let _wrapper = video_wrapper[ i ];
+                        var video_triggers = _wrapper.querySelectorAll('.video_trigger');
+                        if( !!video_triggers.length ) {
+                            for( var l=0; l < video_triggers.length; l++ ) {
+                                var video_trigger = video_triggers[ l ];
+                                var accept_buttons = video_trigger.querySelectorAll( 'input[type="button"]' );
+                                if( !!accept_buttons.length ) {
+                                    for( var j=0; j < accept_buttons.length; j++ ) {
+                                        var accept_button = accept_buttons[ j ];
+                                        accept_button.addEventListener( "click", function() {
+                                            var _trigger = this.parentElement.parentElement.parentElement;
+                                            var data_type = _trigger.getAttribute( "data-type" );
+                                            var source = "";
+                                            _trigger.style.display = "none";
+                                            _trigger.classList.remove("d-flex");
+                                            source = get_source_url( data_type );
+                                            var data_source = _trigger.getAttribute('data-source' );
+                                            console.log(data_source);
+                                            source = source.replace( "{SOURCE}", data_source );
+                                            var video_layers = _trigger.parentElement.querySelectorAll(".video_layer");
+                                            if( !!video_layers.length ) {
+                                                for( var k=0; k < video_layers.length; k++ ) {
+                                                    var video_layer = video_layers[ k ];
+                                                    video_layer.style.display = "block";
+                                                    video_layer.querySelector( "iframe" ).setAttribute( "src", source );
+                                                }
+                                            }
+                                            _wrapper.style.backgroundImage = "";
+                                            _wrapper.style.height = "auto";
+                                        
+                                        })
+                                    }
+                                }
+                            }
+                        }
+                    };
+                    }
+                }
+                function createLightboxElements() {
+                    var elements = [];
+                    <f:spaceless>
+                    <f:for each="{adventsDays}" as="day" iteration="index"><f:variable name="dayContent" value="{day{day.day}}" />
+                        <f:if condition="{day.day} <= {currentDay} && {dayContent}  && {currentMonth} == {data.subheader}"> 
+                            var originalElement = document.getElementById('modal-day-<f:format.raw>{day.day}</f:format.raw>');
+                            if (originalElement) {
+                                var kopierterInhalt = originalElement.cloneNode(true);
+                                elements.push({ height: 'auto', width: 'auto', content: kopierterInhalt.innerHTML });
+                            }</f:if></f:for>
+                    </f:spaceless>
+                   
+                    return elements;
+                }
+                const adventLightbox = GLightbox({
+                    selector: '.glightboxAdvent',
+                    elements: createLightboxElements()
+                });
+                adventLightbox.on('slide_after_load', () => {
+                    allowVideosFromYouTubeInLightbox();
+                });
+
+                var bild = document.getElementById('adventImage');
+                var canvas = document.getElementById('adventCanvas');
+                canvas.width = bild.width;
+                canvas.height = bild.height;
+              
+                var ctx = canvas.getContext('2d');
+
+                // Funktion zum Überprüfen und Öffnen der Lightbox basierend auf dem URL-Anker
+                function drawCanvasOnAreas() {
+                    document.querySelectorAll('area').forEach(function(area) {
+                        var coords = area.coords.split(',').map(function(coord) {  
+                            return parseInt(coord, 10);
+                        });
+                        ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+                        ctx.fillRect(coords[0], coords[1], coords[2] - coords[0], coords[3] - coords[1]);
+
+                        area.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            adventLightbox.openAt(area.dataset.slide);
+                        });
+                    });
+                }
+                function clearCanvasOnAreas() {
+                    document.querySelectorAll('area').forEach(function(area) { 
+                        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+                    });
+                }
+                // Funktion zum Überprüfen und Öffnen der Lightbox basierend auf dem URL-Anker
+                function checkUrlAndOpenLightbox() {
+                    var hash = window.location.hash;
+                    if (hash && hash.startsWith('#advent-')) {
+                        // Extrahieren der Nummer aus dem Anker (z.B. "#advent-1" ergibt 1)
+                        var index = parseInt(hash.split('-')[1], 10);
+                        if (!isNaN(index) && index > 0) {
+                            var triggeredElement = document.getElementById('modal-day-' + index);
+                            if (triggeredElement) {
+                                adventLightbox.openAt(index - 1); // Öffnet die Lightbox beim entsprechenden Index    
+                            } else {
+                                window.confirm('Adventskalender werden nicht zu früh geöffnet!')
+                            }
+                        }
+                    }
+                }
+
+                // Führen Sie die Überprüfung beim Laden der Seite aus
+                checkUrlAndOpenLightbox();
+
+                function resizeMap() {
+                    clearCanvasOnAreas();
+                    var bild = document.getElementById('adventImage');
+                    var areas = document.getElementsByTagName('area');
+                
+                    var originalBreite = <f:format.raw>{files.0.originalFile.properties.width}</f:format.raw>; // Ersetzen Sie dies durch die Originalbreite des Bildes
+                    var originalHoehe = <f:format.raw>{files.0.originalFile.properties.height}</f:format.raw>; // Ersetzen Sie dies durch die Originalhöhe des Bildes
+                    var prozentBreite = bild.clientWidth / originalBreite;
+                    var prozentHoehe = bild.clientHeight / originalHoehe;
+                
+                    for (var i = 0; i < areas.length; i++) {
+                        var coords = areas[i].dataset.originalCoords.split(',');
+                        var newCoords = coords.map(function (coord, index) {
+                            return Math.round(coord * (index % 2 === 0 ? prozentBreite : prozentHoehe));
+                        }).join(',');
+                        areas[i].coords = newCoords;
+                    }
+                    drawCanvasOnAreas();
+                }
+                
+                // Speichern Sie die ursprünglichen Koordinaten
+               
+                var areas = document.getElementsByTagName('area');
+                for (var i = 0; i < areas.length; i++) {
+                    areas[i].dataset.originalCoords = areas[i].coords;
+                }
+                
+                resizeMap();
+                window.onresize = resizeMap;
+            });
+        </f:asset.script>
+    </div>
+
+</html>

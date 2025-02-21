@@ -1,0 +1,21 @@
+@import 'main';
+
+body.theme-white {
+    background-color: $white;
+    padding: 0;
+    #head,
+    .offcanvas {
+        background-color: $white;
+    }
+    .contact {
+        // background-color: $green;
+        svg {
+            stroke: $white;
+            path {
+                stroke: $white;
+            }
+        }
+    }
+}
+
+@import 'bg-white';

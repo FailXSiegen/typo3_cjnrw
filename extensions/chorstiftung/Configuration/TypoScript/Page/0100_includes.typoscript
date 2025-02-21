@@ -1,0 +1,22 @@
+page{
+    includeCSS {
+        abovethefold = EXT:chorstiftung/Resources/Public/StyleSheet/abovethefold.css
+        abovethefold.inline {
+            inline = 1
+            forceOnTop = 1
+            media = all
+        }
+        fonts = EXT:chorstiftung/Resources/Public/StyleSheet/fonts.css
+        fontawesome = EXT:chorstiftung/Resources/Public/StyleSheet/fontawesome.css
+    }
+    includeJSFooter {
+        bootstrap = EXT:chorstiftung/Resources/Public/JavaScript/bootstrap.bundle.min.js
+        main_javascript = EXT:chorstiftung/Resources/Public/JavaScript/javascript.js
+    }
+    headerData {
+        2 = TEXT
+        2.value (
+<link rel="preload" href="/typo3conf/ext/chorstiftung/Resources/Public/Fonts/TheSans/TheSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        )
+    }
+}

@@ -1,0 +1,19 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  20: 'EXT:chorstiftung/Resources/Private/Extensions/Form/Templates/'
+                partialRootPaths:
+                  20: 'EXT:chorstiftung/Resources/Private/Extensions/Form/Partials/'
+                layoutRootPaths:
+                  20: 'EXT:chorstiftung/Resources/Private/Extensions/Form/Layouts/'
+          finishersDefinition:
+            EmailToReceiver:
+              options:
+                layoutRootPaths:
+                  20: 'EXT:chorstiftung/Resources/Private/Extensions/Form/Emails/'

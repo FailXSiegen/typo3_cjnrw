@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2015-02-07T00:02:05Z" product-name="cjnrw">
+        <header/>
+        <body>
+			<trans-unit id="theme" xml:space="preserve">
+				<source>Theme</source>
+			</trans-unit>
+			<trans-unit id="landingpage" xml:space="preserve">
+				<source>Landingpage</source>
+			</trans-unit>
+			<trans-unit id="color.white" xml:space="preserve">
+				<source>Weiß</source>
+			</trans-unit>
+			<trans-unit id="color.grey" xml:space="preserve">
+				<source>Grau</source>
+			</trans-unit>
+			<trans-unit id="color.green" xml:space="preserve">
+				<source>Grün</source>
+			</trans-unit>
+			<trans-unit id="color.darkgreen" xml:space="preserve">
+				<source>Dunkelgrün</source>
+			</trans-unit>
+			<trans-unit id="color.darkblue" xml:space="preserve">
+				<source>Dunkelblau</source>
+			</trans-unit>
+			<trans-unit id="color.lightgreen" xml:space="preserve">
+				<source>Hellgrün</source>
+			</trans-unit>
+			<trans-unit id="color.aubergine" xml:space="preserve">
+				<source>Aubergine</source>
+			</trans-unit>
+			<trans-unit id="color.violett" xml:space="preserve">
+				<source>Violett</source>
+			</trans-unit>
+			<trans-unit id="accordion" xml:space="preserve">
+				<source>Accordion</source>
+			</trans-unit>
+			<trans-unit id="accordion.title" xml:space="preserve">
+				<source>Accordion from CE</source>
+			</trans-unit>
+			<trans-unit id="accordion.description" xml:space="preserve">
+				<source>Generates an accordion element for each content element and uses headline as accordion title.</source>
+			</trans-unit>
+			<trans-unit id="slider" xml:space="preserve">
+				<source>Slider/Carousel</source>
+			</trans-unit>
+			<trans-unit id="slider.title" xml:space="preserve">
+				<source>Slider from CE</source>
+			</trans-unit>
+			<trans-unit id="slider.description" xml:space="preserve">
+				<source>Generates a slide element for each content element and uses headline and subheadline as slider caption if is active.</source>
+			</trans-unit>
+			<trans-unit id="tinyslider" xml:space="preserve">
+				<source>Slider/Carousel (non bootstrap)</source>
+			</trans-unit>
+			<trans-unit id="tinyslider.title" xml:space="preserve">
+				<source>Slider from CE (non bootstrap)</source>
+			</trans-unit>
+			<trans-unit id="tinyslider.description" xml:space="preserve">
+				<source>Generates a slide element for each content element</source>
+			</trans-unit>
+			<trans-unit id="cite" xml:space="preserve">
+				<source>Cite</source>
+			</trans-unit>
+			<trans-unit id="cite.description" xml:space="preserve">
+				<source>Cite box with image and person-informations</source>
+			</trans-unit>
+			<trans-unit id="projectslider" xml:space="preserve">
+				<source>Projectslider</source>
+			</trans-unit>
+			<trans-unit id="projectslider.description" xml:space="preserve">
+				<source>Set images with descriptions as a click-slider</source>
+			</trans-unit>
+			<trans-unit id="counter" xml:space="preserve">
+				<source>Counter</source>
+			</trans-unit>
+			<trans-unit id="counter.description" xml:space="preserve">
+				<source>Counts from defined number to defined number if elements gets in to view</source>
+			</trans-unit>
+			<trans-unit id="maps" xml:space="preserve">
+				<source>Google Maps</source>
+			</trans-unit>
+			<trans-unit id="maps.description" xml:space="preserve">
+				<source>DSGVO 2 click integration</source>
+			</trans-unit>
+			<trans-unit id="imagecols_xxl" xml:space="preserve">
+				<source>Number of Columns (XXL)</source>
+			</trans-unit>
+			<trans-unit id="imagecols_xl" xml:space="preserve">
+				<source>Number of Columns (XL)</source>
+			</trans-unit>
+			<trans-unit id="imagecols_lg" xml:space="preserve">
+				<source>Number of Columns (LG)</source>
+			</trans-unit>
+			<trans-unit id="imagecols_md" xml:space="preserve">
+				<source>Number of Columns (MD)</source>
+			</trans-unit>
+			<trans-unit id="imagecols_sm" xml:space="preserve">
+				<source>Number of Columns (SM)</source>
+			</trans-unit>
+			<trans-unit id="space.start" xml:space="preserve">
+				<source>Space Left</source>
+			</trans-unit>
+			<trans-unit id="space.end" xml:space="preserve">
+				<source>Space Right</source>
+			</trans-unit>
+			<trans-unit id="theme.description" xml:space="preserve">
+				<source>Defines a theme with preconfigured color schemes</source>
+			</trans-unit>
+			<trans-unit id="scroll.container.title" xml:space="preserve">
+				<source>Scroll container</source>
+			</trans-unit>
+			<trans-unit id="scroll.container.description" xml:space="preserve">
+				<source>Defines a locomotive scoll container and adds scroll effects for all children</source>
+			</trans-unit>
+			<trans-unit id="headerrotate" xml:space="preserve">
+				<source>Text container with side-header</source>
+			</trans-unit>
+			<trans-unit id="headerrotate.description" xml:space="preserve">
+				<source>Header and subheader (optional) are displayed besides the content</source>
+			</trans-unit>
+			<trans-unit id="bgimage" xml:space="preserve">
+				<source>Container with background-image</source>
+			</trans-unit>
+			<trans-unit id="bgimage.description" xml:space="preserve">
+				<source>Defines a background-image. Does use the height of the image as the min-heigt. Various options for positioning and stretching.</source>
+			</trans-unit>
+			<trans-unit id="bgimage.class" xml:space="preserve">
+				<source>Defines Backgound image behaviour</source>
+			</trans-unit>
+			<trans-unit id="bgimage.class.description" xml:space="preserve">
+				<source>stretch, background positioning, repeat</source>
+			</trans-unit>
+			<trans-unit id="bgimage.position" xml:space="preserve">
+				<source>Defines where the content elements are positioned</source>
+			</trans-unit>
+			<trans-unit id="bgimage.position.description" xml:space="preserve">
+				<source>Top to bottom, left to right</source>
+			</trans-unit>
+			<trans-unit id="grid.active" xml:space="preserve">
+				<source>Toggles grid background item</source>
+			</trans-unit>
+			<trans-unit id="grid.active.description" xml:space="preserve">
+				<source>Shows grid options and activates the output of a grid bg.</source>
+			</trans-unit>
+			<trans-unit id="grid.color" xml:space="preserve">
+				<source>Overwrite grid color</source>
+			</trans-unit>
+			<trans-unit id="grid.color.description" xml:space="preserve">
+				<source>Depends on background-class or page theme the grid gets a defaut color. You can overwrite this color with this option.</source>
+			</trans-unit>
+			<trans-unit id="grid.height" xml:space="preserve">
+				<source>Grid height</source>
+			</trans-unit>
+			<trans-unit id="grid.height.description" xml:space="preserve">
+				<source>Selects different height of grid</source>
+			</trans-unit>
+			<trans-unit id="particle.active" xml:space="preserve">
+				<source>Toggles particle background item</source>
+			</trans-unit>
+			<trans-unit id="particle.active.description" xml:space="preserve">
+				<source>Shows particle options and activates the output of a particle bg.</source>
+			</trans-unit>
+			<trans-unit id="particle.type" xml:space="preserve">
+				<source>Select particle type</source>
+			</trans-unit>
+			<trans-unit id="particle.type.description" xml:space="preserve">
+				<source>List of particle types to select.</source>
+			</trans-unit>
+			<trans-unit id="particle.color" xml:space="preserve">
+				<source>Overwrite default color</source>
+			</trans-unit>
+			<trans-unit id="particle.color.description" xml:space="preserve">
+				<source>Depends on background-class or page theme the particle gets a defaut color. You can overwrite this color with this option.</source>
+			</trans-unit>
+			<trans-unit id="particle.position" xml:space="preserve">
+				<source>Defines where the particle type is positioned</source>
+			</trans-unit>
+			<trans-unit id="particle.position.description" xml:space="preserve">
+				<source>Top to bottom, left to right</source>
+			</trans-unit>
+			<trans-unit id="particle.width" xml:space="preserve">
+				<source>Defines width of particle</source>
+			</trans-unit>
+			<trans-unit id="particle.width.description" xml:space="preserve">
+				<source>Slides from 0 to 100% width of parent element. Set 0 for full svg scale.</source>
+			</trans-unit>
+			<trans-unit id="particle.height" xml:space="preserve">
+				<source>Defines height of particles</source>
+			</trans-unit>
+			<trans-unit id="particle.height.description" xml:space="preserve">
+				<source>Slides from 0 to 100% height of parent element. Set 0 for full svg scale.</source>
+			</trans-unit>
+			<trans-unit id="particle.offsetx" xml:space="preserve">
+				<source>Vertical offset</source>
+			</trans-unit>
+			<trans-unit id="particle.offsetx.description" xml:space="preserve">
+				<source>Show a specific area of the particles by set a vertical offset in %</source>
+			</trans-unit>
+			<trans-unit id="particle.offsety" xml:space="preserve">
+				<source>Horizontal offset</source>
+			</trans-unit>
+			<trans-unit id="particle.offsety.description" xml:space="preserve">
+				<source>Show a specific area of the particles by set a horizontal offset in %</source>
+			</trans-unit>
+			<trans-unit id="particle.rotate" xml:space="preserve">
+				<source>Rotates the particle output</source>
+			</trans-unit>
+			<trans-unit id="particle.rotate.description" xml:space="preserve">
+				<source>Set a rotation in a full 360° circle radius</source>
+			</trans-unit>
+			<trans-unit id="overflow.hidden" xml:space="preserve">
+				<source>Overflow hidden</source>
+			</trans-unit>
+			<trans-unit id="drop_shadow" xml:space="preserve">
+				<source>Shadow</source>
+			</trans-unit>
+			<trans-unit id="particle.active.description" xml:space="preserve">
+				<source>Hides the content "over" the div container.</source>
+			</trans-unit>
+			<trans-unit id="row" xml:space="preserve">
+				<source>Row</source>
+			</trans-unit>
+			<trans-unit id="row.space" xml:space="preserve">
+				<source>Row space</source>
+			</trans-unit>
+			<trans-unit id="row.space.description" xml:space="preserve">
+				<source>Defines the spaces between the items if the width definition does not sums to 100</source>
+			</trans-unit>
+			<trans-unit id="row.item" xml:space="preserve">
+				<source>Row content</source>
+			</trans-unit>
+			<trans-unit id="row.item.description" xml:space="preserve">
+				<source>Defines the item alignment</source>
+			</trans-unit>
+
+			<trans-unit id="header.color" xml:space="preserve">
+				<source>Overwrite header color</source>
+			</trans-unit>
+			<trans-unit id="header.color.description" xml:space="preserve">
+				<source>Depends on background-class or page theme the header gets a defaut color. You can overwrite this color with this option.</source>
+			</trans-unit>
+
+			<trans-unit id="scroll.background" xml:space="preserve">
+				<source>Scroll background</source>
+			</trans-unit>
+
+			<trans-unit id="scroll.background.description" xml:space="preserve">
+				<source>Animated scroll background item</source>
+			</trans-unit>
+
+			<trans-unit id="1col.title" xml:space="preserve">
+				<source>1 column</source>
+			</trans-unit>
+            <trans-unit id="1col.description" xml:space="preserve">
+				<source>Inserts a 1-column grid for content. Use for background color combinations or full-width content.</source>
+			</trans-unit>
+            <trans-unit id="2cols.title" xml:space="preserve">
+				<source>2 columns</source>
+			</trans-unit>
+            <trans-unit id="2cols.description" xml:space="preserve">
+				<source>Inserts a 2-columns grid for content. The width of each column may be set for different screen sizes.</source>
+			</trans-unit>
+            <trans-unit id="3cols.title" xml:space="preserve">
+				<source>3 columns</source>
+			</trans-unit>
+            <trans-unit id="3cols.description" xml:space="preserve">
+				<source>Inserts a 3-columns grid for content.</source>
+			</trans-unit>
+            <trans-unit id="4cols.title" xml:space="preserve">
+				<source>4 columns</source>
+			</trans-unit>
+            <trans-unit id="4cols.description" xml:space="preserve">
+				<source>Inserts a 4-columns grid for content.</source>
+			</trans-unit>
+			<trans-unit id="grid.sheet.description" xml:space="preserve">
+				<source>Sets properties for different viewports</source>
+			</trans-unit>
+            <trans-unit id="grid.sheet.mediumDevices" xml:space="preserve">
+				<source>Desktop</source>
+			</trans-unit>
+            <trans-unit id="grid.sheet.smallDevices" xml:space="preserve">
+				<source>Small devices</source>
+			</trans-unit>
+            <trans-unit id="grid.sheet.extraSmallDevices" xml:space="preserve">
+				<source>Extra small</source>
+			</trans-unit>
+            <trans-unit id="grid.sheet.largeDevices" xml:space="preserve">
+				<source>Large</source>
+			</trans-unit>
+            <trans-unit id="grid.sheet.extraLargeDevices" xml:space="preserve">
+				<source>Extra Large</source>
+			</trans-unit>
+			 <trans-unit id="grid.sheet.extraextraLargeDevices" xml:space="preserve">
+				<source>Extra extra Large</source>
+			</trans-unit>
+            <trans-unit id="grid.sheet.customClasses" xml:space="preserve">
+				<source>Custom classes</source>
+			</trans-unit>
+            <trans-unit id="grid.label.col1" xml:space="preserve">
+				<source>Column 1</source>
+			</trans-unit>
+            <trans-unit id="grid.label.col2" xml:space="preserve">
+				<source>Column 2</source>
+			</trans-unit>
+            <trans-unit id="grid.label.col3" xml:space="preserve">
+				<source>Column 3</source>
+			</trans-unit>
+            <trans-unit id="grid.label.col4" xml:space="preserve">
+				<source>Column 4</source>
+			</trans-unit>
+            <trans-unit id="grid.label.moreWidth" xml:space="preserve">
+				<source>More width</source>
+			</trans-unit>
+            <trans-unit id="grid.label.notset" xml:space="preserve">
+				<source>not set</source>
+			</trans-unit>
+            <trans-unit id="grid.label.moreOptions" xml:space="preserve">
+				<source>More options</source>
+			</trans-unit>
+            <trans-unit id="grid.label.special" xml:space="preserve">
+				<source>Special</source>
+			</trans-unit>
+            <trans-unit id="grid.label.hidden" xml:space="preserve">
+				<source>hidden</source>
+			</trans-unit>
+            <trans-unit id="grid.label.visible" xml:space="preserve">
+				<source>visible</source>
+			</trans-unit>
+            <trans-unit id="grid.label.autoLayout" xml:space="preserve">
+				<source>Auto layout (col)</source>
+			</trans-unit>
+            <trans-unit id="grid.label.variableWidth" xml:space="preserve">
+				<source>Variable width</source>
+			</trans-unit>
+            <trans-unit id="grid.label.rowCustom" xml:space="preserve">
+				<source>Custom row classes</source>
+			</trans-unit>
+
+            <trans-unit id="grid.sheet.animation" xml:space="preserve">
+				<source>Animation</source>
+			</trans-unit>
+			<trans-unit id="grid.sheet.controls" xml:space="preserve">
+				<source>Controls</source>
+			</trans-unit>
+			<trans-unit id="grid.sheet.options" xml:space="preserve">
+				<source>Options</source>
+			</trans-unit>
+
+            <trans-unit id="grid.sheet.layout" xml:space="preserve">
+				<source>Layout</source>
+			</trans-unit>
+			<trans-unit id="grid.label.style" xml:space="preserve">
+				<source>Style</source>
+			</trans-unit>
+
+            <trans-unit id="grid.sheet.rowClasses" xml:space="preserve">
+				<source>Row classes</source>
+			</trans-unit>
+            <trans-unit id="grid.label.rowValign" xml:space="preserve">
+				<source>Vertical alignment</source>
+			</trans-unit>
+            <trans-unit id="grid.rowValign.alignItemsStart" xml:space="preserve">
+				<source>Start</source>
+			</trans-unit>
+            <trans-unit id="grid.rowValign.alignItemsCenter" xml:space="preserve">
+				<source>Center</source>
+			</trans-unit>
+            <trans-unit id="grid.rowValign.alignItemsEnd" xml:space="preserve">
+				<source>End</source>
+			</trans-unit>
+            <trans-unit id="grid.label.rowHalign" xml:space="preserve">
+				<source>Horiztontal alignment</source>
+			</trans-unit>
+            <trans-unit id="grid.rowHalign.justifyContentStart" xml:space="preserve">
+				<source>Start</source>
+			</trans-unit>
+            <trans-unit id="grid.rowHalign.justifyContentCenter" xml:space="preserve">
+				<source>Center</source>
+			</trans-unit>
+            <trans-unit id="grid.rowHalign.justifyContentEnd" xml:space="preserve">
+				<source>End</source>
+			</trans-unit>
+            <trans-unit id="grid.rowHalign.justifyContentAround" xml:space="preserve">
+				<source>Around</source>
+			</trans-unit>
+            <trans-unit id="grid.rowHalign.justifyContentBetween" xml:space="preserve">
+				<source>Between</source>
+			</trans-unit>
+
+            <trans-unit id="grid.label.none" xml:space="preserve">
+				<source>none</source>
+			</trans-unit>
+			<trans-unit id="grid.label.yes" xml:space="preserve">
+				<source>yes</source>
+			</trans-unit>
+			<trans-unit id="grid.label.no" xml:space="preserve">
+				<source>no</source>
+			</trans-unit>
+
+			<trans-unit id="hide_more" xml:space="preserve">
+				<source>Keine Detailseite</source>
+			</trans-unit>
+
+			<trans-unit id="hide_more.description" xml:space="preserve">
+				<source>Versteckt den "Weiterlesen" Button und gibt den kompletten Inhalt ohne Beschränkung in der Listenansicht aus</source>
+			</trans-unit>
+        </body>
+    </file>
+</xliff>

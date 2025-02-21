@@ -1,0 +1,16 @@
+plugin.tx_news {
+	view {
+		partialRootPaths {
+			99 = EXT:chorstiftung/Resources/Private/Content/Partials/
+		}
+    }
+	settings {
+		media.maxWidth = 262m
+		list.media.image.width = 262
+	}
+}
+
+
+[traverse(request.getQueryParams(), 'tx_news_pi1/news') > 0]
+page.bodyTagCObject.10.50 >
+[end]

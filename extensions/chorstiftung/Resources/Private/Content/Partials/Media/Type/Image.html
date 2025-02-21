@@ -1,0 +1,87 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:switch expression="{data.frame_class}">
+    <f:case value="gridlayout">
+        <f:render section="gridType" arguments="{_all}" />
+    </f:case>
+    <f:defaultCase>
+        <f:render section="defaultType" arguments="{_all}" />
+    </f:defaultCase>
+</f:switch>
+
+<f:section name="defaultType">
+    <figure class="image">
+        <f:if condition="{file.link}">
+            <f:then>
+                <f:link.typolink parameter="{file.link}" title="{file.title}">
+                    <f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings}" />
+                </f:link.typolink>
+            </f:then>
+            <f:else>
+                <f:if condition="{data.image_zoom}">
+                    <f:then>
+                        <f:asset.css 
+                            identifier="glightbox"
+                            href="EXT:cjnrw/Resources/Public/StyleSheet/glightboxcss.css" />
+                        <f:asset.script 
+                            identifier="glightbox-lib"
+                            src="EXT:cjnrw/Resources/Public/JavaScript/glightbox.min.js" />
+                        <f:asset.script identifier="glightbox-init">
+                            const lightbox = GLightbox();
+                        </f:asset.script>
+                        <ce:link.clickEnlarge image="{file}" configuration="{settings.media.popup}">
+                            <f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings}" />
+                        </ce:link.clickEnlarge>
+                    </f:then>
+                    <f:else>
+                        <f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings}" />
+                    </f:else>
+                </f:if>
+            </f:else>
+        </f:if>
+        <f:if condition="{file.description}">
+            <figcaption class="image-caption">
+                {file.description -> f:format.nl2br()}
+            </figcaption>
+        </f:if>
+    </figure>
+</f:section>
+
+<f:section name="gridType">
+    <figure class="image d-flex flex-column h-100">
+        <f:if condition="{file.link}">
+            <f:then>
+                <f:link.typolink parameter="{file.link}" title="{file.title}" class="mt-auto">
+                    <f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings}" />
+                </f:link.typolink>
+            </f:then>
+            <f:else>
+                <f:if condition="{data.image_zoom}">
+                    <f:then>
+                        <f:asset.css 
+                            identifier="glightbox"
+                            href="EXT:cjnrw/Resources/Public/StyleSheet/glightboxcss.css" />
+                        <f:asset.script 
+                            identifier="glightbox-lib"
+                            src="EXT:cjnrw/Resources/Public/JavaScript/glightbox.min.js" />
+                        <f:asset.script identifier="glightbox-init">
+                            const lightbox = GLightbox();
+                        </f:asset.script>
+                        <ce:link.clickEnlarge image="{file}" configuration="{settings.media.popup}">
+                            <f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings}" />
+                        </ce:link.clickEnlarge>
+                    </f:then>
+                    <f:else>
+                        <f:render partial="Media/Rendering/Image" arguments="{file: file, dimensions: dimensions, settings: settings}" />
+                    </f:else>
+                </f:if>
+            </f:else>
+        </f:if>
+        <f:if condition="{file.description}">
+            <figcaption class="image-caption mt-auto pt-3 text-center">
+                {file.description -> f:format.nl2br()}
+            </figcaption>
+        </f:if>
+    </figure>
+</f:section>
+</html>

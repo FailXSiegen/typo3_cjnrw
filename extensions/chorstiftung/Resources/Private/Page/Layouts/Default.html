@@ -1,0 +1,17 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <f:layout name="Default" />
+    <f:if condition="{theme} != 'none' && {theme} != ''">
+        <f:asset.css identifier="{theme}" href="EXT:cjnrw/Resources/Public/StyleSheet/{theme}.css" />
+    </f:if>
+    <f:render partial="Header" arguments="{_all}" />
+    <main>
+        <div class="page-wrapper container border shadow">
+            <f:render section="Main" />
+        </div>
+    </main>
+
+    <f:render partial="Footer" arguments="{_all}" />
+
+</html>

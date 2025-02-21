@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <f:layout name="Default" />
+    <f:section name="Main">
+        <f:cObject typoscriptObjectPath="lib.dynamicContent"
+          data="{
+                colPos:'1'
+          }" />
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-8">
+                <f:cObject typoscriptObjectPath="lib.dynamicContent"
+                data="{
+                      colPos:'0'
+                 }" />
+              </div>
+              <div class="col-12 col-lg-4">
+                <f:cObject typoscriptObjectPath="lib.dynamicContent"
+                data="{
+                      colPos:'3'
+                 }" />
+              </div>
+            </div>
+          </div>
+          <f:cObject typoscriptObjectPath="lib.dynamicContent"
+          data="{
+                colPos:'4'
+          }" />
+    </f:section>
+
+</html>

@@ -1,0 +1,86 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" 
+    xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" 
+    data-namespace-typo3-fluid="true">
+
+    <f:if condition="{gallery.rows}">
+        <f:variable name="columnClass" value="row-cols-{gallery.count.columns}" />
+        <f:if condition="{data.imagecols_sm}">
+            <f:variable name="columnClass" value="{columnClass} row-cols-sm-{data.imagecols_sm}" />
+        </f:if>
+        <f:if condition="{data.imagecols_md}">
+            <f:variable name="columnClass" value="{columnClass} row-cols-md-{data.imagecols_md}" />
+        </f:if>
+        <f:if condition="{data.imagecols_lg}">
+            <f:variable name="columnClass" value="{columnClass} row-cols-lg-{data.imagecols_lg}" />
+        </f:if>
+        <f:if condition="{data.imagecols_xl}">
+            <f:variable name="columnClass" value="{columnClass} row-cols-xl-{data.imagecols_xl}" />
+        </f:if>
+        <f:if condition="{data.imagecols_xxl}">
+            <f:variable name="columnClass" value="{columnClass} row-cols-xxl-{data.imagecols_xxl}" />
+        </f:if>
+        <f:if condition="{data.imagewidth} && {gallery.count.columns} == 1 && ({data.imageorient} == 17  || {data.imageorient} == 18)">
+            <f:variable name="inlineStyle" value="max-width: {data.imagewidth}px" />
+        </f:if>
+        <div 
+            class="ce-gallery{f:if(condition: data.imageborder, then: ' ce-border')}"
+            {f:if(condition: inlineStyle, then:'style="{inlineStyle}"')}
+            data-ce-images="{gallery.count.files}"
+            data-ce-rows="{gallery.count.columns}">
+            <f:switch expression="{data.frame_class}">
+                <f:case value="gridlayout">
+                    <f:render section="gridGallery" arguments="{_all}" />
+                </f:case>
+                <f:defaultCase>
+                    <f:render section="defaultGallery" arguments="{_all}" />
+                </f:defaultCase>
+            </f:switch>
+            
+        </div>
+    </f:if>
+
+    <f:section name="defaultGallery">
+        <f:if condition="{gallery.position.horizontal} == 'center'">
+            <div class="ce-outer">
+                <div class="ce-inner">
+        </f:if>
+        <div class="row {data.row_item_class} {data.row_space_class}{f:if(condition:'{gallery.rows -> f:count()} > 1', then: ' mb-3')} {columnClass}">
+            <f:for each="{gallery.rows}" as="row" iteration="rowIterator">            
+                <f:for each="{row.columns}" as="column">
+                    <f:if condition="{column.media}">
+                        <div class="col{f:if(condition:'{gallery.rows -> f:count()} > 1', then: ' mb-3')}">
+                            <f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
+                        </div>
+                    </f:if>
+                </f:for>
+            </f:for>
+        </div>
+        <f:if condition="{gallery.position.horizontal} == 'center'">
+                </div>
+            </div>
+        </f:if>
+    </f:section>
+
+    <f:section name="gridGallery">
+        <f:if condition="{gallery.position.horizontal} == 'center'">
+            <div class="ce-outer">
+                <div class="ce-inner">
+        </f:if>
+        <div class="row gy-4 {data.row_item_class} {data.row_space_class}{f:if(condition:'{gallery.rows -> f:count()} > 1', then: ' mb-3')} {columnClass}">
+            <f:for each="{gallery.rows}" as="row" iteration="rowIterator">    
+                <f:for each="{row.columns}" as="column">
+                    <f:if condition="{column.media}">
+                        <div class="col d-flex flex-column min-h-100">
+                            <f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
+                        </div>
+                    </f:if>
+                </f:for>
+            </f:for>
+        </div>
+        <f:if condition="{gallery.position.horizontal} == 'center'">
+                </div>
+            </div>
+        </f:if>
+    </f:section>
+</html>

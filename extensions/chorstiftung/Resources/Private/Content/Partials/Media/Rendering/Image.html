@@ -1,0 +1,120 @@
+<html 
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" 
+        xmlns:fx="http://typo3.org/ns/Failx/Cjnrw/ViewHelpers" 
+        data-namespace-typo3-fluid="true">
+    <f:comment>
+        <f:media class="image-embed-item img img-fluid" file="{file}" width="{dimensions.width}"
+                 height="{dimensions.height}" alt="{file.alternative}" title="{file.title}" />
+    </f:comment>
+    <f:variable name="imageStyle" value="{file.properties.image_style}" />
+    <f:if condition="{file.originalResource.properties.image_style}">
+        <f:variable name="imageStyle" value="{file.originalResource.properties.image_style}" />
+    </f:if>
+    <f:variable name="pclass" value="image-embed-item img img-fluid" />
+    <f:if condition="{class}">
+        <f:variable name="pclass" value="{class}" />
+    </f:if>
+    <f:if condition="{file.extension} == 'svg'">
+        <f:then>
+                <f:image treatIdAsReference="1"
+                        class="image-embed-item  img img-fluid {imageStyle}" 
+                        width="{dimensions.width}" 
+                        maxWidth="1920"
+                        height="{dimensions.height}" 
+                        src="{file.uid}" 
+                        title="{file.title}" 
+                        alt="{file.alternative}"
+                        crop="{file.crop}" />
+        </f:then>
+        <f:else>
+            <picture class="{imageStyle}">
+                <fx:exists file="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1', width:'{f:if(condition:\'{dimensions.width} < 575\', then:\'{dimensions.width}\', else:\'575m\')}', cropVariant:'smartphone-portrait') -> fx:substring(start:'1')}.webp">
+                        <source media="(max-width: 575px) and (orientation:portrait)"
+                                srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1', width:'{f:if(condition:\'{dimensions.width} < 575\', then:\'{dimensions.width}\', else:\'575m\')}',cropVariant:'smartphone-portrait')}.webp"
+                                type="image/webp"
+                        >
+                </fx:exists>
+             
+                <source media="(max-width: 575px) and (orientation:portrait)"
+                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition:\'{dimensions.width} < 575\', then:\'{dimensions.width}\', else:\'575m\')}', cropVariant:'smartphone-portrait')}">
+
+                <fx:exists file="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition:\'{dimensions.width} < 575\', then:\'{dimensions.width}\', else:\'575m\')}', cropVariant:'smartphone-landscape') -> fx:substring(start:'1')}.webp">
+                        <source media="(max-width: 575px) and (orientation:landscape)"
+                                srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition:\'{dimensions.width} < 575\', then:\'{dimensions.width}\', else:\'575m\')}', cropVariant:'smartphone-landscape')}.webp"
+                                type="image/webp"
+                                >
+                </fx:exists>
+                <source media="(max-width: 575px) and (orientation:landscape)"
+                        srcset="{f:uri.image(src:'{file.uid}', treatIdAsReference:'1', width:'{f:if(condition:\'{dimensions.width} < 575\', then:\'{dimensions.width}\', else:\'575m\')}', cropVariant:'smartphone-landscape')}">
+
+
+
+                <fx:exists file="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1', width:'{f:if(condition:\'{dimensions.width} < 767\', then:\'{dimensions.width}\', else:\'767m\')}', cropVariant:'smartphone-portrait') -> fx:substring(start:'1')}.webp">
+                        <source media="(max-width: 767px) and (orientation:portrait)"
+                                srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1', width:'{f:if(condition:\'{dimensions.width} < 767\', then:\'{dimensions.width}\', else:\'767m\')}',cropVariant:'smartphone-portrait')}.webp"
+                                type="image/webp"
+                        >
+                </fx:exists>
+             
+                <source media="(max-width: 767px) and (orientation:portrait)"
+                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition:\'{dimensions.width} < 767\', then:\'{dimensions.width}\', else:\'767m\')}', cropVariant:'smartphone-portrait')}">
+
+                <fx:exists file="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition:\'{dimensions.width} < 767\', then:\'{dimensions.width}\', else:\'767m\')}', cropVariant:'smartphone-landscape') -> fx:substring(start:'1')}.webp">
+                        <source media="(max-width: 767px) and (orientation:landscape)"
+                                srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition:\'{dimensions.width} < 767\', then:\'{dimensions.width}\', else:\'767m\')}', cropVariant:'smartphone-landscape')}.webp"
+                                type="image/webp"
+                                >
+                </fx:exists>
+                <source media="(max-width: 767px) and (orientation:landscape)"
+                        srcset="{f:uri.image(src:'{file.uid}', treatIdAsReference:'1', width:'{f:if(condition:\'{dimensions.width} < 767\', then:\'{dimensions.width}\', else:\'767m\')}', cropVariant:'smartphone-landscape')}">
+
+
+                <fx:exists file="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1', width:'{f:if(condition:\'{dimensions.width} < 991\', then:\'{dimensions.width}\', else:\'991m\')}', cropVariant:'tablet-portrait') -> fx:substring(start:'1')}.webp">
+                        <source media="(max-width: 991px) and (orientation:portrait)"
+                                srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition:\'{dimensions.width} < 991\', then:\'{dimensions.width}\', else:\'991m\')}',cropVariant:'tablet-portrait')}.webp"
+                                type="image/webp"
+                        >
+                </fx:exists>
+                <source media="(max-width: 991px) and (orientation:portrait)"
+                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition:\'{dimensions.width} < 991\', then:\'{dimensions.width}\', else:\'991m\')}',cropVariant:'tablet-portrait')}">
+
+                <fx:exists file="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition:\'{dimensions.width} < 991\', then:\'{dimensions.width}\', else:\'991m\')}',cropVariant:'tablet-landscape') -> fx:substring(start:'1')}.webp">
+                        <source media="(max-width: 991px) and (orientation:landscape)"
+                                srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition:\'{dimensions.width} < 991\', then:\'{dimensions.width}\', else:\'991m\')}',cropVariant:'tablet-landscape')}.webp"
+                                type="image/webp"
+                        >
+                </fx:exists>
+                <source media="(max-width: 991px) and (orientation:landscape)"
+                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition:\'{dimensions.width} < 991\', then:\'{dimensions.width}\', else:\'991m\')}',cropVariant:'tablet-landscape')}">
+
+                <fx:exists file="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition:\'{dimensions.width} < 1200\', then:\'{dimensions.width}\', else:\'1200m\')}', cropVariant:'desktop-md') -> fx:substring(start:'1')}.webp">
+                        <source media="(max-width: 1199px) and (min-width:992px)"
+                                srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition:\'{dimensions.width} < 1200\', then:\'{dimensions.width}\', else:\'1200m\')}',cropVariant:'desktop-md')}.webp"
+                                type="image/webp"
+                                >
+                </fx:exists>
+                <source media="(max-width: 1199px) and (min-width:992px)"
+                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1',width:'{f:if(condition:\'{dimensions.width} < 1200\', then:\'{dimensions.width}\', else:\'1200m\')}',cropVariant:'desktop-md')}">
+                <fx:exists file="{f:uri.image(src:'{file.uid}', treatIdAsReference:'1', width:'{dimensions.width}', maxWidth: '1920', cropVariant:'default') -> fx:substring(start:'1')}.webp">
+                        <source media="(min-width: 1200px)"
+                                srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1', width:'{dimensions.width}', maxWidth: '1920',cropVariant:'default')}.webp"
+                                type="image/webp"
+                                >
+                </fx:exists>
+                <source media="(min-width: 1200px)"
+                        srcset="{f:uri.image(src:'{file.uid}',treatIdAsReference:'1', width:'{dimensions.width}', maxWidth: '1920', cropVariant:'default')}">
+                
+                <f:image treatIdAsReference="1"
+                        loading="lazy"
+                        class="{pclass}" 
+                        width="{dimensions.width}" 
+                        maxWidth="1920"
+                        height="{dimensions.height}" 
+                        src="{file.uid}" 
+                        title="{file.title}" 
+                        alt="{file.alternative}"
+                        crop="{file.crop}" />
+            </picture>
+        </f:else>
+    </f:if>
+</html>

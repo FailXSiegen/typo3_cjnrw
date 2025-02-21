@@ -1,0 +1,69 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/scss/container-with-sidetext.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+.container-with-sidetext {
+  position: relative;
+  padding-left: 70px;
+  font-size: 26px;
+}
+@media (min-width: 768px) {
+  .container-with-sidetext {
+    padding-left: 120px;
+    padding-right: 45px;
+  }
+}
+.container-with-sidetext:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  left: 34px;
+  top: 11px;
+  height: 1px;
+}
+@media (min-width: 768px) {
+  .container-with-sidetext:after {
+    width: 59px;
+    left: 40px;
+  }
+}
+.container-with-sidetext .sidetext {
+  position: absolute;
+  transform: rotate(90deg) translate(0, -100%);
+  transform-origin: 0 0;
+  left: -8px;
+  top: 8px;
+  font-weight: 600;
+  min-width: 400px;
+  font-size: 24px;
+}
+@media (min-width: 768px) {
+  .container-with-sidetext .sidetext {
+    font-size: 40px;
+  }
+}
+.container-with-sidetext.with-subheader .sidetext {
+  left: 25px;
+}
+@media (min-width: 768px) {
+  .container-with-sidetext.with-subheader .sidetext {
+    left: 52px;
+  }
+}
+.container-with-sidetext.with-subheader .sidetext-subheader {
+  position: absolute;
+  transform: rotate(90deg) translate(0, 100%);
+  transform-origin: 0 0;
+  font-weight: 600;
+  left: 70px;
+  top: 8px;
+  font-size: 24px;
+}
+@media (min-width: 768px) {
+  .container-with-sidetext.with-subheader .sidetext-subheader {
+    font-size: 40px;
+    left: 80px;
+  }
+}
+.container-with-sidetext.with-subheader:after {
+  display: none;
+}

@@ -1,0 +1,2 @@
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:chorstiftung/Configuration/TypoScript/Extensions/News" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:chorstiftung/Configuration/TypoScript/Extensions/Form" extensions="typoscript">
