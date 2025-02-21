@@ -45,6 +45,7 @@
         "cweagans/composer-patches": "*",
         "failx/cjnrw": "@dev",
         "failx/chorstiftung": "@dev",
+        "blueways/bw-captcha": "^4",
         "georgringer/news": "^11.0",
         "helhum/dotenv-connector": "^3.0",
         "helhum/typo3-console": "^8.0",

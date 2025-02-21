@@ -31,3 +31,13 @@ plugin.tx_lux.settings {
     assetDownloads.allowedExtensions = pdf,txt,doc,docx,xls,xlsx,ppt,pptx,zip,mp3,mp4
   }
 }
+plugin.tx_bwcaptcha.settings.charset = 123456789
+plugin.tx_bwcaptcha.settings.width = 250
+plugin.tx_bwcaptcha.settings.height = 100
+plugin.tx_bwcaptcha.settings.textColor = 0,0,0
+plugin.tx_bwcaptcha.settings.backgroundColor = 255,255,255
+plugin.tx_bwcaptcha.settings.maxFrontLines = 1
+plugin.tx_bwcaptcha.settings.maxBehindLines = 1
+plugin.tx_bwcaptcha.settings.maxAngle = 1
+plugin.tx_bwcaptcha.settings.maxOffset = 1
+plugin.tx_bwcaptcha.settings.lineColor = 0,0,0
