@@ -22,6 +22,7 @@ $sitename = $_ENV['SITENAME'];
 switch ($currentDomain) {
     case 'chorstiftung.ddev.site':
     case 'dev.chorstiftung.nrw':
+    case 'www.chorstiftung.nrw':
     case 'chorstiftung.nrw':
         $domainSpecificConfig['backendLogo'] = 'EXT:chorstiftung/Resources/Public/Images/Chorstiftung_NRW.svg';
         $domainSpecificConfig['loginLogo'] = 'EXT:chorstiftung/Resources/Public/Images/Chorstiftung_NRW.svg';
