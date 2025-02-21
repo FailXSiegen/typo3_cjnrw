@@ -1,6 +1,10 @@
 TYPO3:
   CMS:
     Form:
+      persistenceManager:
+        allowedFileMounts:
+          10: '1:/form_definitions/'
+          20: '1:/chorstiftung/form_definitions/'
       prototypes:
         standard:
           formElementsDefinition:
