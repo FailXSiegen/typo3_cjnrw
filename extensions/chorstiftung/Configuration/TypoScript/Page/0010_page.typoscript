@@ -30,14 +30,14 @@ page {
                 value = rootpage
                 noTrimWrap = | ||
                 if {
-                    value = {$failx.rootPid}
+                    value = {$chorstiftung.rootPid}
                     equals.data = page:uid
                 }
             }
             40 = TEXT
             40 {
               field = theme
-              override = {$failx.defaultTheme}
+              override = {$chorstiftung.defaultTheme}
               override.if.isFalse.field = theme
               noTrimWrap = | ||
             }
@@ -160,38 +160,16 @@ page {
 [traverse(page, "landingpage") == 1]
 page.10 {
     layoutRootPaths {
-      5 = {$failx.resourcePath}Private/Landingpage/Page/Layouts/
+      5 = {$chorstiftung.resourcePath}Private/Landingpage/Page/Layouts/
     }
 
     partialRootPaths {
-      5 = {$failx.resourcePath}Private/Landingpage/Page/Partials/
+      5 = {$chorstiftung.resourcePath}Private/Landingpage/Page/Partials/
     }
 
     templateRootPaths {
-      5 = {$failx.resourcePath}Private/Landingpage/Page/Templates/
+      5 = {$chorstiftung.resourcePath}Private/Landingpage/Page/Templates/
     }
 }
 [end]
-[tree.level > 1]
-page {
-  bodyTagCObject.10 {
-    50 = TEXT
-    50 {
-      stdWrap {
-        cObject = TEXT
-        cObject {
-          numRows.table = pages
-          numRows.select {
-            pidInList.data = field:pid
-            orderBy = sorting
-            where.data = field:sorting
-            where.intval = 1
-            where.wrap = sorting<=|
-          }
-        }
-      }
-      noTrimWrap = | pagesplash pagesplash-||
-    }
-  }
-}
-[end]
+

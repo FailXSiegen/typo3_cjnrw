@@ -268,17 +268,6 @@ TCEFORM {
 				}
 			}
 		}
-		with_splash {
-			disabled = 1
-			types {
-				menu_pages {
-					disabled = 0
-				}
-				menu_subpages {
-					disabled = 0
-				}
-			}
-		}
 		space_before_class {
 		    removeItems = extra-small,small,medium,large,extra-large
 		    addItems {
