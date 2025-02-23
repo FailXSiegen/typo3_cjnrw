@@ -269,6 +269,12 @@ footer, .footer {
 }
 .col-12 + .col-12 {
     margin-top: calc(var(--bs-gutter-x) * 0.5);
+    @include media-breakpoint-up(sm) {
+        margin-top: 0;
+    }
+}
+.col-sm-12 + .col-sm-12 {
+    margin-top: calc(var(--bs-gutter-x) * 0.5);
     @include media-breakpoint-up(md) {
         margin-top: 0;
     }

@@ -8494,8 +8494,17 @@ footer .frame-type-menu_subpages, .footer .frame-type-menu_subpages {
 .col-12 + .col-12 {
   margin-top: calc(var(--bs-gutter-x) * 0.5);
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .col-12 + .col-12 {
+    margin-top: 0;
+  }
+}
+
+.col-sm-12 + .col-sm-12 {
+  margin-top: calc(var(--bs-gutter-x) * 0.5);
+}
+@media (min-width: 768px) {
+  .col-sm-12 + .col-sm-12 {
     margin-top: 0;
   }
 }
