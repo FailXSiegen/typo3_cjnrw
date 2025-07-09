@@ -6,9 +6,16 @@
 		
 		<div class="col-md mb-4 mb-md-0 articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}" itemscope="itemscope" itemtype="http://schema.org/Article">
 			<h3 itemprop="headline">
-				<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" additionalAttributes="{itemprop:'url'}">
-					{newsItem.title}
-				</n:link>
+				<f:if condition="{newsItem.hideMore}">
+					<f:then>
+						{newsItem.title}
+					</f:then>
+					<f:else>
+						<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" additionalAttributes="{itemprop:'url'}">
+							{newsItem.title}
+						</n:link>
+					</f:else>
+				</f:if>
 			</h3>
 
 			<f:render partial="General/AdditionalInformation" arguments="{settings:settings,newsItem:newsItem}" />
@@ -43,18 +50,33 @@
 			</f:if>
 		</div>
 		<f:if condition="{newsItem.mediaPreviews}">
-			<div class="col-md-3">
-				<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
-					<f:variable name="newsWidth" value="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.width)}" />
-					<f:variable name="newsHeight" value="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else:'')}" />
-					<f:variable name="newsDimensions" value="{width: newsWidth, height: newsHeight}" />
-					<f:render 
-						partial="Media/Rendering/Image" 
-						arguments="{
-							file: newsItem.mediaPreviews.0, 
-							dimensions: newsDimensions
-						}" />
-				</n:link>
+			<div class="{f:if(condition: '{newsItem.hideMore} && {newsItem.bodytext} == \'\'', then: 'col-12', else: 'col-md-3')}">
+				<f:if condition="{newsItem.hideMore}">
+					<f:then>
+						<f:variable name="newsWidth" value="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.width)}" />
+						<f:variable name="newsHeight" value="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else:'')}" />
+						<f:variable name="newsDimensions" value="{width: newsWidth, height: newsHeight}" />
+						<f:render 
+							partial="Media/Rendering/Image" 
+							arguments="{
+								file: newsItem.mediaPreviews.0, 
+								dimensions: newsDimensions
+							}" />
+					</f:then>
+					<f:else>
+						<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+							<f:variable name="newsWidth" value="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.width)}" />
+							<f:variable name="newsHeight" value="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else:'')}" />
+							<f:variable name="newsDimensions" value="{width: newsWidth, height: newsHeight}" />
+							<f:render 
+								partial="Media/Rendering/Image" 
+								arguments="{
+									file: newsItem.mediaPreviews.0, 
+									dimensions: newsDimensions
+								}" />
+						</n:link>
+					</f:else>
+				</f:if>
 			</div>
 		</f:if>
 	</div>
