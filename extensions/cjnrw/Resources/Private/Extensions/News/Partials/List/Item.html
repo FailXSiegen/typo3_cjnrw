@@ -50,11 +50,20 @@
 			</f:if>
 		</div>
 		<f:if condition="{newsItem.mediaPreviews}">
-			<div class="{f:if(condition: '{newsItem.hideMore} && {newsItem.bodytext} == \'\'', then: 'col-12', else: 'col-md-3')}">
+			<div class="{f:if(condition: '{newsItem.hideMore} && {newsItem.bodytext} == \'\'', then: 'col-12 d-flex justify-content-center', else: 'col-md-3')}">
 				<f:if condition="{newsItem.hideMore}">
 					<f:then>
-						<f:variable name="newsWidth" value="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.width)}" />
-						<f:variable name="newsHeight" value="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else:'')}" />
+						<f:if condition="{newsItem.bodytext} == ''">
+							<f:then>
+								<f:variable name="newsWidth" value="856m" />
+								<f:variable name="newsHeight" value="500c" />
+							</f:then>
+							<f:else>
+								<f:variable name="newsWidth" value="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.width)}" />
+								<f:variable name="newsHeight" value="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else:'')}" />
+							</f:else>
+						</f:if>
+						
 						<f:variable name="newsDimensions" value="{width: newsWidth, height: newsHeight}" />
 						<f:render 
 							partial="Media/Rendering/Image" 
