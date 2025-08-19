@@ -63,14 +63,28 @@
 								<f:variable name="newsHeight" value="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else:'')}" />
 							</f:else>
 						</f:if>
-						
 						<f:variable name="newsDimensions" value="{width: newsWidth, height: newsHeight}" />
-						<f:render 
-							partial="Media/Rendering/Image" 
-							arguments="{
-								file: newsItem.mediaPreviews.0, 
-								dimensions: newsDimensions
-							}" />
+						<f:if condition="{newsItem.type > 0}">
+							<f:then>
+								<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+									<f:render 
+										partial="Media/Rendering/Image" 
+										arguments="{
+											file: newsItem.mediaPreviews.0, 
+											dimensions: newsDimensions
+										}" />
+								</n:link>
+							</f:then>
+							<f:else>
+								<f:render 
+									partial="Media/Rendering/Image" 
+									arguments="{
+										file: newsItem.mediaPreviews.0, 
+										dimensions: newsDimensions
+									}" />
+							</f:else>
+						</f:if>
+					
 					</f:then>
 					<f:else>
 						<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
