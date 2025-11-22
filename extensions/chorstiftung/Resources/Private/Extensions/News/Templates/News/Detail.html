@@ -49,54 +49,49 @@
 
 				<f:variable name="imageCount" value="{newsItem.mediaNonPreviews -> f:count()}" />
 
-				<f:if condition="{imageCount} > 2">
-					<f:then>
-						<!-- Image Gallery for 3+ images -->
-						<div class="news-image-gallery mb-4">
-							<div class="row g-3">
-								<f:for each="{newsItem.mediaNonPreviews}" as="mediaElement" iteration="iterator">
-									<div class="col-md-6 col-lg-4">
-										<a href="{mediaElement.originalResource.publicUrl}"
-										   class="glightbox d-block"
-										   data-gallery="news-gallery-{newsItem.uid}"
-										   <f:if condition="{mediaElement.description}">data-description="{mediaElement.description -> f:format.htmlspecialchars()}"</f:if>>
-											<div class="ratio ratio-4x3 bg-light rounded overflow-hidden shadow">
-												<f:render partial="Media/Rendering/Image" arguments="{file: mediaElement, dimensions: {width: '400c', height: '300c'}, class: 'img-fluid object-fit-cover'}" />
-											</div>
-											<f:if condition="{mediaElement.description}">
-												<small class="text-muted d-block mt-1">{mediaElement.description}</small>
-											</f:if>
-										</a>
-									</div>
-								</f:for>
-							</div>
-						</div>
+				<!-- Image Gallery with main image and thumbnails -->
+				<div class="row">
+					<div class="col-md-8">
 						<f:render section="inner-content" arguments="{_all}" />
-					</f:then>
-					<f:else>
-						<!-- Sidebar layout for 1-2 images -->
-						<div class="row">
-							<div class="col-md-8">
-								<f:render section="inner-content" arguments="{_all}" />
+					</div>
+					<div class="col-md-4">
+						<f:if condition="{newsItem.mediaNonPreviews}">
+							<!-- Main Image -->
+							<f:variable name="mainImage" value="{newsItem.mediaNonPreviews.0}" />
+							<div class="mb-3">
+								<a href="{mainImage.originalResource.publicUrl}"
+								   class="glightbox d-block"
+								   data-gallery="news-gallery-{newsItem.uid}"
+								   <f:if condition="{mainImage.description}">data-description="{mainImage.description -> f:format.htmlspecialchars()}"</f:if>>
+									<f:render partial="Media/Rendering/Image" arguments="{file: mainImage, dimensions: {width: '600m'}, class: 'img-fluid rounded shadow'}" />
+								</a>
+								<f:if condition="{mainImage.description}">
+									<small class="text-muted d-block mt-2">{mainImage.description}</small>
+								</f:if>
 							</div>
-							<div class="col-md-4">
-								<f:for each="{newsItem.mediaNonPreviews}" as="mediaElement">
-									<div class="mb-3">
-										<a href="{mediaElement.originalResource.publicUrl}"
-										   class="glightbox d-block"
-										   data-gallery="news-gallery-{newsItem.uid}"
-										   <f:if condition="{mediaElement.description}">data-description="{mediaElement.description -> f:format.htmlspecialchars()}"</f:if>>
-											<f:render partial="Media/Rendering/Image" arguments="{file: mediaElement, dimensions: {width: '400m'}, class: 'img-fluid rounded shadow'}" />
-										</a>
-										<f:if condition="{mediaElement.description}">
-											<small class="text-muted d-block mt-1">{mediaElement.description}</small>
+
+							<!-- Thumbnails for additional images -->
+							<f:if condition="{imageCount} > 1">
+								<div class="row g-2">
+									<f:for each="{newsItem.mediaNonPreviews}" as="mediaElement" iteration="iterator">
+										<f:if condition="{iterator.index} > 0">
+											<div class="col-4">
+												<a href="{mediaElement.originalResource.publicUrl}"
+												   class="glightbox d-block"
+												   data-gallery="news-gallery-{newsItem.uid}"
+												   <f:if condition="{mediaElement.description}">data-description="{mediaElement.description -> f:format.htmlspecialchars()}"</f:if>>
+													<div class="ratio ratio-1x1 overflow-hidden rounded shadow-sm">
+														<f:render partial="Media/Rendering/Image" arguments="{file: mediaElement, dimensions: {width: '150c', height: '150c'}, class: 'img-fluid object-fit-cover'}" />
+													</div>
+												</a>
+											</div>
 										</f:if>
-									</div>
-								</f:for>
-							</div>
-						</div>
-					</f:else>
-				</f:if>
+									</f:for>
+								</div>
+							</f:if>
+						</f:if>
+					</div>
+				</div>
 			</f:then>
 			<f:else>
 				<f:render section="headline" arguments="{_all}" />
