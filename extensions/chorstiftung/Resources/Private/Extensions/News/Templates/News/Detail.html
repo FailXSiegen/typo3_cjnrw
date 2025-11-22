@@ -80,8 +80,8 @@
 												   class="glightbox d-block"
 												   data-gallery="news-gallery-{newsItem.uid}"
 												   <f:if condition="{mediaElement.description}">data-description="{mediaElement.description -> f:format.htmlspecialchars()}"</f:if>>
-													<div class="ratio ratio-1x1 overflow-hidden rounded shadow-sm">
-														<f:render partial="Media/Rendering/Image" arguments="{file: mediaElement, dimensions: {width: '150c', height: '150c'}, class: 'img-fluid object-fit-cover'}" />
+													<div class="ratio ratio-1x1 overflow-hidden rounded shadow-sm" style="background: #f8f9fa;">
+														<f:render partial="Media/Rendering/Image" arguments="{file: mediaElement, dimensions: {width: '150c', height: '150c'}, class: 'position-absolute top-0 start-0 w-100 h-100 object-fit-cover'}" />
 													</div>
 												</a>
 											</div>
