@@ -42,30 +42,6 @@
 			});
 		</f:asset.script>
 
-		<f:if condition="{settings.detail.showPrevNext}">
-			<n:simplePrevNext pidList="{newsItem.pid}" news="{newsItem}" as="paginated" sortField="datetime">
-				<f:if condition="{paginated}">
-					<nav aria-label="Page navigation">
-						<ul class="pagination mt-3 justify-content-center">
-							<f:if condition="{paginated.prev}">
-								<li class="page-item">
-									<n:link newsItem="{paginated.prev}" class="page-link" settings="{settings}">
-										<span aria-hidden="true">&laquo;</span> {paginated.prev.title}
-									</n:link>
-								</li>
-							</f:if>
-							<f:if condition="{paginated.next}">
-								<li class="page-item">
-									<n:link newsItem="{paginated.next}" class="page-link" settings="{settings}">
-										{paginated.next.title} <span aria-hidden="true">&raquo;</span>
-									</n:link>
-								</li>
-							</f:if>
-						</ul>
-					</nav>
-				</f:if>
-			</n:simplePrevNext>
-		</f:if>
 
 		<f:if condition="{newsItem.mediaNonPreviews}">
 			<f:then>
@@ -270,5 +246,82 @@
 			</div>
 		</div>
 	</f:if>
+
+	<f:comment><!-- Prev/Next News Navigation --></f:comment>
+	<n:simplePrevNext pidList="{newsItem.pid}" news="{newsItem}" as="paginated" sortField="datetime">
+		<hr class="my-5">
+		<div class="news-navigation">
+			<h4 class="mb-4">Weitere News</h4>
+			<div class="row g-3">
+				<f:if condition="{paginated.prev}">
+					<div class="col-md-6">
+						<div class="card h-100 shadow-sm">
+							<f:if condition="{paginated.prev.mediaPreviews}">
+								<n:link newsItem="{paginated.prev}" settings="{settings}" title="{paginated.prev.title}">
+									<f:render partial="Media/Rendering/Image" arguments="{file: paginated.prev.mediaPreviews.0, dimensions: {width: '600c', height: '400c'}, class: 'img img-fluid card-img-top'}" />
+								</n:link>
+							</f:if>
+							<div class="card-body d-flex flex-column pt-3">
+								<span class="px-3">
+									<small class="text-muted">
+										<f:format.date format="{f:translate(key:'dateFormat')}">{paginated.prev.datetime}</f:format.date>
+									</small>
+								</span>
+								<span class="h5 card-title fw-bold px-3 py-2">
+									<n:link newsItem="{paginated.prev}" settings="{settings}" title="{paginated.prev.title}" class="text-decoration-none text-dark">
+										{paginated.prev.title}
+									</n:link>
+								</span>
+								<div class="card-text flex-grow-1 px-3">
+									<f:if condition="{paginated.prev.teaser}">
+										{paginated.prev.teaser -> f:format.crop(maxCharacters: '150', respectWordBoundaries:'1') -> f:format.html()}
+									</f:if>
+								</div>
+								<div class="mt-3 px-3 pb-3">
+									<n:link newsItem="{paginated.prev}" settings="{settings}" class="btn btn-primary text-white" title="{paginated.prev.title}">
+										<f:translate key="more-link" />
+									</n:link>
+								</div>
+							</div>
+						</div>
+					</div>
+				</f:if>
+
+				<f:if condition="{paginated.next}">
+					<div class="col-md-6 {f:if(condition: '{paginated.prev}', else: 'ms-auto')}">
+						<div class="card h-100 shadow-sm">
+							<f:if condition="{paginated.next.mediaPreviews}">
+								<n:link newsItem="{paginated.next}" settings="{settings}" title="{paginated.next.title}">
+									<f:render partial="Media/Rendering/Image" arguments="{file: paginated.next.mediaPreviews.0, dimensions: {width: '600c', height: '400c'}, class: 'img img-fluid card-img-top'}" />
+								</n:link>
+							</f:if>
+							<div class="card-body d-flex flex-column pt-3">
+								<span class="px-3">
+									<small class="text-muted">
+										<f:format.date format="{f:translate(key:'dateFormat')}">{paginated.next.datetime}</f:format.date>
+									</small>
+								</span>
+								<span class="h5 card-title fw-bold px-3 py-2">
+									<n:link newsItem="{paginated.next}" settings="{settings}" title="{paginated.next.title}" class="text-decoration-none text-dark">
+										{paginated.next.title}
+									</n:link>
+								</span>
+								<div class="card-text flex-grow-1 px-3">
+									<f:if condition="{paginated.next.teaser}">
+										{paginated.next.teaser -> f:format.crop(maxCharacters: '150', respectWordBoundaries:'1') -> f:format.html()}
+									</f:if>
+								</div>
+								<div class="mt-3 px-3 pb-3">
+									<n:link newsItem="{paginated.next}" settings="{settings}" class="btn btn-primary text-white" title="{paginated.next.title}">
+										<f:translate key="more-link" />
+									</n:link>
+								</div>
+							</div>
+						</div>
+					</div>
+				</f:if>
+			</div>
+		</div>
+	</n:simplePrevNext>
 </f:section>
 </html>
