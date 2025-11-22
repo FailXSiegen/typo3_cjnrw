@@ -6,14 +6,6 @@
 <div class="col-md-6 col-lg-4 mb-4">
 	<div class="card pb-3 h-100 {f:if(condition: newsItem.istopnews, then: 'shadow-lg border-primary border-2', else: 'shadow-sm')} articletype-{newsItem.type}" itemscope="itemscope" itemtype="http://schema.org/Article">
 
-		<f:if condition="{newsItem.istopnews}">
-			<div class="position-absolute top-0 end-0 m-3" style="z-index: 10;">
-				<span class="badge bg-primary shadow-sm px-3 py-2">
-					<i class="fas fa-bookmark me-1"></i> Top
-				</span>
-			</div>
-		</f:if>
-
 		<f:if condition="{newsItem.mediaPreviews}">
 			<f:variable name="newsWidth" value="600c" />
 			<f:variable name="newsHeight" value="400c" />
