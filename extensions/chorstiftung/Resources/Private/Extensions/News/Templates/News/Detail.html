@@ -22,7 +22,25 @@
                     </n:titleTag>
                 </f:else>
             </f:if>
+
 		</n:format.nothing>
+
+		<f:comment><!-- GLightbox Assets --></f:comment>
+		<f:asset.css
+			identifier="glightbox"
+			href="EXT:chorstiftung/Resources/Public/StyleSheet/glightboxcss.css" />
+		<f:asset.script
+			identifier="glightbox-lib"
+			src="EXT:chorstiftung/Resources/Public/JavaScript/glightbox.min.js" />
+		<f:asset.script identifier="glightbox-init">
+			document.addEventListener('DOMContentLoaded', function() {
+				const lightbox = GLightbox({
+					touchNavigation: true,
+					loop: true,
+					autoplayVideos: true
+				});
+			});
+		</f:asset.script>
 
 		<f:if condition="{settings.detail.showPrevNext}">
 			<n:simplePrevNext pidList="{newsItem.pid}" news="{newsItem}" as="paginated" sortField="datetime">
@@ -52,23 +70,57 @@
 		<f:if condition="{newsItem.mediaNonPreviews}">
 			<f:then>
 				<f:render section="headline" arguments="{_all}" />
-				<div class="row">
-					<div class="col-md-8">
-						<f:render section="inner-content" arguments="{_all}" />
-					</div>
-					<div class="col-md-4">
-						<f:for each="{newsItem.mediaNonPreviews}" as="mediaElement">
-							<div class="thumbnail">
-								<f:media file="{mediaElement}" class="img-fluid" />
-								<f:if condition="{mediaElement.description}">
-									<div class="caption">
-										{mediaElement.description}
+
+				<f:variable name="imageCount" value="{newsItem.mediaNonPreviews -> f:count()}" />
+
+				<f:if condition="{imageCount} > 2">
+					<f:then>
+						<!-- Image Gallery for 3+ images -->
+						<div class="news-image-gallery mb-4">
+							<div class="row g-3">
+								<f:for each="{newsItem.mediaNonPreviews}" as="mediaElement" iteration="iterator">
+									<div class="col-md-6 col-lg-4">
+										<a href="{mediaElement.originalResource.publicUrl}"
+										   class="glightbox d-block"
+										   data-gallery="news-gallery-{newsItem.uid}"
+										   <f:if condition="{mediaElement.description}">data-description="{mediaElement.description -> f:format.htmlspecialchars()}"</f:if>>
+											<div class="ratio ratio-4x3 bg-light rounded overflow-hidden shadow">
+												<f:render partial="Media/Rendering/Image" arguments="{file: mediaElement, dimensions: {width: '400c', height: '300c'}, class: 'img-fluid object-fit-cover'}" />
+											</div>
+											<f:if condition="{mediaElement.description}">
+												<small class="text-muted d-block mt-1">{mediaElement.description}</small>
+											</f:if>
+										</a>
 									</div>
-								</f:if>
+								</f:for>
 							</div>
-						</f:for>
-					</div>
-				</div>
+						</div>
+						<f:render section="inner-content" arguments="{_all}" />
+					</f:then>
+					<f:else>
+						<!-- Sidebar layout for 1-2 images -->
+						<div class="row">
+							<div class="col-md-8">
+								<f:render section="inner-content" arguments="{_all}" />
+							</div>
+							<div class="col-md-4">
+								<f:for each="{newsItem.mediaNonPreviews}" as="mediaElement">
+									<div class="mb-3">
+										<a href="{mediaElement.originalResource.publicUrl}"
+										   class="glightbox d-block"
+										   data-gallery="news-gallery-{newsItem.uid}"
+										   <f:if condition="{mediaElement.description}">data-description="{mediaElement.description -> f:format.htmlspecialchars()}"</f:if>>
+											<f:render partial="Media/Rendering/Image" arguments="{file: mediaElement, dimensions: {width: '400m'}, class: 'img-fluid rounded shadow'}" />
+										</a>
+										<f:if condition="{mediaElement.description}">
+											<small class="text-muted d-block mt-1">{mediaElement.description}</small>
+										</f:if>
+									</div>
+								</f:for>
+							</div>
+						</div>
+					</f:else>
+				</f:if>
 			</f:then>
 			<f:else>
 				<f:render section="headline" arguments="{_all}" />
@@ -79,8 +131,10 @@
 </f:section>
 
 <f:section name="headline">
-	<h1 class="pb-3 border-bottom" itemprop="headline">{newsItem.title}</h1>
-	<f:render partial="General/AdditionalInformation" arguments="{settings:settings,newsItem:newsItem}" />
+	<div class="mb-4">
+		<h1 class="display-5 fw-bold mb-3" itemprop="headline">{newsItem.title}</h1>
+		<f:render partial="General/AdditionalInformation" arguments="{settings:settings,newsItem:newsItem}" />
+	</div>
 </f:section>
 
 <f:section name="inner-content">
@@ -137,61 +191,83 @@
 	</f:comment>
 	<f:if condition="{newsItem.allRelatedSorted}">
 		<!-- Related news records -->
-		<div class="news-related news-related-news mb-3">
-			<h4>
+		<div class="news-related news-related-news mb-4 mt-5">
+			<h4 class="mb-3">
 				<f:translate key="related-news" />
 			</h4>
-			<ul class="list-group">
+			<div class="list-group list-group-flush">
 				<f:for each="{newsItem.allRelatedSorted}" as="related">
-					<li class="list-group-item">
-						<span class="news-related-news-date me-2">
-							<f:format.date format="{f:translate(key:'dateFormat')}">{related.datetime}</f:format.date>
-						</span>
-						<n:link newsItem="{related}" settings="{settings}" title="{related.title}">
-							{related.title}
-						</n:link>
-					</li>
-
+					<n:link newsItem="{related}" settings="{settings}" title="{related.title}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+						<div>
+							<div class="fw-bold">{related.title}</div>
+							<small class="text-muted">
+								<f:format.date format="{f:translate(key:'dateFormat')}">{related.datetime}</f:format.date>
+							</small>
+						</div>
+						<i class="fas fa-chevron-right"></i>
+					</n:link>
 				</f:for>
-			</ul>
+			</div>
 		</div>
 	</f:if>
 
 
 	<f:if condition="{newsItem.relatedFiles}">
 		<!-- related files -->
-		<div class="news-related-files mb-3 d-flex justify-content-center">
-			<f:for each="{newsItem.relatedFiles}" as="relatedFile">
-				<span class="related-file me-4 d-flex flex-column justify-content-center">
-					<span class="news-related-files-link">
-						<a href="{relatedFile.originalResource.publicUrl -> f:format.htmlspecialchars()}" target="_blank">
-							<f:render partial="Media/Rendering/Image" arguments="{file:relatedFile}" />
-						</a>
-					</span>
-					<f:if condition="{relatedFile.originalResource.description}">
-						<small class="news-related-files-description mt-1 blockquote-footer"> {relatedFile.originalResource.description -> f:format.nl2br()} </small>
-					</f:if>
-					<small class="news-related-files-size"> {relatedFile.originalResource.size -> f:format.bytes()} </small>
-				</span>
-			</f:for>
+		<div class="news-related-files mb-4 mt-4">
+			<h4 class="mb-3"><f:translate key="LLL:EXT:news/Resources/Private/Language/locallang.xlf:related-files" default="Downloads" /></h4>
+			<div class="row g-3">
+				<f:for each="{newsItem.relatedFiles}" as="relatedFile">
+					<div class="col-md-6 col-lg-4">
+						<div class="card h-100">
+							<div class="card-body">
+								<a href="{relatedFile.originalResource.publicUrl -> f:format.htmlspecialchars()}" target="_blank" class="text-decoration-none">
+									<div class="d-flex align-items-center">
+										<div class="me-3">
+											<i class="fas fa-file-download fa-2x text-primary"></i>
+										</div>
+										<div class="flex-grow-1">
+											<div class="fw-bold text-dark">
+												{relatedFile.originalResource.name}
+											</div>
+											<small class="text-muted">{relatedFile.originalResource.size -> f:format.bytes()}</small>
+										</div>
+									</div>
+									<f:if condition="{relatedFile.originalResource.description}">
+										<div class="mt-2 small text-muted">
+											{relatedFile.originalResource.description -> f:format.nl2br()}
+										</div>
+									</f:if>
+								</a>
+							</div>
+						</div>
+					</div>
+				</f:for>
+			</div>
 		</div>
 	</f:if>
 
 	<f:if condition="{newsItem.relatedLinks}">
 		<!-- Related links -->
-		<div class="news-related news-related-links mb-3">
-			<h4>
+		<div class="news-related news-related-links mb-4 mt-4">
+			<h4 class="mb-3">
 				<f:translate key="related-links" />
 			</h4>
-			<ul class="list-group">
+			<div class="list-group list-group-flush">
 				<f:for each="{newsItem.relatedLinks}" as="relatedLink">
-					<li class="list-group-item">
-						<f:link.typolink parameter="{relatedLink.uri}" class="me-2" title="{relatedLink.title}" target="{n:targetLink(link:relatedLink.uri)}"><i class="fas fa-external-link me-1"> </i>{f:if(condition: relatedLink.title, then: relatedLink.title, else: relatedLink.uri)}</f:link.typolink>
-						<f:if condition="{relatedLink.description}"><span>{relatedLink.description}</span>
-						</f:if>
-					</li>
+					<f:link.typolink parameter="{relatedLink.uri}" title="{relatedLink.title}" target="{n:targetLink(link:relatedLink.uri)}" class="list-group-item list-group-item-action">
+						<div class="d-flex align-items-center">
+							<i class="fas fa-external-link-alt me-3 text-primary"></i>
+							<div class="flex-grow-1">
+								<div class="fw-bold">{f:if(condition: relatedLink.title, then: relatedLink.title, else: relatedLink.uri)}</div>
+								<f:if condition="{relatedLink.description}">
+									<small class="text-muted">{relatedLink.description}</small>
+								</f:if>
+							</div>
+						</div>
+					</f:link.typolink>
 				</f:for>
-			</ul>
+			</div>
 		</div>
 	</f:if>
 </f:section>

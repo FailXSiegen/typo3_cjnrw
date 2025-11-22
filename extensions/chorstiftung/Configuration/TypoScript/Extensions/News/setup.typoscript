@@ -1,7 +1,14 @@
 plugin.tx_news {
 	view {
+		templateRootPaths {
+			99 = EXT:chorstiftung/Resources/Private/Extensions/News/Templates/
+		}
 		partialRootPaths {
-			99 = EXT:chorstiftung/Resources/Private/Content/Partials/
+			98 = EXT:chorstiftung/Resources/Private/Content/Partials/
+			99 = EXT:chorstiftung/Resources/Private/Extensions/News/Partials/
+		}
+		layoutRootPaths {
+			99 = EXT:chorstiftung/Resources/Private/Extensions/News/Layouts/
 		}
     }
 	settings {
