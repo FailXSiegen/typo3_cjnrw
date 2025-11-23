@@ -104,6 +104,9 @@
 												<f:if condition="{mediaElement.description}">data-description="{mediaElement.description -> f:format.htmlspecialchars()}"</f:if>>
 													<f:render partial="Media/Rendering/Image" arguments="{file: mediaElement, dimensions: {width: '600m'}, class: 'img-fluid rounded shadow'}" />
 												</a>
+												<f:if condition="{mediaElement.description}">
+													<small class="text-muted d-block mt-2">{mediaElement.description}</small>
+												</f:if>
 											</div>
 										</f:if>
 									</f:for>
