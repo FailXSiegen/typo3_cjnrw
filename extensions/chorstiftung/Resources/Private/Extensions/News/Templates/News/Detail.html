@@ -71,27 +71,43 @@
 							</div>
 
 							<!-- Thumbnails for additional images -->
-							<f:if condition="{imageCount} > 1">
-								<div class="row g-2">
+							<f:if condition="{imageCount} > 2">
+								<f:then>
+									<div class="row g-2">
+										<f:for each="{newsItem.mediaNonPreviews}" as="mediaElement" iteration="iterator">
+											<f:if condition="{iterator.index} > 0">
+												<div class="col-4">
+													<a href="{mediaElement.originalResource.publicUrl}"
+													class="glightbox d-block"
+													data-gallery="news-gallery-{newsItem.uid}"
+													<f:if condition="{mediaElement.description}">data-description="{mediaElement.description -> f:format.htmlspecialchars()}"</f:if>>
+														<f:image
+															image="{mediaElement}"
+															width="200c"
+															height="200c"
+															class="img-fluid rounded shadow-sm"
+															alt="{mediaElement.alternative}"
+															title="{mediaElement.title}" />
+													</a>
+												</div>
+											</f:if>
+										</f:for>
+									</div>
+								</f:then>
+								<f:else>
 									<f:for each="{newsItem.mediaNonPreviews}" as="mediaElement" iteration="iterator">
 										<f:if condition="{iterator.index} > 0">
-											<div class="col-4">
-												<a href="{mediaElement.originalResource.publicUrl}"
-												   class="glightbox d-block"
-												   data-gallery="news-gallery-{newsItem.uid}"
-												   <f:if condition="{mediaElement.description}">data-description="{mediaElement.description -> f:format.htmlspecialchars()}"</f:if>>
-													<f:image
-														image="{mediaElement}"
-														width="200c"
-														height="200c"
-														class="img-fluid rounded shadow-sm"
-														alt="{mediaElement.alternative}"
-														title="{mediaElement.title}" />
+											<div class="mb-3">
+											<a href="{mediaElement.originalResource.publicUrl}"
+												class="glightbox d-block"
+												data-gallery="news-gallery-{newsItem.uid}"
+												<f:if condition="{mediaElement.description}">data-description="{mediaElement.description -> f:format.htmlspecialchars()}"</f:if>>
+													<f:render partial="Media/Rendering/Image" arguments="{file: mediaElement, dimensions: {width: '600m'}, class: 'img-fluid rounded shadow'}" />
 												</a>
 											</div>
 										</f:if>
 									</f:for>
-								</div>
+								</f:else>
 							</f:if>
 						</f:if>
 					</div>
