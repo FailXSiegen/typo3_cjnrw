@@ -33,13 +33,18 @@ return [
             'loginLogo' => 'EXT:cjnrw/Resources/Public/Images/logo-chorjugend-nrw-quer_transparent.png',
             'loginLogoAlt' => 'Chorjugend NRW',
         ],
+        'bw_captcha' => [
+            'sfEventMgt' => '0',
+        ],
         'extensionmanager' => [
             'automaticInstallation' => '1',
             'offlineMode' => '0',
         ],
         'form_to_database' => [
             'csvDelimiter' => ',',
+            'csvHtmlSpecialChars' => '1',
             'csvOnlyFilenameOfUploadFields' => '0',
+            'displayActiveFieldsOnly' => '0',
             'hideLocationInList' => '0',
         ],
         'lux' => [

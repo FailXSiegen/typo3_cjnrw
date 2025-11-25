@@ -78,6 +78,15 @@ call_user_func(
                     // 'items' => \Failx\Cjnrw\Utility\IconUtility::iconArray($extbaseFrameworkConfiguration['plugin.']['tx_cjnrw.']['settings.']['jsonfile']),
                     'maxitems' => 1
                 ],
+            ],
+            'disable_pagesplash' => [
+                'label' => 'LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:disable_pagesplash',
+                'description' => 'LLL:EXT:cjnrw/Resources/Private/Language/locallang_db.xlf:disable_pagesplash.description',
+                'config' => [
+                    'type' => 'check',
+                    'renderType' => 'checkboxToggle',
+                    'default' => 0,
+                ],
             ]
         ];
         // Add TCA columns.
@@ -87,7 +96,7 @@ call_user_func(
         );
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             'pages',
-            'theme,--linebreak--',
+            'theme,disable_pagesplash,--linebreak--',
             '',
             'after:doktype'
         );

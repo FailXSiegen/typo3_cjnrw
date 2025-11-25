@@ -192,7 +192,7 @@ page.10 {
     }
 }
 [end]
-[tree.level > 1]
+[tree.level > 1 && traverse(page, "disable_pagesplash") != 1]
 page {
   bodyTagCObject.10 {
     50 = TEXT

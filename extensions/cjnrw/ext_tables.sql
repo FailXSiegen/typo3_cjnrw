@@ -90,6 +90,7 @@ CREATE TABLE tt_content (
 CREATE TABLE pages (
     theme VARCHAR(255) DEFAULT '' NOT NULL,
     social_media_icon VARCHAR(255) DEFAULT '' NOT NULL,
+    disable_pagesplash tinyint(4) DEFAULT '0' NOT NULL,
 );
 
 #

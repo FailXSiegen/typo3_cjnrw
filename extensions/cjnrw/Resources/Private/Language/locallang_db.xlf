@@ -406,6 +406,12 @@
 			<trans-unit id="hide_more.description" xml:space="preserve">
 				<source>Versteckt den "Weiterlesen" Button und gibt den kompletten Inhalt ohne Beschränkung in der Listenansicht aus</source>
 			</trans-unit>
+			<trans-unit id="disable_pagesplash" xml:space="preserve">
+				<source>Farbklecks deaktivieren</source>
+			</trans-unit>
+			<trans-unit id="disable_pagesplash.description" xml:space="preserve">
+				<source>Deaktiviert den Farbklecks (Pagesplash) für diese Seite</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>
