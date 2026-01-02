@@ -26,3 +26,14 @@ for (var i = 0, n = particleElements.length; i < n; ++i) {
     particleElements[i].style.transform = matrix;
     particleElements[i].style.setProperty('transform', particleElements[i].style.transform + ' rotate('+rotate+'deg)','important');
 }
+
+// Scroll to first invalid form field after page load
+const firstInvalidField = document.querySelector('.is-invalid')
+if (firstInvalidField) {
+    // Small delay to ensure page is fully loaded and browser anchor scroll is done
+    setTimeout(() => {
+        firstInvalidField.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        const input = firstInvalidField.querySelector('input, select, textarea') || firstInvalidField
+        input.focus()
+    }, 100)
+}
