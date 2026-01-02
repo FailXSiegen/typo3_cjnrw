@@ -8,10 +8,10 @@ TYPO3:
               renderingOptions:
                 templateRootPaths:
                   20: 'EXT:chorstiftung/Resources/Private/Extensions/Form/Templates/'
-                partialRootPaths:
-                  20: 'EXT:chorstiftung/Resources/Private/Extensions/Form/Partials/'
                 layoutRootPaths:
                   20: 'EXT:chorstiftung/Resources/Private/Extensions/Form/Layouts/'
+                # Bootstrap 5 Template-Variante aktivieren
+                templateVariant: version2
           finishersDefinition:
             EmailToReceiver:
               options:
